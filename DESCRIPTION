@@ -18,6 +18,7 @@ RoxygenNote: 7.3.2
 URL: https://github.com/richelbilderbeek/scoreto
 BugReports: https://github.com/richelbilderbeek/scoreto/issues
 Imports:
+    readr,
     stringr,
     tibble
 Suggests:
