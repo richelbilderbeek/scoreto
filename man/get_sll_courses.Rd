@@ -7,7 +7,10 @@
 get_sll_courses()
 }
 \value{
-a table with all SciLifeLab courses
+a table with all SciLifeLab courses.
+
+This table is a \link[tibble]{tibble} with column names \code{name}
+and \code{url}.
 }
 \description{
 Get the SciLifeLab courses
