@@ -21,6 +21,7 @@ Imports:
     lubridate,
     readr,
     stringr,
-    tibble
+    tibble,
+    tidyr
 Suggests:
     testthat

@@ -3,5 +3,6 @@
 export(extract_from_date)
 export(extract_to_date)
 export(get_adh_courses)
+export(get_courses)
 export(get_naiss_courses)
 export(get_sll_courses)
