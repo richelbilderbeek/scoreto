@@ -9,8 +9,12 @@ get_sll_courses()
 \value{
 a table with all SciLifeLab courses.
 
-This table is a \link[tibble]{tibble} with column names \code{name}
-and \code{url}.
+This table is a \link[tibble]{tibble} with these column names:
+\itemize{
+\item \code{source}: the URL where this course was found
+\item \code{name}: the name of the course
+\item \code{url}: the URL of the course
+}
 }
 \description{
 Get the SciLifeLab courses

@@ -3,6 +3,6 @@ test_that("use", {
 
   t <- get_sll_courses()
   expect_true(tibble::is_tibble(t))
-  expect_equal(2, length(names(t)))
-  expect_equal(c("name", "url"), names(t))
+  expect_equal(3, length(names(t)))
+  expect_equal(c("source", "name", "url"), names(t))
 })
