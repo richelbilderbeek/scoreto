@@ -3,5 +3,5 @@ test_that("use", {
   expect_true(tibble::is_tibble(t))
   expect_equal(5, length(names(t)))
   expect_equal(c("date_from", "date_to", "name", "url", "source"), names(t))
-  expect_equal(0, is.na(t$date_from))
+  expect_equal(0, sum(is.na(t$date_from)))
 })
