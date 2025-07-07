@@ -19,12 +19,15 @@ get_sll_courses <- function() {
 
   dates_with_nas <- stringr::str_match(lines, "<p>(.* 20..)</p>")[, 2]
   dates <- dates_with_nas[!is.na(dates_with_nas)]
+  from_dates <- extract_from_date(dates)
+  to_dates <- extract_to_date(dates)
 
   testthat::expect_equal(length(course_names), length(urls))
   testthat::expect_equal(length(course_names), length(dates))
 
   tibble::tibble(
-    date = dates,
+    date_from = from_dates,
+    date_to = to_dates,
     name = course_names,
     url = urls,
     source = sll_url

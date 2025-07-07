@@ -22,7 +22,8 @@ get_adh_courses <- function() {
   testthat::expect_equal(length(course_names), length(urls))
 
   tibble::tibble(
-    date = dates,
+    date_from = dates,
+    date_to = dates,
     name = course_names,
     url = urls,
     source = adh_training_url

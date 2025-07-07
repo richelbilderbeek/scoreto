@@ -1,5 +1,5 @@
 Package: scoreto
-Title: Collect SCoRe training resources 
+Title: Collect SCoRe training resources
 Version: 0.1
 Authors@R: c(
     person("Richèl J.C.", "Bilderbeek", email = "rjcbilderbeek@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-1107-7049")))
@@ -9,7 +9,7 @@ Description:
     computational resources.
     Knowledge is one such resources.
     This R package collects the courses and training
-    for resources supported by SCoRe
+    for resources supported by SCoRe.
 License: GPL-3 
 Encoding: UTF-8
 Language: en-US
@@ -18,6 +18,7 @@ RoxygenNote: 7.3.2
 URL: https://github.com/richelbilderbeek/scoreto
 BugReports: https://github.com/richelbilderbeek/scoreto/issues
 Imports:
+    lubridate,
     readr,
     stringr,
     tibble
