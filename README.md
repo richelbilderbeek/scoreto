@@ -3,9 +3,9 @@
 <!-- markdownlint-disable MD013 -->
 
 Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github.com/richelbilderbeek/scorito/actions)|[![Codecov logo](man/figures/Codecov.png)](https://about.codecov.io/)
----------|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------
-`main`   |![R-CMD-check](https://github.com/richelbilderbeek/scorito/workflows/R-CMD-check/badge.svg?branch=main)   |[![codecov.io](https://codecov.io/github/richelbilderbeek/scorito/coverage.svg?branch=main)](https://app.codecov.io/github/richelbilderbeek/scorito/branch/main)
-`develop`|![R-CMD-check](https://github.com/richelbilderbeek/scorito/workflows/R-CMD-check/badge.svg?branch=develop)  |[![codecov.io](https://codecov.io/github/richelbilderbeek/scorito/coverage.svg?branch=develop)](https://app.codecov.io/github/richelbilderbeek/scorito/branch/develop)
+---------|---------|---------
+`main`   |[![R-CMD-check](https://github.com/richelbilderbeek/scoreto/actions/workflows/R-CMD-check.yaml/badge.svg?branch=main)](https://github.com/richelbilderbeek/scoreto/actions/workflows/R-CMD-check.yaml)    |[![codecov.io](https://codecov.io/github/richelbilderbeek/scorito/coverage.svg?branch=main)](https://app.codecov.io/github/richelbilderbeek/scorito/branch/main)
+`develop`|[![R-CMD-check](https://github.com/richelbilderbeek/scoreto/actions/workflows/R-CMD-check.yaml/badge.svg?branch=develop)](https://github.com/richelbilderbeek/scoreto/actions/workflows/R-CMD-check.yaml) |[![codecov.io](https://codecov.io/github/richelbilderbeek/scorito/coverage.svg?branch=develop)](https://app.codecov.io/github/richelbilderbeek/scorito/branch/develop)
 
 `scoreto` (rhymes on 'mosquito', not on 'didgeridoo') is an R package
 to get an overview of all training activities relevant for SCoRe.
