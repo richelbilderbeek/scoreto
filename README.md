@@ -7,7 +7,6 @@ Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github
 `main`   |![R-CMD-check](https://github.com/richelbilderbeek/scorito/workflows/R-CMD-check/badge.svg?branch=main)   |[![codecov.io](https://codecov.io/github/richelbilderbeek/scorito/coverage.svg?branch=main)](https://app.codecov.io/github/richelbilderbeek/scorito/branch/main)
 `develop`|![R-CMD-check](https://github.com/richelbilderbeek/scorito/workflows/R-CMD-check/badge.svg?branch=develop)  |[![codecov.io](https://codecov.io/github/richelbilderbeek/scorito/coverage.svg?branch=develop)](https://app.codecov.io/github/richelbilderbeek/scorito/branch/develop)
 
-
 `scoreto` (rhymes on 'mosquito', not on 'didgeridoo') is an R package
 to get an overview of all training activities relevant for SCoRe.
 
