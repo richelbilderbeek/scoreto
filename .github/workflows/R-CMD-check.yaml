@@ -44,10 +44,10 @@ jobs:
         run: Rscript -e 'covr::codecov()'
 
       - name: Upload coverage reports to Codecov
-          uses: codecov/codecov-action@v5
-          with:
-            token: ${{ secrets.CODECOV_TOKEN }}
-            slug: richelbilderbeek/scoreto
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: richelbilderbeek/scoreto
 
       - name: Lint
         run: Rscript -e 'lintr::lint_package()'
