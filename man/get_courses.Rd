@@ -2,13 +2,13 @@
 % Please edit documentation in R/get_courses.R
 \name{get_courses}
 \alias{get_courses}
-\title{Get all the courses}
+\title{Get all the future courses}
 \usage{
 get_courses()
 }
 \value{
-a table with all courses.
+a table with all future courses, sorted alphabetically by date
 }
 \description{
-Get all the courses
+Get all the future courses
 }
