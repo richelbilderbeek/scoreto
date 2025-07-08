@@ -1,1 +1,16 @@
+CMD
+Codecov
+codecov
+config
+io
+json
+jsonc
+linter
+markdownlint
+markdownlintignore
+mlc
+SCoRe
 scoreto
+txt
+wordlist
+yml
