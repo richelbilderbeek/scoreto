@@ -8,6 +8,7 @@ get_courses <- function() {
   tibbles[[2]] <- get_naiss_courses()
   tibbles[[3]] <- get_sll_courses()
   tibbles[[4]] <- get_uppmax_courses()
+  tibbles[[5]] <- get_enccs_courses()
 
   # TODO: Add ENCCS
   # TODO: Add HPC2N
