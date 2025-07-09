@@ -4,10 +4,10 @@
 \alias{extract_uppmax_to_date}
 \title{Extract the 'to' date}
 \usage{
-extract_uppmax_to_date(sll_date_range)
+extract_uppmax_to_date(uppmax_date_range)
 }
 \arguments{
-\item{sll_date_range}{a SciLifeLab date range}
+\item{uppmax_date_range}{an UPPMAX date range}
 }
 \value{
 a string in \code{YYYY-MM-DD} format
@@ -16,7 +16,7 @@ a string in \code{YYYY-MM-DD} format
 Extract the 'to' date
 }
 \examples{
-extract_to_date("9 - 11 September 2025") # 2025-09-11
-extract_to_date("6 - 31 October 2025") # 2025-10-31
-extract_to_date("24 - 28 November 2025") # 2025-11-28
+extract_uppmax_to_date("Aug 25-27") # 2025-08-27
+extract_uppmax_to_date("Oct 14") # 2025-10-14
+extract_uppmax_to_date("Oct 23-24 + 27-29") # 2025-10-29
 }

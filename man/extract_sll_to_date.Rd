@@ -16,7 +16,7 @@ a string in \code{YYYY-MM-DD} format
 Extract the 'to' date
 }
 \examples{
-extract_to_date("9 - 11 September 2025") # 2025-09-11
-extract_to_date("6 - 31 October 2025") # 2025-10-31
-extract_to_date("24 - 28 November 2025") # 2025-11-28
+extract_sll_to_date("9 - 11 September 2025") # 2025-09-11
+extract_sll_to_date("6 - 31 October 2025") # 2025-10-31
+extract_sll_to_date("24 - 28 November 2025") # 2025-11-28
 }

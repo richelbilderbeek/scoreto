@@ -1,6 +1,6 @@
 test_that("minimal use", {
   expect_equal(
-    extract_uppmax_from_date("Aug 25-27"),
+    extract_uppmax_from_date(uppmax_date_range = "Aug 25-27"),
     paste0(lubridate::year(lubridate::today()), "-08-25")
   )
   expect_equal(

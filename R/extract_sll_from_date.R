@@ -2,9 +2,9 @@
 #' @param sll_date_range a SciLifeLab date range
 #' @return a string in `YYYY-MM-DD` format
 #' @examples
-#' extract_from_date("9 - 11 September 2025") # 2025-09-09
-#' extract_from_date("6 - 31 October 2025") # 2025-10-06
-#' extract_from_date("24 - 28 November 2025") # 2025-11-24
+#' extract_sll_from_date("9 - 11 September 2025") # 2025-09-09
+#' extract_sll_from_date("6 - 31 October 2025") # 2025-10-06
+#' extract_sll_from_date("24 - 28 November 2025") # 2025-11-24
 #' @export
 extract_sll_from_date <- function(sll_date_range) {
   # sll_date_range <- "7 - 9 September 2025"
