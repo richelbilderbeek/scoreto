@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_courses.R
 \name{get_courses}
 \alias{get_courses}
-\title{Get all the future courses}
+\title{Get a table with all of the future courses}
 \usage{
 get_courses()
 }
@@ -10,5 +10,5 @@ get_courses()
 a table with all future courses, sorted alphabetically by date
 }
 \description{
-Get all the future courses
+Get a table with all of the future courses
 }

@@ -1,4 +1,4 @@
-#' Get all the future courses
+#' Get a table with all of the future courses
 #'
 #' @return a table with all future courses, sorted alphabetically by date
 #' @export

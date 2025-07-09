@@ -17,6 +17,15 @@ get_courses_as_markdown <- function() {
     ")"
   )
 
+  # Add logo and link
+  t$provider_name <- paste0(
+    "![",
+    t$provider_name,
+    " logo](",
+    get_logo_paths(t$provider_name),
+    ")"
+  )
+
   text <- knitr::kable(t)
   names(t)
   text[1] <- paste0(
