@@ -38,8 +38,9 @@ get_uppmax_courses <- function() {
   tibble::tibble(
     date_from = dates,
     date_to = dates,
-    name = course_names,
-    url = urls,
-    source = "https://docs.uppmax.uu.se/courses_workshops/courses_workshops/"
+    course_name = course_names,
+    course_url = urls,
+    provider_courses_url = "https://docs.uppmax.uu.se/courses_workshops/courses_workshops/",
+    provider_name = "UPPMAX"
   )
 }

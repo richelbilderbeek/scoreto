@@ -28,8 +28,9 @@ get_sll_courses <- function() {
   tibble::tibble(
     date_from = from_dates,
     date_to = to_dates,
-    name = course_names,
-    url = urls,
-    source = sll_url
+    course_name = course_names,
+    course_url = urls,
+    provider_courses_url = sll_url,
+    provider_name = "SciLifeLab"
   )
 }

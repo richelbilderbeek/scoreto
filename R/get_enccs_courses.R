@@ -15,16 +15,21 @@ get_enccs_courses <- function() {
 
   date_indices <- stringr::str_which(lines, "tribe-event-date-start")
   from_dates_with_nas <- stringr::str_match(lines[date_indices], "<span class=\"tribe-event-date-start\">([:upper:][:lower:]{2} [:digit:]{1,2}) .*</span>")[,2]
-  from_dates <- as.character(na.omit(from_dates_with_nas))
+  from_dates_enccs <- as.character(na.omit(from_dates_with_nas))
+  from_dates <- convert_enccs_dates(from_dates_enccs)
   testthat::expect_equal(length(date_indices), length(from_dates))
+
 
   to_date_indices <- date_indices
   # NA if the event is one day
   to_dates_with_nas <- stringr::str_match(lines[date_indices], "<span class=\"tribe-event-date-end\">([:upper:][:lower:]{2} [:digit:]{1,2}) .*</span>")[,2]
   na_indices <- which(is.na(to_dates_with_nas))
-  to_dates <- to_dates_with_nas
-  to_dates[na_indices] <- from_dates[na_indices]
-  testthat::expect_equal(length(date_indices), length(to_dates))
+  to_dates_enccs <- to_dates_with_nas
+  to_dates_enccs[na_indices] <- from_dates_enccs[na_indices]
+  from_dates <- convert_enccs_dates(to_dates_enccs)
+  testthat::expect_equal(length(date_indices), length(from_dates))
+
+
 
   title_lines <- lines[date_indices + 5]
   course_names_with_unicode <- stringr::str_match(title_lines, "\"(.*)\"")[, 2]
@@ -36,8 +41,9 @@ get_enccs_courses <- function() {
   tibble::tibble(
     date_from = from_dates,
     date_to = to_dates,
-    name = course_names,
-    url = urls,
-    source = enccs_url
+    course_name = course_names,
+    course_url = urls,
+    provider_courses_url = enccs_url,
+    provider_name = "ENCCS"
   )
 }

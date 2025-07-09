@@ -22,8 +22,9 @@ get_naiss_courses <- function() {
   tibble::tibble(
     date_from = dates,
     date_to = dates,
-    name = course_names,
-    url = urls,
-    source = naiss_url
+    course_name = course_names,
+    course_url = urls,
+    provider_courses_url = naiss_url,
+    provider_name = "NAISS"
   )
 }

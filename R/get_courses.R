@@ -10,12 +10,12 @@ get_courses <- function() {
   tibbles[[4]] <- get_uppmax_courses()
   tibbles[[5]] <- get_enccs_courses()
 
-  # TODO: Add ENCCS
   # TODO: Add HPC2N
   # TODO: Add PDC
   # TODO: Add C3SE
   # TODO: Add NSC
   # TODO: Add LUNARC
+
 
   t_with_nas <- dplyr::bind_rows(tibbles)
   t_any_date <- t_with_nas |> tidyr::drop_na()
