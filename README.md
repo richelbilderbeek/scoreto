@@ -10,6 +10,8 @@ Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github
 `scoreto` (rhymes on 'mosquito', not on 'didgeridoo') is an R package
 to get an overview of all training activities relevant for SCoRe.
 
+`scoreto` is used in [the SCoRe user documentation](https://nbisweden.github.io/SCoRe_user_doc/).
+
 ## Installation
 
 ```r
