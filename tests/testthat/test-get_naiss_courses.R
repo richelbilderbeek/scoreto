@@ -3,6 +3,9 @@ test_that("use", {
   expect_true(tibble::is_tibble(t))
   expect_equal(6, length(names(t)))
   expect_equal(c("date_from", "date_to", "course_name", "course_url", "provider_courses_url", "provider_name"), names(t))
-  expect_true(all(stringr::str_detect(t$date_from, "^[:digit:]{4}-[:digit:]{2}-[:digit:]{2}$")))
-  expect_true(all(stringr::str_detect(t$date_to, "^[:digit:]{4}-[:digit:]{2}-[:digit:]{2}$")))
+  testthat::expect_true(is.character(t$date_from))
+  if (nrow(t) > 0) {
+    expect_true(all(stringr::str_detect(t$date_from, "^[:digit:]{4}-[:digit:]{2}-[:digit:]{2}$")))
+    expect_true(all(stringr::str_detect(t$date_to, "^[:digit:]{4}-[:digit:]{2}-[:digit:]{2}$")))
+  }
 })

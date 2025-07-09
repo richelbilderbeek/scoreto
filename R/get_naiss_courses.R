@@ -19,7 +19,7 @@ get_naiss_courses <- function() {
 
   testthat::expect_equal(length(course_names), length(urls))
 
-  tibble::tibble(
+  t <- tibble::tibble(
     date_from = dates,
     date_to = dates,
     course_name = course_names,
@@ -27,4 +27,12 @@ get_naiss_courses <- function() {
     provider_courses_url = naiss_url,
     provider_name = "NAISS"
   )
+  t$date_from <- as.character(t$date_from)
+  t$date_to <- as.character(t$date_to)
+  t$course_name <- as.character(t$course_name)
+  t$course_url <- as.character(t$course_url)
+  t$provider_courses_url <- as.character(t$provider_courses_url)
+  t$provider_courses_url <- as.character(t$provider_courses_url)
+
+  t[-1, ]
 }

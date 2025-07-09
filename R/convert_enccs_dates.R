@@ -5,7 +5,6 @@
 #' convert_enccs_dates("Jul 10") # 2025-07-10
 #' @export
 convert_enccs_dates <- function(enccs_dates) {
-  # Vectorize(convert_enccs_date)(enccs_dates)
   month_str <- stringr::str_match(enccs_dates, "^([:upper:][:lower:]{2})")[, 2]
   month <- lubridate::month(lubridate::mdy(paste0(month_str, "/01/2000")))
   month[nchar(month) == 1] <- paste0("0", month[nchar(month) == 1])

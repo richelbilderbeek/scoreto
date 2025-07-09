@@ -36,8 +36,8 @@ get_uppmax_courses <- function() {
   testthat::expect_equal(length(course_names), length(urls))
 
   tibble::tibble(
-    date_from = dates,
-    date_to = dates,
+    date_from = from_dates,
+    date_to = to_dates,
     course_name = course_names,
     course_url = urls,
     provider_courses_url = "https://docs.uppmax.uu.se/courses_workshops/courses_workshops/",

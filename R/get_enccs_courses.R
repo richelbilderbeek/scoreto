@@ -26,7 +26,7 @@ get_enccs_courses <- function() {
   na_indices <- which(is.na(to_dates_with_nas))
   to_dates_enccs <- to_dates_with_nas
   to_dates_enccs[na_indices] <- from_dates_enccs[na_indices]
-  from_dates <- convert_enccs_dates(to_dates_enccs)
+  to_dates <- convert_enccs_dates(to_dates_enccs)
   testthat::expect_equal(length(date_indices), length(from_dates))
 
 
