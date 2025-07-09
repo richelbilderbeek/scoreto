@@ -3,6 +3,9 @@
 #' @return a table with all future courses, sorted alphabetically by date
 #' @export
 get_courses <- function() {
+  date_to <- NULL # No visible binding for global variable
+  date_from <- NULL # No visible binding for global variable
+
   tibbles <- list()
   tibbles[[1]] <- get_adh_courses()
   tibbles[[2]] <- get_naiss_courses()

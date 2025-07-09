@@ -19,7 +19,13 @@ get_courses_as_markdown <- function() {
 
   text <- knitr::kable(t)
   names(t)
-  text[1] <- "|**From**|**To**|**Course name**|**Course site**|**Provider site**|**Provider name**|"
-  text[2] <- "|:----------|:----------|:---------------------------------------------------|:-----------|:------------|:------------|"
+  text[1] <- paste0(
+    "|**From**|**To**|**Course name**|**Course site**",
+    "|**Provider site**|**Provider name**|"
+  )
+  text[2] <- paste0("|:----------|:----------",
+    "|:---------------------------------------------------",
+    "|:-----------|:------------|:------------|"
+  )
   text
 }

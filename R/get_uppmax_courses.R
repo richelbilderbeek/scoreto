@@ -12,7 +12,11 @@ get_uppmax_courses <- function() {
   # Cannot use the pretty rendered source at
   # https://docs.uppmax.uu.se/courses_workshops/courses_workshops/
   # because it cannot be read
-  uppmax_url <- "https://raw.githubusercontent.com/UPPMAX/UPPMAX-documentation/refs/heads/main/docs/courses_workshops/courses_workshops.md"
+  uppmax_url <- paste0(
+    "https://raw.githubusercontent.com/",
+    "UPPMAX/UPPMAX-documentation/refs/heads/main/",
+    "docs/courses_workshops/courses_workshops.md"
+  )
   all_lines <- readr::read_lines(uppmax_url)
 
   lines <- stringr::str_subset(all_lines, ".md-button--primary")
@@ -29,18 +33,25 @@ get_uppmax_courses <- function() {
   urls[index_with_relative_urls] <-
     paste0(
       "https://docs.uppmax.uu.se/courses_workshops/",
-       urls[index_with_relative_urls]
+      urls[index_with_relative_urls]
     )
-  urls[index_with_relative_urls] <- tools::file_path_sans_ext(urls[index_with_relative_urls])
+  urls[index_with_relative_urls] <- tools::file_path_sans_ext(
+    urls[index_with_relative_urls]
+  )
 
   testthat::expect_equal(length(course_names), length(urls))
+
+  provider_courses_url <- paste0(
+    "https://docs.uppmax.uu.se/",
+    "courses_workshops/courses_workshops/"
+  )
 
   tibble::tibble(
     date_from = from_dates,
     date_to = to_dates,
     course_name = course_names,
     course_url = urls,
-    provider_courses_url = "https://docs.uppmax.uu.se/courses_workshops/courses_workshops/",
+    provider_courses_url = provider_courses_url,
     provider_name = "UPPMAX"
   )
 }

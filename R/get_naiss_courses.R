@@ -10,7 +10,7 @@
 get_naiss_courses <- function() {
   naiss_url <- "https://www.naiss.se/events/"
   lines <- readr::read_lines(naiss_url)
-
+  testthat::expect_true(length(lines) > 0)
   dates <- NA
 
   course_names <- NA
