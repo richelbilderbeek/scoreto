@@ -15,6 +15,7 @@ get_logo_path <- function(provider_name) {
   }
   if (provider_name == "AIDA Data Hub") return("logo/aida_logo_24_x_24.png")
   if (provider_name == "ENCCS") return("logo/enccs_logo_103_x_24.png")
+  if (provider_name == "HPC2N") return("logo/hpc2n_logo_84_x_24.png")
   if (provider_name == "NAISS") return("logo/naiss_logo_inverted_148_x_24.png")
   if (provider_name == "PDC") return("logo/pdc_logo_21_x_24.png")
   if (provider_name == "SciLifeLab") return("logo/sll_logo_110_x_24.png")

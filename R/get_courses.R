@@ -12,6 +12,13 @@ get_courses <- function() {
   tibbles[[3]] <- get_sll_courses()
   tibbles[[4]] <- get_uppmax_courses()
   tibbles[[5]] <- get_enccs_courses()
+  tibbles[[6]] <- get_hpc2n_courses()
+
+  # TODO: Add HPC2N
+  # TODO: Add PDC
+  # TODO: Add C3SE
+  # TODO: Add NSC
+  # TODO: Add LUNARC
 
   # Check again
   for (i in seq_len(length(tibbles))) {
@@ -20,11 +27,6 @@ get_courses <- function() {
   }
 
 
-  # TODO: Add HPC2N
-  # TODO: Add PDC
-  # TODO: Add C3SE
-  # TODO: Add NSC
-  # TODO: Add LUNARC
 
 
   t_with_nas <- dplyr::bind_rows(tibbles)

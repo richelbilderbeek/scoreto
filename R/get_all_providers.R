@@ -7,6 +7,7 @@ get_all_providers <- function() {
   c(
     "AIDA Data Hub",
     "ENCCS",
+    "HPC2N",
     "NAISS",
     "PDC",
     "SciLifeLab",
