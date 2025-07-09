@@ -13,8 +13,8 @@ get_courses <- function() {
   tibbles[[4]] <- get_uppmax_courses()
   tibbles[[5]] <- get_enccs_courses()
   tibbles[[6]] <- get_hpc2n_courses()
+  tibbles[[7]] <- get_lunarc_courses()
 
-  # TODO: Add HPC2N
   # TODO: Add PDC
   # TODO: Add C3SE
   # TODO: Add NSC
