@@ -22,7 +22,7 @@ get_enccs_courses <- function() {
       "</span>"
     )
   )[, 2]
-  from_dates_enccs <- as.character(na.omit(from_dates_with_nas))
+  from_dates_enccs <- as.character(stats::na.omit(from_dates_with_nas))
   from_dates <- convert_enccs_dates(from_dates_enccs)
   testthat::expect_equal(length(date_indices), length(from_dates))
 

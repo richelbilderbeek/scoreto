@@ -1,4 +1,6 @@
 #' Determine if the table is correctly formatted
+#' @param t a table
+#' @return TRUE if the table is correctly formatted
 #' @export
 is_correctly_formatted_table <- function(t) {
 

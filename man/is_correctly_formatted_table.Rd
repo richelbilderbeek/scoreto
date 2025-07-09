@@ -6,6 +6,12 @@
 \usage{
 is_correctly_formatted_table(t)
 }
+\arguments{
+\item{t}{a table}
+}
+\value{
+TRUE if the table is correctly formatted
+}
 \description{
 Determine if the table is correctly formatted
 }

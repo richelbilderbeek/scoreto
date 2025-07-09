@@ -2,3 +2,6 @@
 ^\.Rproj\.user$
 ^LICENSE$
 ^\.github$
+^\.markdownlint\.jsonc$
+^\.spellcheck\.yml$
+^\.wordlist\.txt$

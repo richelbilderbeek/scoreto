@@ -1,5 +1,5 @@
 #' Extract the 'to' date from one or more UPPMAX dates
-#' @param uppmax_date_range a UPPMAX date range
+#' @param uppmax_date_ranges one or more UPPMAX date ranges
 #' @return a string in `YYYY-MM-DD` format
 #' @examples
 #' extract_uppmax_to_dates("Aug 25-27") # 2025-08-27

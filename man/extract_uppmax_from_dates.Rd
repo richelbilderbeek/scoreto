@@ -7,7 +7,7 @@
 extract_uppmax_from_dates(uppmax_date_ranges)
 }
 \arguments{
-\item{uppmax_date_range}{a SciLifeLab date range}
+\item{uppmax_date_ranges}{one or more UPPMAX date ranges}
 }
 \value{
 a string in \code{YYYY-MM-DD} format
