@@ -13,10 +13,12 @@ extract_uppmax_from_date <- function(uppmax_date_range) {
     info = "Use 'extract_uppmax_from_dates' if you need more elements"
   )
 
-  # uppmax_date_range <- "Oct 23-24 + 27-29"
   year <- lubridate::year(lubridate::today())
 
-  month_str <- stringr::str_match(uppmax_date_range, "[:upper:][:alpha:]{2,10}")[, 1]
+  month_str <- stringr::str_match(
+    uppmax_date_range,
+    "[:upper:][:alpha:]{2,10}"
+  )[, 1]
 
   # Complete to a fake date so lubridate::mdy works
   month <- lubridate::month(lubridate::mdy(paste0(month_str, "/01/2000")))

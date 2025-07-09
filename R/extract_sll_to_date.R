@@ -7,7 +7,6 @@
 #' extract_sll_to_date("24 - 28 November 2025") # 2025-11-28
 #' @export
 extract_sll_to_date <- function(sll_date_range) {
-  # sll_date_range <- "7 - 9 September 2025"
   year <- stringr::str_match(sll_date_range, "[:digit:]{4}")[, 1]
 
   month_str <- stringr::str_match(sll_date_range, "[:alpha:]{4,20}")[, 1]

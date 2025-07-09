@@ -13,11 +13,20 @@ get_adh_courses <- function() {
   all_lines <- readr::read_lines(adh_training_url)
   lines <- stringr::str_subset(all_lines, "<li style=")
 
-  dates <- stringr::str_match(lines, "date=\"([[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}) ")[, 2]
+  dates <- stringr::str_match(
+    lines,
+    "date=\"([[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}) "
+  )[, 2]
 
-  course_names <- stringr::str_match(lines, "<strong><a href=\"/training-events/.*.html\">(.*)</a></strong>")[, 2]
+  course_names <- stringr::str_match(
+    lines,
+    "<strong><a href=\"/training-events/.*.html\">(.*)</a></strong>"
+  )[, 2]
 
-  relative_urls <- stringr::str_match(lines, "<strong><a href=\"/(training-events/.*.html)\">.*</a></strong>")[, 2]
+  relative_urls <- stringr::str_match(
+    lines,
+    "<strong><a href=\"/(training-events/.*.html)\">.*</a></strong>"
+  )[, 2]
   urls <- paste0(adh_home_url, "/", relative_urls)
   testthat::expect_equal(length(course_names), length(urls))
 

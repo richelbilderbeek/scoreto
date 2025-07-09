@@ -11,7 +11,11 @@ get_courses_as_markdown <- function() {
 
   # Convert URLs to Markdown strings
   testthat::expect_true("provider_courses_url" %in% names(t))
-  t$provider_courses_url <- paste0("[Provider site](", t$provider_courses_url, ")")
+  t$provider_courses_url <- paste0(
+    "[Provider site](",
+    t$provider_courses_url,
+    ")"
+  )
 
   text <- knitr::kable(t)
   names(t)

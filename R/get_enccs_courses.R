@@ -11,10 +11,13 @@ get_enccs_courses <- function() {
 
 
   last_useless_line_index <- stringr::str_which(all_lines, "<body ")
-  lines <- all_lines[ -(1:last_useless_line_index) ]
+  lines <- all_lines[-(1:last_useless_line_index) ]
 
   date_indices <- stringr::str_which(lines, "tribe-event-date-start")
-  from_dates_with_nas <- stringr::str_match(lines[date_indices], "<span class=\"tribe-event-date-start\">([:upper:][:lower:]{2} [:digit:]{1,2}) .*</span>")[,2]
+  from_dates_with_nas <- stringr::str_match(
+    lines[date_indices],
+    "<span class=\"tribe-event-date-start\">([:upper:][:lower:]{2} [:digit:]{1,2}) .*</span>"
+  )[,2]
   from_dates_enccs <- as.character(na.omit(from_dates_with_nas))
   from_dates <- convert_enccs_dates(from_dates_enccs)
   testthat::expect_equal(length(date_indices), length(from_dates))
