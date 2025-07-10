@@ -1,11 +1,5 @@
 #' Get the SciLifeLab courses
-#' @return
-#'   a table with all SciLifeLab courses.
-#'
-#'   This table is a \link[tibble]{tibble} with these column names:
-#'   - `source`: the URL where this course was found
-#'   - `name`: the name of the course
-#'   - `url`: the URL of the course
+#' @return a table with all SciLifeLab courses.
 #' @export
 get_sll_courses <- function() {
   sll_url <- "https://training.scilifelab.se/events"

@@ -8,13 +8,6 @@ get_adh_courses()
 }
 \value{
 a table with all AIDA Data Hub courses.
-
-This table is a \link[tibble]{tibble} with these column names:
-\itemize{
-\item \code{source}: the URL where this course was found
-\item \code{name}: the name of the course
-\item \code{url}: the URL of the course
-}
 }
 \description{
 Get the AIDA Data Hub courses

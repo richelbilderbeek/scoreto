@@ -1,11 +1,5 @@
 #' Get the AIDA Data Hub courses
-#' @return
-#'   a table with all AIDA Data Hub courses.
-#'
-#'   This table is a \link[tibble]{tibble} with these column names:
-#'   - `source`: the URL where this course was found
-#'   - `name`: the name of the course
-#'   - `url`: the URL of the course
+#' @return a table with all AIDA Data Hub courses.
 #' @export
 get_adh_courses <- function() {
   adh_home_url <- "https://datahub.aida.scilifelab.se"

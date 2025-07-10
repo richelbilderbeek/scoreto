@@ -1,11 +1,5 @@
 #' Get the NAISS courses
-#' @return
-#'   a table with all NAISS courses.
-#'
-#'   This table is a \link[tibble]{tibble} with these column names:
-#'   - `source`: the URL where this course was found
-#'   - `name`: the name of the course
-#'   - `url`: the URL of the course
+#' @return a table with all NAISS courses.
 #' @export
 get_naiss_courses <- function() {
   naiss_url <- "https://www.naiss.se/events/"
