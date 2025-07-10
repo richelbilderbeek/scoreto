@@ -14,3 +14,10 @@ scoreto
 txt
 wordlist
 yml
+Awk
+Bootcamp
+CodeRefinery
+Hackathon
+Pawsey
+Supercomputing
+formalisms
