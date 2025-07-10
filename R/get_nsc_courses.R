@@ -12,8 +12,15 @@ get_nsc_courses <- function() {
   testthat::expect_equal(1, length(line))
   dirty_items <- stringr::str_split(line, "<li class=\"sub\" ")[[1]]
   all_items <- stringr::str_subset(dirty_items, "^onclick")
-  all_nsc_courses_text <- stringr::str_subset(all_items, "Training|HPC|Tetralith|Sigma|VASP|WIEN2k")
-  nsc_courses_text <- stringr::str_subset(all_nsc_courses_text, "2020|2021|2022|2023|2024", negate = TRUE)
+  all_nsc_courses_text <- stringr::str_subset(
+    all_items,
+    "Training|HPC|Tetralith|Sigma|VASP|WIEN2k"
+  )
+  nsc_courses_text <- stringr::str_subset(
+    all_nsc_courses_text,
+    "2020|2021|2022|2023|2024",
+    negate = TRUE
+  )
 
   from_dates <- extract_nsc_from_dates(nsc_courses_text)
   to_dates <- extract_nsc_to_dates(nsc_courses_text)

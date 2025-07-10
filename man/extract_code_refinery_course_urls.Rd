@@ -4,10 +4,11 @@
 \alias{extract_code_refinery_course_urls}
 \title{Extract the URL of a course from an Code Refinery courses text}
 \usage{
-extract_code_refinery_course_urls(code_refinery_courses_text)
+extract_code_refinery_course_urls(text)
 }
 \arguments{
-\item{code_refinery_courses_text}{subset of raw HTML from the Code Refinery website.}
+\item{text}{subset of raw HTML
+from the Code Refinery website.}
 }
 \value{
 a collection of strings and NAs

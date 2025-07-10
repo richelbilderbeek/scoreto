@@ -1,5 +1,6 @@
 #' Extract the URL of a course from an LUNARC courses text
 #' @param lunarc_courses_text subset of raw HTML from the LUNARC website.
+#' @param lunarc_courses_url The URL for the LUNARC courses
 #' @return a collection of strings and NAs
 #' @export
 extract_lunarc_course_urls <- function(

@@ -17,9 +17,11 @@ is_correctly_formatted_table <- function(t) {
   if (!all(names(t) == expected_names)) return(FALSE)
 
   if (nrow(t) > 0) {
+    if (sum(is.na(t$course_url)) != 0) return(FALSE)
+    if (sum(is.na(t$date_from)) != 0) return(FALSE)
+    if (sum(is.na(t$date_to)) != 0) return(FALSE)
     if (!are_correctly_formatted_dates(t$date_from)) return(FALSE)
     if (!are_correctly_formatted_dates(t$date_to)) return(FALSE)
   }
-  if (sum(is.na(t$course_url)) != 0) return(FALSE)
   TRUE
 }

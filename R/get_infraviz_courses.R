@@ -22,14 +22,17 @@ get_infraviz_courses <- function() {
   lines <- all_lines[from_index:to_index]
   lines
 
-  workshop_title_indices <- stringr::str_which(lines, "<h2 class=\"wp-block-post-title\"><a href=\"https://infravis.se/workshop")
+  workshop_title_indices <- stringr::str_which(
+    lines,
+    "<h2 class=\"wp-block-post-title\"><a href=\"https://infravis.se/workshop"
+  )
   title_lines <- lines[workshop_title_indices]
   excerpt_lines <- lines[workshop_title_indices + 2]
 
-  from_dates <- extract_infraviz_from_dates(infraviz_courses_text = excerpt_lines)
+  from_dates <- extract_infraviz_from_dates(infraviz_courses_text = excerpt_lines)  # nolint
   to_dates <- extract_infraviz_to_dates(infraviz_courses_text = excerpt_lines)
-  course_names <- extract_infraviz_course_names(infraviz_courses_text = title_lines)
-  course_urls <- extract_infraviz_course_urls(infraviz_courses_text = title_lines)
+  course_names <- extract_infraviz_course_names(infraviz_courses_text = title_lines) # nolint
+  course_urls <- extract_infraviz_course_urls(infraviz_courses_text = title_lines) # nolint
 
   testthat::expect_equal(length(from_dates), length(to_dates))
   testthat::expect_equal(length(from_dates), length(to_dates))

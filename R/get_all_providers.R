@@ -6,9 +6,15 @@
 get_all_providers <- function() {
   c(
     "AIDA Data Hub",
+    "C3SE",
+    "Code Refinery",
+    "CSC",
     "ENCCS",
     "HPC2N",
+    "InfraViz",
+    "LUNARC",
     "NAISS",
+    "NSC",
     "PDC",
     "SciLifeLab",
     "UPPMAX"

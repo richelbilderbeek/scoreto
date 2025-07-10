@@ -11,6 +11,8 @@ extract_pdc_course_urls(
 }
 \arguments{
 \item{pdc_courses_text}{subset of raw HTML from the PDC website.}
+
+\item{pdc_training_url}{The URL for the PDC courses}
 }
 \value{
 a collection of strings and NAs

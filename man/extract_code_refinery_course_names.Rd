@@ -4,10 +4,11 @@
 \alias{extract_code_refinery_course_names}
 \title{Extract the course names from an Code Refinery courses text}
 \usage{
-extract_code_refinery_course_names(code_refinery_courses_text)
+extract_code_refinery_course_names(text)
 }
 \arguments{
-\item{code_refinery_courses_text}{subset of raw HTML from the Code Refinery website.}
+\item{text}{subset of raw HTML
+from the Code Refinery website.}
 }
 \description{
 Extract the course names from an Code Refinery courses text

@@ -7,7 +7,8 @@
 extract_code_refinery_to_dates(code_refinery_courses_text)
 }
 \arguments{
-\item{code_refinery_courses_text}{subset of raw HTML from the Code Refinery website.}
+\item{code_refinery_courses_text}{subset of raw HTML
+from the Code Refinery website.}
 }
 \description{
 Extract the to dates from an Code Refinery courses text

@@ -15,18 +15,18 @@ get_csc_test_courses_text <- function() {
     "\t</div>",
     "",
     "\t<ul class=\"term-filter-list\">",
-    "\t\t\t\t\t<li data-termid=\"2\" data-postid=\"18\" data-termname=\"Event\">",
-    "\t\t\t\t\t\t\t\t\t<button aria-label=\"Filter: Event\" class=\"filter-button\">",
+    "\t\t\t\t\t<li data-termid=\"2\" data-postid=\"18\" data-termname=\"Event\">", # nolint
+    "\t\t\t\t\t\t\t\t\t<button aria-label=\"Filter: Event\" class=\"filter-button\">", # nolint
     "\t\t\t\t\t\tEvent",
     "\t\t\t\t\t</button>",
     "\t\t\t\t\t\t\t</li>",
-    "\t\t\t\t\t<li data-termid=\"3\" data-postid=\"18\" data-termname=\"Training\">",
-    "\t\t\t\t\t\t\t\t\t<button aria-label=\"Filter: Training\" class=\"filter-button\">",
+    "\t\t\t\t\t<li data-termid=\"3\" data-postid=\"18\" data-termname=\"Training\">", # nolint
+    "\t\t\t\t\t\t\t\t\t<button aria-label=\"Filter: Training\" class=\"filter-button\">", # nolint
     "\t\t\t\t\t\tTraining",
     "\t\t\t\t\t</button>",
     "\t\t\t\t\t\t\t</li>",
-    "\t\t\t\t\t<li data-termid=\"15\" data-postid=\"18\" data-termname=\"Webinar\">",
-    "\t\t\t\t\t\t\t\t\t<button aria-label=\"Filter: Webinar\" class=\"filter-button\">",
+    "\t\t\t\t\t<li data-termid=\"15\" data-postid=\"18\" data-termname=\"Webinar\">", # nolint
+    "\t\t\t\t\t\t\t\t\t<button aria-label=\"Filter: Webinar\" class=\"filter-button\">", # nolint
     "\t\t\t\t\t\tWebinar",
     "\t\t\t\t\t</button>",
     "\t\t\t\t\t\t\t</li>",
@@ -43,10 +43,10 @@ get_csc_test_courses_text <- function() {
     "\t\t\t\t<ul class=\"row cards-list content-lift-wrapper\">",
     "\t\t\t\t\t",
     "\t<!-- common-event-lift -->",
-    "\t<li class=\"col-lg-4 col-md-4 col-sm-6 lift-wrapper\" data-parenttermid=\"|3|\">",
+    "\t<li class=\"col-lg-4 col-md-4 col-sm-6 lift-wrapper\" data-parenttermid=\"|3|\">", # nolint
     "\t\t<div class=\"inner-wrapper\">",
     "\t\t\t<div class=\"lift-image\" aria-hidden=\"true\">",
-    "\t\t\t\t<img src=\"https://lumi-supercomputer.eu/content/uploads/2024/09/small_dardel-500x190-c-default.png\" alt=\"\">",
+    "\t\t\t\t<img src=\"https://lumi-supercomputer.eu/content/uploads/2024/09/small_dardel-500x190-c-default.png\" alt=\"\">", # nolint
     "\t\t\t</div>",
     "\t\t\t<div class=\"lift-content\">",
     "",
@@ -63,12 +63,12 @@ get_csc_test_courses_text <- function() {
     "\t\t\t\t</div>",
     "\t\t\t\t<div class=\"event-location\"></div>",
     "",
-    "\t\t\t\t\t\t\t\t\t<a href=\"https://lumi-supercomputer.eu/events/pdc-summer-school-2025/\" class=\"card-action\">",
+    "\t\t\t\t\t\t\t\t\t<a href=\"https://lumi-supercomputer.eu/events/pdc-summer-school-2025/\" class=\"card-action\">", # nolint
     "\t\t\t\t\t\t<h2 class=\"event-title\">PDC Summer School 2025</h2>",
     "\t\t\t\t\t</a>",
     "\t\t\t\t\t\t\t\t<div class=\"event-content\">",
-    "\t\t\t\t\tThe PDC Center for High Performance Computing (PDC) at the KTH Royal Institute of Technology&hellip;</div>",
-    "\t\t\t\t<div class=\"event-readmore sst-readmore\" aria-hidden=\"true\">",
+    "\t\t\t\t\tThe PDC Center for High Performance Computing (PDC) at the KTH Royal Institute of Technology&hellip;</div>", # nolint
+    "\t\t\t\t<div class=\"event-readmore sst-readmore\" aria-hidden=\"true\">", # nolint
     "\t\t\t\t\t<span>Read more</span>",
     "\t\t\t\t</div>",
     "\t\t\t</div>",
@@ -76,10 +76,10 @@ get_csc_test_courses_text <- function() {
     "\t</li>",
     "",
     "\t<!-- common-event-lift -->",
-    "\t<li class=\"col-lg-4 col-md-4 col-sm-6 lift-wrapper\" data-parenttermid=\"|3|\">",
+    "\t<li class=\"col-lg-4 col-md-4 col-sm-6 lift-wrapper\" data-parenttermid=\"|3|\">", # nolint
     "\t\t<div class=\"inner-wrapper\">",
     "\t\t\t<div class=\"lift-image\" aria-hidden=\"true\">",
-    "\t\t\t\t<img src=\"https://lumi-supercomputer.eu/content/uploads/2020/03/lumi_pikkukuva-500x190-c-default.jpg\" alt=\"\">",
+    "\t\t\t\t<img src=\"https://lumi-supercomputer.eu/content/uploads/2020/03/lumi_pikkukuva-500x190-c-default.jpg\" alt=\"\">", # nolint
     "\t\t\t</div>",
     "\t\t\t<div class=\"lift-content\">",
     "",
@@ -102,11 +102,11 @@ get_csc_test_courses_text <- function() {
     "\t\t\t\t</div>",
     "\t\t\t\t<div class=\"event-location\">Espoo, Finland</div>",
     "",
-    "\t\t\t\t\t\t\t\t\t<a href=\"https://lumi-supercomputer.eu/events/gpu-hackathon/\" class=\"card-action\">",
+    "\t\t\t\t\t\t\t\t\t<a href=\"https://lumi-supercomputer.eu/events/gpu-hackathon/\" class=\"card-action\">", # nolint
     "\t\t\t\t\t\t<h2 class=\"event-title\">CSC/Pawsey GPU Hackathon</h2>",
     "\t\t\t\t\t</a>",
     "\t\t\t\t\t\t\t\t<div class=\"event-content\">",
-    "\t\t\t\t\t&nbsp; Join us and have fun hacking on your GPU code with expert mentors! The&hellip;</div>",
+    "\t\t\t\t\t&nbsp; Join us and have fun hacking on your GPU code with expert mentors! The&hellip;</div>", # nolint
     "\t\t\t\t<div class=\"event-readmore sst-readmore\" aria-hidden=\"true\">",
     "\t\t\t\t\t<span>Read more</span>",
     "\t\t\t\t</div>",
@@ -117,4 +117,3 @@ get_csc_test_courses_text <- function() {
     "\t\t\t\t<div>"
   )
 }
-  

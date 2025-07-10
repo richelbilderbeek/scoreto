@@ -7,7 +7,7 @@ get_code_refinery_courses <- function() {
 
   from_index <- stringr::str_which(
     all_lines,
-    "<h2 id=\"upcoming-coderefinery-workshops\">Upcoming CodeRefinery workshops</h2>"
+    "<h2 id=\"upcoming-coderefinery-workshops\">Upcoming CodeRefinery workshops</h2>" # nolint
   ) + 1
 
   to_index <- stringr::str_which(

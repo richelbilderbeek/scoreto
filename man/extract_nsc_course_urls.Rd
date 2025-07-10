@@ -11,6 +11,8 @@ extract_nsc_course_urls(
 }
 \arguments{
 \item{nsc_courses_text}{subset of raw HTML from the NSC website.}
+
+\item{nsc_training_url}{The URL for the NSC courses}
 }
 \value{
 a collection of strings and NAs

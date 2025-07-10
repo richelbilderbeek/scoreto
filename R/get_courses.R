@@ -20,7 +20,6 @@ get_courses <- function() {
   tibbles[[11]] <- get_pdc_courses()
   tibbles[[12]] <- get_sll_courses()
   tibbles[[13]] <- get_uppmax_courses()
-  # tibbles[[14]] <- get_cdhu_courses() # CDHU has humans in mind
 
   # Check again
   for (i in seq_len(length(tibbles))) {

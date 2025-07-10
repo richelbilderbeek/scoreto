@@ -1,7 +1,10 @@
 #' Extract the from dates from an Code Refinery courses text
-#' @param code_refinery_courses_text subset of raw HTML from the Code Refinery website.
+#' @param code_refinery_courses_text subset of raw HTML
+#'   from the Code Refinery website.
 #' @export
-extract_code_refinery_from_dates <- function(code_refinery_courses_text) {
+extract_code_refinery_from_dates <- function( # nolint
+  code_refinery_courses_text
+) {
 
   dates <- stringr::str_match(
     code_refinery_courses_text,

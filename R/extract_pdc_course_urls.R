@@ -1,5 +1,6 @@
 #' Extract the URL of a course from an PDC courses text
 #' @param pdc_courses_text subset of raw HTML from the PDC website.
+#' @param pdc_training_url The URL for the PDC courses
 #' @return a collection of strings and NAs
 #' @export
 extract_pdc_course_urls <- function(

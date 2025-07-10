@@ -11,6 +11,8 @@ extract_lunarc_course_urls(
 }
 \arguments{
 \item{lunarc_courses_text}{subset of raw HTML from the LUNARC website.}
+
+\item{lunarc_courses_url}{The URL for the LUNARC courses}
 }
 \value{
 a collection of strings and NAs

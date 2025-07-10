@@ -1,5 +1,6 @@
 #' Extract the to dates from an Code Refinery courses text
-#' @param code_refinery_courses_text subset of raw HTML from the Code Refinery website.
+#' @param code_refinery_courses_text subset of raw HTML
+#'   from the Code Refinery website.
 #' @export
 extract_code_refinery_to_dates <- function(code_refinery_courses_text) {
 

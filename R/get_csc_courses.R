@@ -7,7 +7,7 @@ get_csc_courses <- function() {
 
   from_index <- stringr::str_which(
     all_lines,
-    "<a href=\"https://lumi-supercomputer.eu/events/\">&nbsp;Events and Training</a>"
+    "<a href=\"https://lumi-supercomputer.eu/events/\">&nbsp;Events and Training</a>" # nolint
   ) + 1
   testthat::expect_equal(1, length(from_index))
 
