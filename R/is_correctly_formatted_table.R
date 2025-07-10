@@ -20,5 +20,6 @@ is_correctly_formatted_table <- function(t) {
     if (!are_correctly_formatted_dates(t$date_from)) return(FALSE)
     if (!are_correctly_formatted_dates(t$date_to)) return(FALSE)
   }
+  if (sum(is.na(t$course_url)) != 0) return(FALSE)
   TRUE
 }
