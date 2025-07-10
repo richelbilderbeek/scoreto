@@ -1,7 +1,7 @@
-#' Extract the from dates from a LUNARC courses text
+#' Extract the to dates from a LUNARC courses text
 #' @param lunarc_courses_text subset of raw HTML from the LUNARC website.
 #' @export
-extract_lunarc_from_dates <- function(lunarc_courses_text) {
+extract_lunarc_to_dates <- function(lunarc_courses_text) {
 
   lunarc_dates <- stringr::str_match(
     lunarc_courses_text,

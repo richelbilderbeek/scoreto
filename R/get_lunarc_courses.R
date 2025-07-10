@@ -6,13 +6,13 @@ get_lunarc_courses <- function() {
   all_lines <- readr::read_lines(lunarc_courses_url)
   full_line <- stringr::str_subset(all_lines, "The following events are currently scheduled")
   line <- stringr::str_match(full_line, "<ul>(.*)</ul>")[, 2]
-  lines <- stringr::str_split(line, pattern = "</li><li>")
-
+  lines_as_list <- stringr::str_split(line, pattern = "</li><li>")
+  lines <- sapply(lines_as_list, "[[", 1)
 
   from_dates <- extract_lunarc_from_dates(lines)
   to_dates <- extract_lunarc_to_dates(lines)
   course_names <- extract_lunarc_course_names(lines)
-  course_urls <- extract_lunarc_course_urls(lines)
+  course_urls <- extract_lunarc_course_urls(lunarc_courses_text = lines)
 
   tibble::tibble(
     date_from = from_dates,

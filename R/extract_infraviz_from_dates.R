@@ -3,22 +3,18 @@
 #' @export
 extract_infraviz_from_dates <- function(infraviz_courses_text) {
 
-  raw_dates_text <- stringr::str_subset(
-    infraviz_courses_text,
-    "[[:digit:]\\.-]+\\.20[:digit:]{2}$"
-  )
   dates <- stringr::str_match(
-    raw_dates_text,
-    "([[:digit:]\\.-]+\\.20[:digit:]{2})$"
+    infraviz_courses_text,
+    "Time: (.*); Location"
   )[, 2]
 
-  day <- stringr::str_match(dates, "^([:digit:]+)\\.")[, 2]
+  day <- stringr::str_match(dates, "([:digit:]+), ")[, 2]
   day[nchar(day) == 1] <- paste0("0", day[nchar(day) == 1])
   testthat::expect_true(all(2 == nchar(day)))
 
   month_str <- stringr::str_match(
     dates,
-    "\\.([:digit:]{1,2})\\.2"
+    "^([:upper:][:lower:]+) "
   )[, 2]
   month <- lubridate::month(lubridate::mdy(paste0(month_str, "/01/2000")))
   month[nchar(month) == 1] <- paste0(
