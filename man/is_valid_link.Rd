@@ -6,9 +6,19 @@
 \usage{
 is_valid_link(url)
 }
+\arguments{
+\item{url}{one URL}
+}
 \value{
 TRUE if the link is valid, FALSE otherwise
 }
 \description{
 Detect if a link is valid
+}
+\examples{
+is_valid_link("https://nbisweden.github.io/SCoRe_user_doc") # TRUE
+is_valid_link("https://nonsense.url") # FALSE
+}
+\seealso{
+use \link{are_valid_links} for checking multiple links
 }
