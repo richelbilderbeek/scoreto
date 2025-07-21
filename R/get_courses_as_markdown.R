@@ -8,20 +8,29 @@
 get_courses_as_markdown <- function(t = get_courses()) {
   testthat::expect_true(is_correctly_formatted_table(t))
 
-  # Convert URLs to Markdown strings
+  # Convert URLs to Markdown strings, add a warning if link is broken
   testthat::expect_true("course_url" %in% names(t))
   course_url <- t$course_url
-  invalid_link_indices <- which(!are_valid_links(t$course_url))
+  invalid_link_indices <- which(!are_valid_links(course_url))
   course_url <- paste0("[Course site](", course_url, ")")
+  course_url[invalid_link_indices] <- paste0(
+    ":warning: ", course_url[invalid_link_indices]
+  )
   t$course_url <- course_url
 
-  # Convert URLs to Markdown strings
+  # Convert URLs to Markdown strings, add a warning if link is broken
   testthat::expect_true("provider_courses_url" %in% names(t))
-  t$provider_courses_url <- paste0(
+  provider_courses_url <- t$provider_courses_url
+  invalid_link_indices <- which(!are_valid_links(provider_courses_url))
+  provider_courses_url <- paste0(
     "[Provider site](",
-    t$provider_courses_url,
+    provider_courses_url,
     ")"
   )
+  provider_courses_url[invalid_link_indices] <- paste0(
+    ":warning: ", provider_courses_url[invalid_link_indices]
+  )
+  t$provider_courses_url <- provider_courses_url
 
   # Add logo and link
   t$provider_name <- paste0(

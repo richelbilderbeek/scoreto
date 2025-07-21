@@ -3,6 +3,9 @@
 \name{is_valid_link}
 \alias{is_valid_link}
 \title{Detect if a link is valid}
+\source{
+From \url{https://stackoverflow.com/a/53858028/3364162}
+}
 \usage{
 is_valid_link(url)
 }
