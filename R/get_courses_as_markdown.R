@@ -1,9 +1,12 @@
 #' Get all the courses, as a Markdown table
 #'
+#' @param t a table, as returned by \link{get_courses}
+#' or \link{get_test_courses_table}, passing the requirements
+#' of \link{is_correctly_formatted_table}
 #' @return a Markdown table  of all courses, as text
 #' @export
-get_courses_as_markdown <- function() {
-  t <- get_courses()
+get_courses_as_markdown <- function(t = get_courses()) {
+  testthat::expect_true(is_correctly_formatted_table(t))
 
   # Convert URLs to Markdown strings
   testthat::expect_true("course_url" %in% names(t))

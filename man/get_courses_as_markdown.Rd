@@ -4,7 +4,12 @@
 \alias{get_courses_as_markdown}
 \title{Get all the courses, as a Markdown table}
 \usage{
-get_courses_as_markdown()
+get_courses_as_markdown(t = get_courses())
+}
+\arguments{
+\item{t}{a table, as returned by \link{get_courses}
+or \link{get_test_courses_table}, passing the requirements
+of \link{is_correctly_formatted_table}}
 }
 \value{
 a Markdown table  of all courses, as text

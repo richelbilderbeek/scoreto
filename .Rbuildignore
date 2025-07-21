@@ -5,3 +5,4 @@
 ^\.markdownlint\.jsonc$
 ^\.spellcheck\.yml$
 ^\.wordlist\.txt$
+^\.markdownlintignore$
