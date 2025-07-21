@@ -4,6 +4,8 @@ test_that("minimal use", {
   expect_equal(get_logo_path("PDC"), "logo/pdc_logo_21_x_24.png")
   expect_equal(get_logo_path("SciLifeLab"), "logo/sll_logo_110_x_24.png")
   expect_equal(get_logo_path("UPPMAX"), "logo/uppmax_logo_116_x_24.png")
+
+  expect_error(get_logo_path("Nonsense"), "Invalid provider name")
 })
 
 test_that("all providers have a logo", {
@@ -11,3 +13,5 @@ test_that("all providers have a logo", {
     expect_silent(get_logo_path(n))
   }
 })
+
+

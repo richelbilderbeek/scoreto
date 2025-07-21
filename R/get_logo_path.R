@@ -25,13 +25,13 @@ get_logo_path <- function(provider_name) {
   if (provider_name == "NSC") return("logo/nsc_logo_66_x_24.png")
   if (provider_name == "PDC") return("logo/pdc_logo_21_x_24.png")
   if (provider_name == "SciLifeLab") return("logo/sll_logo_110_x_24.png")
-  if (provider_name != "UPPMAX") {
-    msg <- paste0(
+  testthat::expect_equal(
+    object = provider_name,
+    expected = "UPPMAX",
+    info = paste0(
       "Provider with name '", provider_name, "' ",
       "does not have a logo yet. "
     )
-    stop(msg)
-  }
-  testthat::expect_equal(provider_name, "UPPMAX")
+  )
   "logo/uppmax_logo_116_x_24.png"
 }
