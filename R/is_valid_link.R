@@ -8,6 +8,7 @@
 #' is_valid_link("https://nbisweden.github.io/SCoRe_user_doc") # TRUE
 #' is_valid_link("https://nonsense.url") # FALSE
 is_valid_link <- function(url) {
+  Sys.sleep(0.1)
   httr::set_config(httr::config(ssl_verifypeer = 0L))
   tryCatch({
       x <- httr::GET(url)
