@@ -7,9 +7,8 @@ Description:
     SCoRe, short for 'Support for Computational Resources'
     is an NBIS unit that supports users in finding their
     computational resources.
-    Knowledge is one such resources.
-    This R package collects the courses and training
-    for resources supported by SCoRe.
+    This R package collects all resources
+    in one place.
 License: GPL-3 
 Encoding: UTF-8
 Language: en-US
