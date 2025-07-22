@@ -1,0 +1,17 @@
+storage_system,data_sensitivity,data_activity,user_costs,accessible_for 
+Berzelius Storage,regular,active,Free,Users of the NSC Berzelius HPC cluster
+Cephyr,regular,active,Free,Users of C3SE HPC clusters
+Crex 1,regular,active,Free,Users of the UPPMAX Rackham and Snowy HPC clusters
+Cygnus,sensitive,active,Free,Users of the Bianca HPC cluster
+Center Storage,regular,active,Free,Users of the NSC HPC clusters
+Centerstorage nobackup,regular,active,Free,Users of the LUNARC HPC clusters
+Data Science Platform,any,any,[Prices](https://datahub.aida.scilifelab.se/services/#prices),Anyone
+dCache,regular,active,Free,Swedish researchers
+EOSC EU Node,regular,active,Free,Researchers in Europe
+Klemming,regular,active,Free,Users of the PDC Dardel HPC cluster
+Mimer,regular,active,Free,Users of the C3SE Alvis HPC cluster
+Nobackup,regular,active,Free,Users of the HPC2N HPC clusters
+NSC Center Storage,regular,active,Free,Users of NSC HPC clusters
+Spirula,regular,active,Free,Swedish data-driven life science researchers
+Storage,regular,active,Free,Users of the CSC LUMI HPC cluster
+Vesta,sensitive,any,Free,Uppsala University researchers
