@@ -28,7 +28,7 @@ get_courses <- function() {
   # Check again
   for (i in seq_len(length(tibbles))) {
     t <- tibbles[[i]]
-    testthat::expect_true(is_correctly_formatted_table(t))
+    testthat::expect_true(is_correctly_formatted_courses_table(t))
   }
 
 

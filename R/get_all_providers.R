@@ -10,6 +10,7 @@ get_all_providers <- function() {
     "Code Refinery",
     "CSC",
     "ENCCS",
+    "EOSC",
     "HPC2N",
     "InfraViz",
     "LUNARC",
@@ -17,6 +18,7 @@ get_all_providers <- function() {
     "NSC",
     "PDC",
     "SciLifeLab",
+    "University of Gothenburg",
     "UPPMAX"
   )
 }

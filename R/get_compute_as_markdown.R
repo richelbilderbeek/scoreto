@@ -8,6 +8,26 @@
 #' table as a table.
 #' @export
 get_compute_as_markdown <- function(t = get_compute()) {
+  hpc_cluster <- NULL # No visible binding for global variable
+  center <- NULL # No visible binding for global variable
+  center_md <- NULL # No visible binding for global variable
 
+  testthat::expect_true(is_correctly_formatted_compute_table(t))
+
+  # Merge columns hpc_cluster and hpc_cluster_url
+  t$hpc_cluster_md <- paste0("[", t$hpc_cluster,"](", t$hpc_cluster_url, ")")
+  t$hpc_cluster_url <- NULL
+
+  # Add logos
+  centers <- get_cluster_to_center()
+  centers$logo <- get_logo_paths(centers$center)
+  centers$center_md <- paste0("![", centers$center, "](", centers$logo,")")
+  cluster_to_logo <- centers |>
+    dplyr::select(hpc_cluster, center, center_md) |>
+    dplyr::group_by(hpc_cluster) |>
+    dplyr::summarise(logo = paste0(center_md, collapse = " "))
+  t <- merge(t, cluster_to_logo)
+
+  names(t)
   knitr::kable(t)
 }
