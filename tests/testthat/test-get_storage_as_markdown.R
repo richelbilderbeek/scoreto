@@ -1,6 +1,8 @@
-test_that("use", {
-  expect_output(get_storage_as_markdown(t = get_storage()))
+test_that("minimal use", {
+  expect_silent(get_storage_as_markdown(t = get_storage()))
+})
 
+test_that("use", {
   t <- get_storage_as_markdown()
   expect_equal(
     t[1],
