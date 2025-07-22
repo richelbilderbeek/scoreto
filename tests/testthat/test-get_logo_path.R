@@ -8,6 +8,7 @@ test_that("minimal use", {
   expect_error(get_logo_path(c("NAISS", "UPPMAX")), "Provide exactly one provider name")
 
   expect_silent(get_logo_path("EOSC"))
+  expect_silent(get_logo_path("Swestore"))
   expect_silent(get_logo_path("University of Gothenburg"))
 })
 

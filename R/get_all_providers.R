@@ -18,6 +18,7 @@ get_all_providers <- function() {
     "NSC",
     "PDC",
     "SciLifeLab",
+    "Swestore",
     "University of Gothenburg",
     "UPPMAX"
   )
