@@ -35,6 +35,6 @@ get_storage_as_markdown <- function(t = get_storage()) {
 
   names(t)
   text <- knitr::kable(t)
-  text[1] <- "|HPC storage system name|Data sensivity|Data activity|User fee|Accessible for|Center(s)|"
+  text[1] <- "|HPC storage system name|Data sensitivity|Data activity|User fee|Accessible for|Center(s)|"
   text
 }

@@ -6,7 +6,7 @@ test_that("use", {
   t <- get_storage_as_markdown()
   expect_equal(
     t[1],
-    "|HPC storage system name|Data sensivity|Data activity|User fee|Accessible for|Center(s)|"
+    "|HPC storage system name|Data sensitivity|Data activity|User fee|Accessible for|Center(s)|"
   )
 
   # Number of pipes is equal is each line
