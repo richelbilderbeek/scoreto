@@ -1,6 +1,10 @@
 #' Get a table with all of the future courses
 #'
+#' This table is displayed at
+#' \url{https://nbisweden.github.io/SCoRe_user_doc/courses/}.
 #' @return a table with all future courses, sorted alphabetically by date
+#' @seealso use \link{get_courses_as_markdown} to get this
+#' table as Markdown text.
 #' @export
 get_courses <- function() {
   date_to <- NULL # No visible binding for global variable

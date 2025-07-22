@@ -15,5 +15,10 @@ of \link{is_correctly_formatted_table}}
 a Markdown table  of all courses, as text
 }
 \description{
-Get all the courses, as a Markdown table
+This table is displayed at
+\url{https://nbisweden.github.io/SCoRe_user_doc/courses/}.
+}
+\seealso{
+use \link{get_courses} to get this
+table as a table.
 }

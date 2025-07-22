@@ -10,5 +10,10 @@ get_courses()
 a table with all future courses, sorted alphabetically by date
 }
 \description{
-Get a table with all of the future courses
+This table is displayed at
+\url{https://nbisweden.github.io/SCoRe_user_doc/courses/}.
+}
+\seealso{
+use \link{get_courses_as_markdown} to get this
+table as Markdown text.
 }

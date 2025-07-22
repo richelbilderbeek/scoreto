@@ -1,9 +1,13 @@
 #' Get all the courses, as a Markdown table
 #'
+#' This table is displayed at
+#' \url{https://nbisweden.github.io/SCoRe_user_doc/courses/}.
 #' @param t a table, as returned by \link{get_courses}
 #' or \link{get_test_courses_table}, passing the requirements
 #' of \link{is_correctly_formatted_table}
 #' @return a Markdown table  of all courses, as text
+#' @seealso use \link{get_courses} to get this
+#' table as a table.
 #' @export
 get_courses_as_markdown <- function(t = get_courses()) {
   testthat::expect_true(is_correctly_formatted_table(t))
