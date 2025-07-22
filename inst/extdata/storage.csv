@@ -1,4 +1,4 @@
-storage_system,storage_url,data_sensitivity,data_activity,user_costs,accessible_for 
+storage_system,storage_system_url,data_sensitivity,data_activity,user_costs,accessible_for 
 Berzelius Storage,https://supr.naiss.se/resource/berzelius-storage/,regular,active,Free,Users of the NSC Berzelius HPC cluster
 Cephyr NOBACKUP,https://supr.naiss.se/resource/cephyr-nobackup/,regular,active,Free,Users of C3SE HPC clusters
 Crex 1,https://supr.naiss.se/resource/crex-1/,regular,active,Free,Users of the UPPMAX Rackham and Snowy HPC clusters

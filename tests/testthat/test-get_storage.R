@@ -1,3 +1,3 @@
 test_that("use", {
-  expect_output(get_storage())
+  expect_silent(get_storage())
 })

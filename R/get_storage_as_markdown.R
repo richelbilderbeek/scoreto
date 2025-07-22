@@ -8,7 +8,7 @@
 #' table as a table.
 #' @export
 get_storage_as_markdown <- function(t = get_storage()) {
-  hpc_cluster <- NULL # No visible binding for global variable
+  storage_system <- NULL # No visible binding for global variable
   center <- NULL # No visible binding for global variable
   center_md <- NULL # No visible binding for global variable
 
@@ -16,24 +16,25 @@ get_storage_as_markdown <- function(t = get_storage()) {
 
   # Merge columns storage_system and storage_system_url
   t$storage_system_md <- paste0("[", t$storage_system,"](", t$storage_system_url, ")")
-  t$storage_systemr_url <- NULL
+  t$storage_system_url <- NULL
 
   # Add logos
-  centers <- get_cluster_to_center()
+  centers <- get_storage_to_center()
   centers$logo <- get_logo_paths(centers$center)
   centers$center_md <- paste0("![", centers$center, "](", centers$logo,")")
+  names(centers)
   cluster_to_logo <- centers |>
-    dplyr::select(hpc_cluster, center, center_md) |>
-    dplyr::group_by(hpc_cluster) |>
+    dplyr::select(storage_system, center, center_md) |>
+    dplyr::group_by(storage_system) |>
     dplyr::summarise(logo = paste0(center_md, collapse = " "))
   t <- merge(t, cluster_to_logo)
 
   # Replace name
-  t$hpc_cluster <- t$hpc_cluster_md
-  t$hpc_cluster_md <- NULL
+  t$storage_system <- t$storage_system_md
+  t$storage_system_md <- NULL
 
   names(t)
   text <- knitr::kable(t)
-  text[1] <- "HPC cluster name|Type of computation|Type of data|User fee|Accessible for|Center(s)"
+  text[1] <- "|HPC storage system name|Data sensivity|Data activity|User fee|Accessible for|Center(s)|"
   text
 }
