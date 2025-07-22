@@ -28,6 +28,12 @@ get_compute_as_markdown <- function(t = get_compute()) {
     dplyr::summarise(logo = paste0(center_md, collapse = " "))
   t <- merge(t, cluster_to_logo)
 
+  # Replace name
+  t$hpc_cluster <- t$hpc_cluster_md
+  t$hpc_cluster_md <- NULL
+
   names(t)
-  knitr::kable(t)
+  text <- knitr::kable(t)
+  text[1] <- "HPC cluster name|Type of computation|Type of data|User fee|Accessible for|Center(s)"
+  text
 }
