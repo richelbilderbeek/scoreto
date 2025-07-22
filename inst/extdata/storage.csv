@@ -1,17 +1,16 @@
-storage_system,data_sensitivity,data_activity,user_costs,accessible_for 
-Berzelius Storage,regular,active,Free,Users of the NSC Berzelius HPC cluster
-Cephyr,regular,active,Free,Users of C3SE HPC clusters
-Crex 1,regular,active,Free,Users of the UPPMAX Rackham and Snowy HPC clusters
-Cygnus,sensitive,active,Free,Users of the Bianca HPC cluster
-Center Storage,regular,active,Free,Users of the NSC HPC clusters
-Centerstorage nobackup,regular,active,Free,Users of the LUNARC HPC clusters
-Data Science Platform,any,any,[Prices](https://datahub.aida.scilifelab.se/services/#prices),Anyone
-dCache,regular,active,Free,Swedish researchers
-EOSC EU Node,regular,active,Free,Researchers in Europe
-Klemming,regular,active,Free,Users of the PDC Dardel HPC cluster
-Mimer,regular,active,Free,Users of the C3SE Alvis HPC cluster
-Nobackup,regular,active,Free,Users of the HPC2N HPC clusters
-NSC Center Storage,regular,active,Free,Users of NSC HPC clusters
-Spirula,regular,active,Free,Swedish data-driven life science researchers
-Storage,regular,active,Free,Users of the CSC LUMI HPC cluster
-Vesta,sensitive,any,Free,Uppsala University researchers
+storage_system,storage_url,data_sensitivity,data_activity,user_costs,accessible_for 
+Berzelius Storage,https://supr.naiss.se/resource/berzelius-storage/,regular,active,Free,Users of the NSC Berzelius HPC cluster
+Cephyr NOBACKUP,https://supr.naiss.se/resource/cephyr-nobackup/,regular,active,Free,Users of C3SE HPC clusters
+Crex 1,https://supr.naiss.se/resource/crex-1/,regular,active,Free,Users of the UPPMAX Rackham and Snowy HPC clusters
+Cygnus,https://uppmax.github.io/UPPMAX-documentation/hardware/storage/cygnus/,sensitive,active,Free,Users of the Bianca HPC cluster
+Center Storage,https://www.nsc.liu.se/support/storage/snic-centrestorage/,regular,active,Free,Users of the NSC HPC clusters
+Centerstorage nobackup,https://supr.naiss.se/resource/centrestorage-nobackup-lunarc/,regular,active,Free,Users of the LUNARC HPC clusters
+Data Science Platform,https://datahub.aida.scilifelab.se/data-science-platform/,any,any,[Prices](https://datahub.aida.scilifelab.se/services/#prices),Anyone
+dCache,https://supr.naiss.se/resource/dcache/,regular,active,Free,Swedish researchers
+EOSC EU Node,https://open-science-cloud.ec.europa.eu/,regular,active,Free,Researchers in Europe
+Klemming,https://supr.naiss.se/resource/klemming/,regular,active,Free,Users of the PDC Dardel HPC cluster
+Mimer,https://supr.naiss.se/resource/mimer/,regular,active,Free,Users of the C3SE Alvis HPC cluster
+Nobackup,https://supr.naiss.se/resource/nobackup-hpc2n/,regular,active,Free,Users of the HPC2N HPC clusters
+NSC Centre Storage,https://www.nsc.liu.se/support/storage/snic-centrestorage/,regular,active,Free,Users of NSC HPC clusters
+Spirula,https://supr.naiss.se/resource/spirula/,regular,active,Free,Swedish data-driven life science researchers
+Vesta,https://www.uu.se/medarbetare/stod-och-verktyg/it/it-tjanster/tillaggstjanster/vesta,sensitive,any,Free,Uppsala University researchers
