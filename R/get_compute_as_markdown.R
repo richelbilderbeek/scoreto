@@ -35,5 +35,5 @@ get_compute_as_markdown <- function(t = get_compute()) {
   names(t)
   text <- knitr::kable(t)
   text[1] <- "HPC cluster name|Type of computation|Type of data|User fee|Accessible for|Center(s)"
-  text
+  cat(text, sep = "\n")
 }
