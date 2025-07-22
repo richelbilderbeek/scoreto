@@ -31,7 +31,7 @@ get_logo_path <- function(provider_name) {
   if (provider_name == "HPC2N") return("logo/hpc2n_logo_84_x_24.png")
   if (provider_name == "InfraViz") return("logo/infraviz_logo_47_x_24.png")
   if (provider_name == "LUNARC") return("logo/lunarc_logo_42_x_24.png")
-  if (provider_name == "NAISS") return("logo/naiss_logo_inverted_148_x_24.png")
+  if (provider_name == "NAISS") return("logo/naiss_logo_148_x_24.png")
   if (provider_name == "NSC") return("logo/nsc_logo_66_x_24.png")
   if (provider_name == "PDC") return("logo/pdc_logo_21_x_24.png")
   if (provider_name == "SciLifeLab") return("logo/sll_logo_110_x_24.png")
