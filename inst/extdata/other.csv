@@ -1,2 +1,4 @@
 name,name_url,description,user_costs,accessible_for 
 AIDA Data Hub datasets,https://docs.datahub.aida.scilifelab.se/data/download-dataset/,Download datasets from the AIDA Nextcloud,Free,Everyone
+EOSC Bulk Data Transfer,https://open-science-cloud.ec.europa.eu/services/bulk-data-transfer,Transfer data in bulk,Unknown,EU citizens
+EOSC Large File Transfer,https://open-science-cloud.ec.europa.eu/services/large-file-transfer,Transfer large files,Unknown,EU citizens
