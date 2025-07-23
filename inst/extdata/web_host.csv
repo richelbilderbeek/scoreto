@@ -1,3 +1,5 @@
 web_host,web_host_url,deploy_type,data_sensitivity,user_costs,accessible_for 
 SciLifeLab Serve,https://serve.scilifelab.se/,Containers,Regular,Free,Life science scientists
 Swedish Science Cloud,https://cloud.snic.se/,Any type,Regular,Free,Swedish researchers
+EOSC Cloud Container Platform,https://open-science-cloud.ec.europa.eu/services/cloud-container-platform,Containers,Unknown,Unknown,EU citizens
+EOSC Virtual Machines,https://open-science-cloud.ec.europa.eu/services/virtual-machines,Predefined virtual machines,Unknown,Unknown,EU citizens
