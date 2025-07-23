@@ -12,6 +12,7 @@ test_that("use", {
   expect_true("NSC" %in% get_all_providers())
   expect_true("PDC" %in% get_all_providers())
   expect_true("SciLifeLab" %in% get_all_providers())
+  expect_true("SND" %in% get_all_providers())
   expect_true("Swestore" %in% get_all_providers())
   expect_true("UPPMAX" %in% get_all_providers())
 
