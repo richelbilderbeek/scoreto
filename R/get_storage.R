@@ -12,7 +12,7 @@
 get_storage <- function(check_file = FALSE) {
   testthat::expect_equal(length(check_file), 1)
   testthat::expect_true(check_file %in% c(TRUE, FALSE))
-  filename <- get_scoreto_path("storage.csv")
+  filename <- scoreto::get_scoreto_path("storage.csv")
   if (check_file == TRUE) {
     text <- readr::read_lines(filename)
     n_commas <- stringr::str_count(text, ",")

@@ -4,7 +4,7 @@
 \alias{get_web_host_as_markdown}
 \title{Get all the web_host resources, as a Markdown table}
 \usage{
-get_web_host_as_markdown(t = get_web_host())
+get_web_host_as_markdown(t = scoreto::get_web_host())
 }
 \arguments{
 \item{t}{a table, as returned by \link{get_web_host}}

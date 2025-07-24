@@ -14,7 +14,7 @@ get_logo_path <- function(provider_name) {
     )
     stop(msg)
   }
-  if (!is_provider(provider_name)) {
+  if (!scoreto::is_provider(provider_name)) {
     msg <- paste0(
       "Invalid provider name '", provider_name, "'. ",
       "Use a valid provider name instead. ",

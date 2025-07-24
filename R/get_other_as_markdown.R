@@ -7,12 +7,12 @@
 #' @seealso use \link{get_other} to get this
 #' table as a table.
 #' @export
-get_other_as_markdown <- function(t = get_other()) {
+get_other_as_markdown <- function(t = scoreto::get_other()) {
   name <- NULL # No visible binding for global variable
   center <- NULL # No visible binding for global variable
   center_md <- NULL # No visible binding for global variable
 
-  testthat::expect_true(is_correctly_formatted_other_table(t))
+  testthat::expect_true(scoreto::is_correctly_formatted_other_table(t))
 
   # Merge columns other_system and other_system_url
 

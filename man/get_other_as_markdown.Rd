@@ -4,7 +4,7 @@
 \alias{get_other_as_markdown}
 \title{Get all the other resources, as a Markdown table}
 \usage{
-get_other_as_markdown(t = get_other())
+get_other_as_markdown(t = scoreto::get_other())
 }
 \arguments{
 \item{t}{a table, as returned by \link{get_other}}

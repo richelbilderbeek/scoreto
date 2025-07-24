@@ -4,7 +4,7 @@
 \alias{get_storage_as_markdown}
 \title{Get all the storage resources, as a Markdown table}
 \usage{
-get_storage_as_markdown(t = get_storage())
+get_storage_as_markdown(t = scoreto::get_storage())
 }
 \arguments{
 \item{t}{a table, as returned by \link{get_storage}}

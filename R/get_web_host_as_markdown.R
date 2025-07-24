@@ -7,12 +7,12 @@
 #' @seealso use \link{get_web_host} to get this
 #' table as a table.
 #' @export
-get_web_host_as_markdown <- function(t = get_web_host()) {
+get_web_host_as_markdown <- function(t = scoreto::get_web_host()) {
   web_host <- NULL # No visible binding for global variable
   center <- NULL # No visible binding for global variable
   center_md <- NULL # No visible binding for global variable
 
-  testthat::expect_true(is_correctly_formatted_web_host_table(t))
+  testthat::expect_true(scoreto::is_correctly_formatted_web_host_table(t))
 
   # Merge columns web_host_system and web_host_system_url
 

@@ -3,5 +3,5 @@
 #' @return the paths to the logos
 #' @export
 get_logo_paths <- function(provider_names) {
-  as.character(Vectorize(get_logo_path)(provider_names))
+  as.character(Vectorize(scoreto::get_logo_path)(provider_names))
 }

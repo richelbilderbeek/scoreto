@@ -4,7 +4,7 @@
 \alias{get_courses_as_markdown}
 \title{Get all the courses, as a Markdown table}
 \usage{
-get_courses_as_markdown(t = get_courses())
+get_courses_as_markdown(t = scoreto::get_courses())
 }
 \arguments{
 \item{t}{a table, as returned by \link{get_courses}

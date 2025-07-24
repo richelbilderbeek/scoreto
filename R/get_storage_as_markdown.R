@@ -7,12 +7,12 @@
 #' @seealso use \link{get_storage} to get this
 #' table as a table.
 #' @export
-get_storage_as_markdown <- function(t = get_storage()) {
+get_storage_as_markdown <- function(t = scoreto::get_storage()) {
   storage_system <- NULL # No visible binding for global variable
   center <- NULL # No visible binding for global variable
   center_md <- NULL # No visible binding for global variable
 
-  testthat::expect_true(is_correctly_formatted_storage_table(t))
+  testthat::expect_true(scoreto::is_correctly_formatted_storage_table(t))
 
   # Merge columns storage_system and storage_system_url
   t$storage_system_md <- paste0(

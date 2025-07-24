@@ -4,7 +4,7 @@
 \alias{get_compute_as_markdown}
 \title{Get all the compute resources, as a Markdown table}
 \usage{
-get_compute_as_markdown(t = get_compute())
+get_compute_as_markdown(t = scoreto::get_compute())
 }
 \arguments{
 \item{t}{a table, as returned by \link{get_compute}}

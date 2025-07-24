@@ -6,5 +6,5 @@
 #' is_provider("UPPMAX")
 #' @export
 is_provider <- function(s) {
-  s %in% get_all_providers()
+  s %in% scoreto::get_all_providers()
 }

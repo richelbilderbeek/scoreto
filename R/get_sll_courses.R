@@ -13,8 +13,8 @@ get_sll_courses <- function() {
 
   dates_with_nas <- stringr::str_match(lines, "<p>(.* 20..)</p>")[, 2]
   dates <- dates_with_nas[!is.na(dates_with_nas)]
-  from_dates <- extract_sll_from_date(dates)
-  to_dates <- extract_sll_to_date(dates)
+  from_dates <- scoreto::extract_sll_from_date(dates)
+  to_dates <- scoreto::extract_sll_to_date(dates)
 
   testthat::expect_equal(length(course_names), length(urls))
   testthat::expect_equal(length(course_names), length(dates))

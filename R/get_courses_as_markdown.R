@@ -10,7 +10,7 @@
 #' table as a table.
 #' @export
 get_courses_as_markdown <- function(t = scoreto::get_courses()) {
-  testthat::expect_true(is_correctly_formatted_courses_table(t))
+  testthat::expect_true(scoreto::is_correctly_formatted_courses_table(t))
 
   # Convert URLs to Markdown strings, add a warning if link is broken
   testthat::expect_true("course_url" %in% names(t))
