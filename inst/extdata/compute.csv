@@ -1,7 +1,8 @@
 hpc_cluster,hpc_cluster_url,compute_type,data_type,user_costs,accessible_for
 Alvis,https://www.c3se.chalmers.se/about/Alvis/,AI,Regular,Free,Swedish researchers
 Bianca,https://docs.uppmax.uu.se/cluster_guides/bianca/,General purpose,Sensitive,Free,Swedish researchers
-COSMOS,https://www.lunarc.lu.se/systems/cosmos/,General purpose,Regular,Free,Swedish researchers
+Berzelius,https://www.nsc.liu.se/systems/berzelius/,General purpose,Regular,Free,Linköping researchers
+COSMOS,https://www.lunarc.lu.se/systems/cosmos/,General purpose,Regular,Free,Lund researchers
 COSMOS SENS,https://www.lunarc.lu.se/systems/cosmos-sens/,General purpose,Sensitive,Free,Lund researchers
 Dardel,https://www.pdc.kth.se/hpc-services/computing-systems/dardel-hpc-system/dardel,General purpose,Regular,Free,Swedish researchers
 Data Science Platform,https://datahub.aida.scilifelab.se/data-science-platform/,Any,Any,[User fee](https://datahub.aida.scilifelab.se/services/#prices),Anyone
