@@ -50,4 +50,6 @@ jobs:
           slug: richelbilderbeek/scoreto
 
       - name: Lint
-        run: Rscript -e 'lintr::lint_package()'
+        run: Rscript -e 'Sys.setenv("LINTR_ERROR_ON_LINT" = TRUE); lintr::lint_package()'
+
+
