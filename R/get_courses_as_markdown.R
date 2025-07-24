@@ -51,9 +51,6 @@ get_courses_as_markdown <- function(t = get_courses()) {
     "|**From**|**To**|**Course name**|**Course site**",
     "|**Provider site**|**Provider name**|"
   )
-  text[2] <- paste0("|:-----------|:------------",
-    "|:---------------------------------------------------",
-    "|:-----------|:------------------|:------------|"
-  )
+  text[2] <- get_optimal_markdown_divider(text)
   text
 }
