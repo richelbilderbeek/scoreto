@@ -4,7 +4,11 @@
 \alias{get_storage}
 \title{Get a table with all of the storage resources}
 \usage{
-get_storage()
+get_storage(check_file = FALSE)
+}
+\arguments{
+\item{check_file}{Check the file before reading it.
+This is used for debugging and can be assumed to not be needed.}
 }
 \value{
 a table with all storage resources,
