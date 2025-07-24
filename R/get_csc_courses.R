@@ -19,10 +19,10 @@ get_csc_courses <- function() {
 
   lines <- all_lines[from_index:to_index]
 
-  from_dates <- extract_csc_from_dates(lines)
-  to_dates <- extract_csc_to_dates(lines)
-  course_names <- extract_csc_course_names(lines)
-  course_urls <- extract_csc_course_urls(lines)
+  from_dates <- scoreto::extract_csc_from_dates(lines)
+  to_dates <- scoreto::extract_csc_to_dates(lines)
+  course_names <- scoreto::extract_csc_course_names(lines)
+  course_urls <- scoreto::extract_csc_course_urls(lines)
 
   testthat::expect_equal(length(from_dates), length(to_dates))
   testthat::expect_equal(length(from_dates), length(to_dates))

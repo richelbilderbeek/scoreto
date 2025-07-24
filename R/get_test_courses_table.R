@@ -13,6 +13,6 @@ get_test_courses_table <- function() {
     "2025-03-14", "2025-03-14", "Course with failing course URL", "https://docs.uppmax.uu.se/failing_url", "https://docs.uppmax.uu.se/courses_workshops/courses_workshops/", "UPPMAX", # nolint indeed a long line
   )
 
-  testthat::expect_true(is_correctly_formatted_courses_table(t))
+  testthat::expect_true(scoreto::is_correctly_formatted_courses_table(t))
   t
 }

@@ -9,10 +9,10 @@ get_hpc2n_courses <- function() {
 
   lines <- all_lines[from_index:to_index]
 
-  from_dates <- extract_hpc2n_from_dates(lines)
-  to_dates <- extract_hpc2n_to_dates(lines)
-  course_names <- extract_hpc2n_course_names(lines)
-  course_urls <- extract_hpc2n_course_urls(lines)
+  from_dates <- scoreto::extract_hpc2n_from_dates(lines)
+  to_dates <- scoreto::extract_hpc2n_to_dates(lines)
+  course_names <- scoreto::extract_hpc2n_course_names(lines)
+  course_urls <- scoreto::extract_hpc2n_course_urls(lines)
   course_urls[is.na(course_urls)] <- hpc2n_courses_url
 
   tibble::tibble(

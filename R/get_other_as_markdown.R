@@ -37,6 +37,6 @@ get_other_as_markdown <- function(t = get_other()) {
   names(t)
   text <- knitr::kable(t)
   text[1] <- "|Name|Description|User fee|Accessible for|Center(s)|"
-  text[2] <- get_optimal_markdown_divider(text)
+  text[2] <- scoreto::get_optimal_markdown_divider(text)
   text
 }

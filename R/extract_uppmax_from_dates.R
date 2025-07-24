@@ -8,6 +8,6 @@
 #' @export
 extract_uppmax_from_dates <- function(uppmax_date_ranges) {
   as.character(
-    Vectorize(extract_uppmax_from_date)(uppmax_date_ranges)
+    Vectorize(scoreto::extract_uppmax_from_date)(uppmax_date_ranges)
   )
 }

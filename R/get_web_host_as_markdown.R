@@ -40,6 +40,6 @@ get_web_host_as_markdown <- function(t = get_web_host()) {
     "|Web host name|Deploy type|Data sensitivity|",
     "User fee|Accessible for|Center(s)|"
   )
-  text[2] <- get_optimal_markdown_divider(text)
+  text[2] <- scoreto::get_optimal_markdown_divider(text)
   text
 }

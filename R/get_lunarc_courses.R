@@ -12,10 +12,12 @@ get_lunarc_courses <- function() {
   lines_as_list <- stringr::str_split(line, pattern = "</li><li>")
   lines <- sapply(lines_as_list, "[[", 1)
 
-  from_dates <- extract_lunarc_from_dates(lines)
-  to_dates <- extract_lunarc_to_dates(lines)
-  course_names <- extract_lunarc_course_names(lines)
-  course_urls <- extract_lunarc_course_urls(lunarc_courses_text = lines)
+  from_dates <- scoreto::extract_lunarc_from_dates(lines)
+  to_dates <- scoreto::extract_lunarc_to_dates(lines)
+  course_names <- scoreto::extract_lunarc_course_names(lines)
+  course_urls <- scoreto::extract_lunarc_course_urls(
+    lunarc_courses_text = lines
+  )
 
   tibble::tibble(
     date_from = from_dates,

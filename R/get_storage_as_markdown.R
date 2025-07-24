@@ -42,6 +42,6 @@ get_storage_as_markdown <- function(t = get_storage()) {
     "|HPC storage system name|Data sensitivity|Data activity|",
     "User fee|Accessible for|Center(s)|"
   )
-  text[2] <- get_optimal_markdown_divider(text)
+  text[2] <- scoreto::get_optimal_markdown_divider(text)
   text
 }

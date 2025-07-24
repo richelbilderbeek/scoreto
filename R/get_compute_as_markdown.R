@@ -7,12 +7,12 @@
 #' @seealso use \link{get_compute} to get this
 #' table as a table.
 #' @export
-get_compute_as_markdown <- function(t = get_compute()) {
+get_compute_as_markdown <- function(t = scoreto::get_compute()) {
   hpc_cluster <- NULL # No visible binding for global variable
   center <- NULL # No visible binding for global variable
   center_md <- NULL # No visible binding for global variable
 
-  testthat::expect_true(is_correctly_formatted_compute_table(t))
+  testthat::expect_true(scoreto::is_correctly_formatted_compute_table(t))
 
   # Merge columns hpc_cluster and hpc_cluster_url
   t$hpc_cluster_md <- paste0("[", t$hpc_cluster, "](", t$hpc_cluster_url, ")")
@@ -38,6 +38,6 @@ get_compute_as_markdown <- function(t = get_compute()) {
     "|HPC cluster name|Type of computation|Type of data|",
     "User fee|Accessible for|Center(s)|"
   )
-  text[2] <- get_optimal_markdown_divider(text)
+  text[2] <- scoreto::get_optimal_markdown_divider(text)
   text
 }

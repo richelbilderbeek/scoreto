@@ -13,10 +13,10 @@ get_pdc_courses <- function() {
   dates <- all_lines[event_indices + 6]
 
 
-  from_dates <- extract_pdc_from_dates(pdc_courses_text = dates)
-  to_dates <- extract_pdc_to_dates(pdc_courses_text = dates)
-  course_names <- extract_pdc_course_names(pdc_courses_text = titles)
-  course_urls <- extract_pdc_course_urls(pdc_courses_text = titles)
+  from_dates <- scoreto::extract_pdc_from_dates(pdc_courses_text = dates)
+  to_dates <- scoreto::extract_pdc_to_dates(pdc_courses_text = dates)
+  course_names <- scoreto::extract_pdc_course_names(pdc_courses_text = titles)
+  course_urls <- scoreto::extract_pdc_course_urls(pdc_courses_text = titles)
 
   testthat::expect_equal(length(from_dates), length(to_dates))
   testthat::expect_equal(length(from_dates), length(to_dates))
