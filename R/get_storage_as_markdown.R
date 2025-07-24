@@ -22,8 +22,8 @@ get_storage_as_markdown <- function(t = get_storage()) {
   t$storage_system_url <- NULL
 
   # Add logos
-  centers <- get_storage_to_center()
-  centers$logo <- get_logo_paths(centers$center)
+  centers <- scoreto::get_storage_to_center()
+  centers$logo <- scoreto::get_logo_paths(centers$center)
   centers$center_md <- paste0("![", centers$center, "](", centers$logo, ")")
   names(centers)
   cluster_to_logo <- centers |>

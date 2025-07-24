@@ -20,8 +20,8 @@ get_web_host_as_markdown <- function(t = get_web_host()) {
   t$web_host_url <- NULL
 
   # Add logos
-  centers <- get_web_host_to_center()
-  centers$logo <- get_logo_paths(centers$center)
+  centers <- scoreto::get_web_host_to_center()
+  centers$logo <- scoreto::get_logo_paths(centers$center)
   centers$center_md <- paste0("![", centers$center, "](", centers$logo, ")")
   names(centers)
   cluster_to_logo <- centers |>

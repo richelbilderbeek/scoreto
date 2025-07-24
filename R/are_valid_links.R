@@ -10,5 +10,5 @@
 #' )
 #' are_valid_links(urls)
 are_valid_links <- function(urls) {
-  as.logical(Vectorize(is_valid_link)(urls))
+  as.logical(Vectorize(scoreto::is_valid_link)(urls))
 }

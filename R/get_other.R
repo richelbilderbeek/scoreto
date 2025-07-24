@@ -9,7 +9,7 @@
 #' @export
 get_other <- function() {
   readr::read_csv(
-    get_scoreto_path("other.csv"),
+    scoreto::get_scoreto_path("other.csv"),
     show_col_types = FALSE
   )
 }

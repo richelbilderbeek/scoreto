@@ -9,7 +9,7 @@
 #' @export
 get_web_host <- function() {
   readr::read_csv(
-    get_scoreto_path("web_host.csv"),
+    scoreto::get_scoreto_path("web_host.csv"),
     show_col_types = FALSE
   )
 }

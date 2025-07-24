@@ -10,7 +10,7 @@
 #' get_web_host_to_center()
 get_web_host_to_center <- function() {
   readr::read_csv(
-    get_scoreto_path("web_host_to_center.csv"),
+    scoreto::get_scoreto_path("web_host_to_center.csv"),
     show_col_types = FALSE
   )
 }

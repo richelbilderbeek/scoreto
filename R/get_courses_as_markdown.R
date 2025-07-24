@@ -41,7 +41,7 @@ get_courses_as_markdown <- function(t = get_courses()) {
     "![",
     t$provider_name,
     " logo](",
-    get_logo_paths(t$provider_name),
+    scoreto::get_logo_paths(t$provider_name),
     ")"
   )
 

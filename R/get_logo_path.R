@@ -10,7 +10,7 @@ get_logo_path <- function(provider_name) {
       "Provider names given: '",
       stringr::str_flatten_comma(provider_name),
       "'. ",
-      "Tip: use 'get_logo_paths' for multiple logo paths."
+      "Tip: use 'scoreto::get_logo_paths' for multiple logo paths."
     )
     stop(msg)
   }
@@ -19,7 +19,7 @@ get_logo_path <- function(provider_name) {
       "Invalid provider name '", provider_name, "'. ",
       "Use a valid provider name instead. ",
       "Valid provider names are ",
-      stringr::str_flatten_comma(get_all_providers())
+      stringr::str_flatten_comma(scoreto::get_all_providers())
     )
     stop(msg)
   }

@@ -20,8 +20,8 @@ get_other_as_markdown <- function(t = get_other()) {
   t$name_url <- NULL
 
   # Add logos
-  centers <- get_other_to_center()
-  centers$logo <- get_logo_paths(centers$center)
+  centers <- scoreto::get_other_to_center()
+  centers$logo <- scoreto::get_logo_paths(centers$center)
   centers$center_md <- paste0("![", centers$center, "](", centers$logo, ")")
   names(centers)
   cluster_to_logo <- centers |>

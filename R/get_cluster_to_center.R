@@ -6,7 +6,7 @@
 #' @export
 get_cluster_to_center <- function() {
   readr::read_csv(
-    get_scoreto_path("cluster_to_center.csv"),
+    scoreto::get_scoreto_path("cluster_to_center.csv"),
     show_col_types = FALSE
   )
 }

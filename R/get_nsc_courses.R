@@ -22,10 +22,10 @@ get_nsc_courses <- function() {
     negate = TRUE
   )
 
-  from_dates <- extract_nsc_from_dates(nsc_courses_text)
-  to_dates <- extract_nsc_to_dates(nsc_courses_text)
-  course_names <- extract_nsc_course_names(nsc_courses_text)
-  course_urls <- extract_nsc_course_urls(nsc_courses_text)
+  from_dates <- scoreto::extract_nsc_from_dates(nsc_courses_text)
+  to_dates <- scoreto::extract_nsc_to_dates(nsc_courses_text)
+  course_names <- scoreto::extract_nsc_course_names(nsc_courses_text)
+  course_urls <- scoreto::extract_nsc_course_urls(nsc_courses_text)
 
   testthat::expect_equal(length(from_dates), length(to_dates))
   testthat::expect_equal(length(from_dates), length(to_dates))

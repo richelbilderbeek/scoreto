@@ -10,7 +10,7 @@
 #' get_storage_to_center()
 get_storage_to_center <- function() {
   readr::read_csv(
-    get_scoreto_path("storage_to_center.csv"),
+    scoreto::get_scoreto_path("storage_to_center.csv"),
     show_col_types = FALSE
   )
 }

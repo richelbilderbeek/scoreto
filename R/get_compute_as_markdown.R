@@ -19,8 +19,8 @@ get_compute_as_markdown <- function(t = get_compute()) {
   t$hpc_cluster_url <- NULL
 
   # Add logos
-  centers <- get_cluster_to_center()
-  centers$logo <- get_logo_paths(centers$center)
+  centers <- scoreto::get_cluster_to_center()
+  centers$logo <- scoreto::get_logo_paths(centers$center)
   centers$center_md <- paste0("![", centers$center, "](", centers$logo, ")")
   cluster_to_logo <- centers |>
     dplyr::select(hpc_cluster, center, center_md) |>
