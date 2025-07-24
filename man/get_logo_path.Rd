@@ -15,3 +15,6 @@ the path to the logo
 \description{
 Get the path to the logo of a provider of computational resources
 }
+\seealso{
+Use \link{get_all_providers} to get a list of all providers
+}

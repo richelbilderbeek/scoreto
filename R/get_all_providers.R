@@ -1,5 +1,6 @@
 #' Get the names of all the providers of computational resources
 #' @return the names of all the providers in alphabetic order
+#' @seealso Use \link{get_logo_path} to get the logo of a provider
 #' @examples
 #' get_all_providers()
 #' @export
@@ -9,16 +10,22 @@ get_all_providers <- function() {
     "C3SE",
     "Code Refinery",
     "CSC",
+    "Doris SND",
     "ENCCS",
     "EOSC",
+    "FEGA Sweden",
+    "GBIF",
     "HPC2N",
     "InfraViz",
     "LUNARC",
     "NAISS",
     "NSC",
     "PDC",
+    "SBDI",
     "SciLifeLab",
+    "SITES",
     "SND",
+    "Stockholm University",
     "Swestore",
     "University of Gothenburg",
     "UPPMAX"

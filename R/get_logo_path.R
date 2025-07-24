@@ -1,5 +1,6 @@
 #' Get the path to the logo of a provider of computational resources
 #' @param provider_name the name of a provider of computational resources
+#' @seealso Use \link{get_all_providers} to get a list of all providers
 #' @return the path to the logo
 #' @export
 get_logo_path <- function(provider_name) {
@@ -38,6 +39,14 @@ get_logo_path <- function(provider_name) {
   if (provider_name == "SND") return("logo/snd_logo_83_x_24.png")
   if (provider_name == "Swestore") return("logo/swestore_logo_24_x_24.png")
   if (provider_name == "University of Gothenburg") return("logo/university_of_gothenburg_logo_24_x_24.png")
+
+  if (provider_name == "Doris SND") return("logo/doris_snd_logo_30_x_24.png")
+  if (provider_name == "Stockholm University") return("logo/stockholm_university_logo_57_x_24.png")
+  if (provider_name == "FEGA Sweden") return("logo/fega_sweden_logo_71_x_24.png")
+  if (provider_name == "GBIF") return("logo/gbif_logo_48_x_24.png")
+  if (provider_name == "SITES") return("logo/sites_logo_68_x_24.png")
+  if (provider_name == "SBDI") return("logo/sbdi_logo_26_x_24.png")
+
 
   testthat::expect_equal(
     object = provider_name,

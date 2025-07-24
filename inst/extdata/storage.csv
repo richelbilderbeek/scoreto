@@ -14,4 +14,10 @@ Nobackup,https://supr.naiss.se/resource/nobackup-hpc2n/,regular,active,Free,User
 NSC Centre Storage,https://www.nsc.liu.se/support/storage/snic-centrestorage/,regular,active,Free,Users of NSC HPC clusters
 Spirula,https://supr.naiss.se/resource/spirula/,regular,active,Free,Swedish data-driven life science researchers
 Vesta,https://www.uu.se/medarbetare/stod-och-verktyg/it/it-tjanster/tillaggstjanster/vesta,sensitive,any,Free,Uppsala University researchers
-Researchdata.se,https://researchdata.se,Any,Any,Free,EU citizens
+DORIS,https://snd.se/en/doris-researchers,Any,Any,Free,Swedish researchers
+Bolin Centre Database,https://bolin.su.se/data,Regular,Any,Free,Climate researchers
+FEGA Sweden,https://fega.nbis.se/,Sensitive,Any,Free,Swedish researchers working on genotype and phenotype data
+GBIF Sweden,https://gbif.se/,Regular,Any,Free,Swedish researchers working on biodiversity data
+SciLifeLab Data Repository,https://www.scilifelab.se/,Regular,Any,Free,Swedish life science researchers
+SITES Data Portal,https://data.fieldsites.se/portal/,Regular,Any,Free,Swedish ecosystem researchers
+Swedish Biodiversity Data Infrastructure,https://biodiversitydata.se/,Regular,Any,Free,Swedish researchers working on biodiversity data

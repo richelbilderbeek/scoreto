@@ -15,3 +15,6 @@ Get the names of all the providers of computational resources
 \examples{
 get_all_providers()
 }
+\seealso{
+Use \link{get_logo_path} to get the logo of a provider
+}

@@ -16,6 +16,14 @@ test_that("use", {
   expect_true("Swestore" %in% get_all_providers())
   expect_true("UPPMAX" %in% get_all_providers())
 
+  expect_false("researchdata.se" %in% get_all_providers())
+  expect_true("Doris SND" %in% get_all_providers())
+  expect_true("Stockholm University" %in% get_all_providers())
+  expect_true("FEGA Sweden" %in% get_all_providers())
+  expect_true("GBIF" %in% get_all_providers())
+  expect_true("SITES" %in% get_all_providers())
+  expect_true("SBDI" %in% get_all_providers())
+
   s <- get_all_providers()
   t <- stringr::str_sort(s)
   expect_equal(s, t)
