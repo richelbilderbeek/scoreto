@@ -3,7 +3,7 @@
 #' @examples
 #' get_all_provider_logos_as_markdown()
 #' @export
-get_all_provider_logos_as_markdown <- function() {
+get_all_provider_logos_as_markdown <- function() { # nolint long name is fine
   providers <- get_all_providers()
   logo_paths <- get_logo_paths(providers)
   testthat::expect_equal(length(providers), length(logo_paths))

@@ -16,13 +16,13 @@ get_other_as_markdown <- function(t = get_other()) {
 
   # Merge columns other_system and other_system_url
 
-  t$name_md <- paste0("[", t$name,"](", t$name_url, ")")
+  t$name_md <- paste0("[", t$name, "](", t$name_url, ")")
   t$name_url <- NULL
 
   # Add logos
   centers <- get_other_to_center()
   centers$logo <- get_logo_paths(centers$center)
-  centers$center_md <- paste0("![", centers$center, "](", centers$logo,")")
+  centers$center_md <- paste0("![", centers$center, "](", centers$logo, ")")
   names(centers)
   cluster_to_logo <- centers |>
     dplyr::select(name, center, center_md) |>

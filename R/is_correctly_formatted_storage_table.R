@@ -5,7 +5,7 @@
 #' @examples
 #' is_correctly_formatted_storage_table(get_storage()) # True
 #' is_correctly_formatted_storage_table("Nonsense") # False
-is_correctly_formatted_storage_table <- function(t) {
+is_correctly_formatted_storage_table <- function(t) { # nolint indeed a long function name
 
   if (!tibble::is_tibble(t)) return(FALSE)
   if (length(names(t)) != 6) return(FALSE)

@@ -7,7 +7,10 @@ test_that("minimal use", {
   expect_equal(get_logo_path("SND"), "logo/snd_logo_83_x_24.png")
 
   expect_error(get_logo_path("Nonsense"), "Invalid provider name")
-  expect_error(get_logo_path(c("NAISS", "UPPMAX")), "Provide exactly one provider name")
+  expect_error(
+    get_logo_path(c("NAISS", "UPPMAX")),
+    "Provide exactly one provider name"
+  )
 
 
   expect_silent(get_logo_path("EOSC"))
@@ -29,5 +32,3 @@ test_that("all providers have a logo", {
     expect_silent(get_logo_path(n))
   }
 })
-
-

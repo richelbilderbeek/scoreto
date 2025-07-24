@@ -15,13 +15,13 @@ get_compute_as_markdown <- function(t = get_compute()) {
   testthat::expect_true(is_correctly_formatted_compute_table(t))
 
   # Merge columns hpc_cluster and hpc_cluster_url
-  t$hpc_cluster_md <- paste0("[", t$hpc_cluster,"](", t$hpc_cluster_url, ")")
+  t$hpc_cluster_md <- paste0("[", t$hpc_cluster, "](", t$hpc_cluster_url, ")")
   t$hpc_cluster_url <- NULL
 
   # Add logos
   centers <- get_cluster_to_center()
   centers$logo <- get_logo_paths(centers$center)
-  centers$center_md <- paste0("![", centers$center, "](", centers$logo,")")
+  centers$center_md <- paste0("![", centers$center, "](", centers$logo, ")")
   cluster_to_logo <- centers |>
     dplyr::select(hpc_cluster, center, center_md) |>
     dplyr::group_by(hpc_cluster) |>
@@ -34,7 +34,10 @@ get_compute_as_markdown <- function(t = get_compute()) {
 
   names(t)
   text <- knitr::kable(t)
-  text[1] <- "|HPC cluster name|Type of computation|Type of data|User fee|Accessible for|Center(s)|"
+  text[1] <- paste0(
+    "|HPC cluster name|Type of computation|Type of data|",
+    "User fee|Accessible for|Center(s)|"
+  )
   text[2] <- get_optimal_markdown_divider(text)
   text
 }

@@ -11,11 +11,11 @@ is_valid_link <- function(url) {
   Sys.sleep(0.1)
   httr::set_config(httr::config(ssl_verifypeer = 0L))
   tryCatch({
-      x <- httr::GET(url)
-      x$status_code != 404
-    },
-    error = function(e) {
-      return(FALSE)
-    }
+    x <- httr::GET(url)
+    x$status_code != 404
+  },
+  error = function(e) {
+    FALSE
+  }
   )
 }

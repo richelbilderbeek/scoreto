@@ -7,10 +7,14 @@ get_optimal_markdown_divider <- function(text) {
   testthat::expect_true(stringr::str_detect(text[2], "^(\\|:-+)+\\|$"))
 
   text_without_divider <- text[-2]
-  text_without_begin_and_end_bar <- stringr::str_sub(text_without_divider, 2, -2)
+  text_without_begin_and_end_bar <- stringr::str_sub(
+    text_without_divider, 2, -2 # Remove first and last
+  )
 
-  text_matrix <- stringr::str_split(text_without_begin_and_end_bar, "\\|", simplify = TRUE)
-
+  text_matrix <- stringr::str_split(
+    text_without_begin_and_end_bar, "\\|",
+    simplify = TRUE
+  )
 
   get_length <- function(x) {
     x <- stringr::str_trim(x)

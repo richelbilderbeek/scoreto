@@ -15,13 +15,16 @@ get_storage_as_markdown <- function(t = get_storage()) {
   testthat::expect_true(is_correctly_formatted_storage_table(t))
 
   # Merge columns storage_system and storage_system_url
-  t$storage_system_md <- paste0("[", t$storage_system,"](", t$storage_system_url, ")")
+  t$storage_system_md <- paste0(
+    "[", t$storage_system, "]",
+    "(", t$storage_system_url, ")"
+  )
   t$storage_system_url <- NULL
 
   # Add logos
   centers <- get_storage_to_center()
   centers$logo <- get_logo_paths(centers$center)
-  centers$center_md <- paste0("![", centers$center, "](", centers$logo,")")
+  centers$center_md <- paste0("![", centers$center, "](", centers$logo, ")")
   names(centers)
   cluster_to_logo <- centers |>
     dplyr::select(storage_system, center, center_md) |>
@@ -35,7 +38,10 @@ get_storage_as_markdown <- function(t = get_storage()) {
 
   names(t)
   text <- knitr::kable(t)
-  text[1] <- "|HPC storage system name|Data sensitivity|Data activity|User fee|Accessible for|Center(s)|"
+  text[1] <- paste0(
+    "|HPC storage system name|Data sensitivity|Data activity|",
+    "User fee|Accessible for|Center(s)|"
+  )
   text[2] <- get_optimal_markdown_divider(text)
   text
 }

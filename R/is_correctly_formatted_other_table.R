@@ -5,7 +5,7 @@
 #' @examples
 #' is_correctly_formatted_other_table(get_other()) # True
 #' is_correctly_formatted_other_table("Nonsense") # False
-is_correctly_formatted_other_table <- function(t) {
+is_correctly_formatted_other_table <- function(t) { # nolint indeed a long function name
 
   if (!tibble::is_tibble(t)) return(FALSE)
   if (length(names(t)) != 5) return(FALSE)

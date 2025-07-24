@@ -9,4 +9,3 @@ test_that("Some column values start with uppercase", {
   expect_true(all(stringr::str_detect(t$user_costs, "^\\[?[:upper:]")))
   expect_true(all(stringr::str_detect(t$accessible_for, "^[:upper:]")))
 })
-

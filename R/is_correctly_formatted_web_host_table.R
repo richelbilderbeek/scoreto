@@ -5,7 +5,7 @@
 #' @examples
 #' is_correctly_formatted_web_host_table(get_web_host()) # True
 #' is_correctly_formatted_web_host_table("Nonsense") # False
-is_correctly_formatted_web_host_table <- function(t) {
+is_correctly_formatted_web_host_table <- function(t) { # nolint indeed a long function name
 
   if (!tibble::is_tibble(t)) return(FALSE)
   if (length(names(t)) != 6) return(FALSE)

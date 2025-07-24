@@ -8,9 +8,9 @@
 get_test_courses_table <- function() {
 
   t <- tibble::tribble(
-    ~date_from, ~date_to, ~course_name, ~course_url, ~provider_courses_url, ~provider_name,
-    "2024-03-14", "2024-03-14", "Course in something", "https://docs.uppmax.uu.se/courses_workshops/intro_to_python/", "https://docs.uppmax.uu.se/courses_workshops/courses_workshops/", "UPPMAX",
-    "2025-03-14", "2025-03-14", "Course with failing course URL", "https://docs.uppmax.uu.se/failing_url", "https://docs.uppmax.uu.se/courses_workshops/courses_workshops/", "UPPMAX",
+    ~date_from, ~date_to, ~course_name, ~course_url, ~provider_courses_url, ~provider_name, # nolint indeed a long line
+    "2024-03-14", "2024-03-14", "Course in something", "https://docs.uppmax.uu.se/courses_workshops/intro_to_python/", "https://docs.uppmax.uu.se/courses_workshops/courses_workshops/", "UPPMAX", # nolint indeed a long line
+    "2025-03-14", "2025-03-14", "Course with failing course URL", "https://docs.uppmax.uu.se/failing_url", "https://docs.uppmax.uu.se/courses_workshops/courses_workshops/", "UPPMAX", # nolint indeed a long line
   )
 
   testthat::expect_true(is_correctly_formatted_courses_table(t))
