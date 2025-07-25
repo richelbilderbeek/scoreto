@@ -24,6 +24,10 @@ test_that("us", {
   )
   expect_false(is_correctly_formatted_courses_table(t))
 
+  u <- t
+  names(u) <- c(names(t)[-1], "nonsense_name")
+  expect_false(is_correctly_formatted_courses_table(u))
+
   # Incorrect date format
   t <- tibble::tibble(
     wrong_date_from = "March 14",

@@ -12,5 +12,5 @@ test_that("us", {
   u <- t
   names(u) <- c(names(t)[-1], "nonsense_name")
   expect_equal(length(names(u)), length(names(t)))
-  expect_false(is_correctly_formatted_other_table(u))
+  expect_false(is_correctly_formatted_compute_table(u))
 })

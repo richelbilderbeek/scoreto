@@ -11,6 +11,6 @@ test_that("us", {
 
   u <- t
   names(u) <- c(names(t)[-1], "nonsense_name")
-  expect_false(is_correctly_formatted_other_table(u))
+  expect_false(is_correctly_formatted_web_host_table(u))
 
 })
