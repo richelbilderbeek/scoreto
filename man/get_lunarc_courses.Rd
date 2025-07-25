@@ -4,7 +4,11 @@
 \alias{get_lunarc_courses}
 \title{Get the LUNARC courses}
 \usage{
-get_lunarc_courses()
+get_lunarc_courses(html_text = get_lunarc_html())
+}
+\arguments{
+\item{html_text}{HTML text to parse, as can be obtained by
+\link{get_lunarc_html} or \link{get_test_lunarc_html}}
 }
 \value{
 a table with all LUNARC courses.

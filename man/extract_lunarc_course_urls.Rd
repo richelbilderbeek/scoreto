@@ -6,13 +6,13 @@
 \usage{
 extract_lunarc_course_urls(
   lunarc_courses_text,
-  lunarc_courses_url = "https://www.lunarc.lu.se/learning-more/training-courses"
+  lunarc_home_url = "https://www.lunarc.lu.se/"
 )
 }
 \arguments{
 \item{lunarc_courses_text}{subset of raw HTML from the LUNARC website.}
 
-\item{lunarc_courses_url}{The URL for the LUNARC courses}
+\item{lunarc_home_url}{The URL for the LUNARC home}
 }
 \value{
 a collection of strings and NAs
