@@ -6,4 +6,3 @@
 get_lunarc_html <- function() {
   readr::read_lines(get_lunarc_courses_url())
 }
-
