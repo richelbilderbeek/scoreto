@@ -5,4 +5,9 @@ test_that("use", {
   )
   course_urls <- extract_pdc_course_urls(pdc_courses_text)
   expect_equal(length(pdc_courses_text), length(course_urls))
+  expect_equal(
+    0,
+    sum(stringr::str_detect(course_urls, "about/events/about/events"))
+  )
+
 })

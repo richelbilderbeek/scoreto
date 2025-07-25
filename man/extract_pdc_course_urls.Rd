@@ -6,7 +6,7 @@
 \usage{
 extract_pdc_course_urls(
   pdc_courses_text,
-  pdc_training_url = "https://www.pdc.kth.se/about/events"
+  pdc_training_url = "https://www.pdc.kth.se/"
 )
 }
 \arguments{

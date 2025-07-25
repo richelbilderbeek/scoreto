@@ -5,7 +5,7 @@
 #' @export
 extract_pdc_course_urls <- function(
   pdc_courses_text,
-  pdc_training_url = "https://www.pdc.kth.se/about/events"
+  pdc_training_url = "https://www.pdc.kth.se/"
 ) {
   rel_url <- stringr::str_match(
     pdc_courses_text,
