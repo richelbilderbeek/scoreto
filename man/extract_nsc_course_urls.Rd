@@ -6,13 +6,13 @@
 \usage{
 extract_nsc_course_urls(
   nsc_courses_text,
-  nsc_training_url = "https://www.nsc.liu.se/support/Events/"
+  nsc_home_url = "https://www.nsc.liu.se"
 )
 }
 \arguments{
 \item{nsc_courses_text}{subset of raw HTML from the NSC website.}
 
-\item{nsc_training_url}{The URL for the NSC courses}
+\item{nsc_home_url}{The URL for the NSC home}
 }
 \value{
 a collection of strings and NAs
