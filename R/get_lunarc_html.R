@@ -4,5 +4,5 @@
 #' @return HTML text
 #' @export
 get_lunarc_html <- function() {
-  readr::read_lines(get_lunarc_courses_url())
+  readr::read_lines(scoreto::get_lunarc_courses_url())
 }
