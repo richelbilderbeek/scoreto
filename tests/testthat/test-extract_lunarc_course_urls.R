@@ -6,7 +6,7 @@ test_that("use", {
     0,
     sum(
       stringr::str_detect(
-        t$course_url,
+        course_urls,
         "learning-more/training-courses/learning-more/training-courses"
       )
     )
