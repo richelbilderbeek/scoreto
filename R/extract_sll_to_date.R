@@ -9,7 +9,10 @@
 extract_sll_to_date <- function(sll_date_range) {
   year <- stringr::str_match(sll_date_range, "[:digit:]{4}")[, 1]
 
-  month_str <- stringr::str_match(sll_date_range, "([:alpha:]{4,20}) [:digit:]{4}")[, 2]
+  month_str <- stringr::str_match(
+    sll_date_range,
+    "([:alpha:]{4,20}) [:digit:]{4}"
+  )[, 2]
 
   # Complete to a fake date so lubridate::mdy works
   month <- lubridate::month(lubridate::mdy(paste0(month_str, "/01/2000")))
