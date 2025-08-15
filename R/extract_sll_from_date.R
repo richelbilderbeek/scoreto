@@ -15,7 +15,7 @@ extract_sll_from_date <- function(sll_date_range) {
   month <- lubridate::month(lubridate::mdy(paste0(month_str, "/01/2000")))
   month[nchar(month) == 1] <- paste0("0", month[nchar(month) == 1])
 
-  day <- stringr::str_match(sll_date_range, "([:digit:]{1,2}) - ")[, 2]
+  day <- stringr::str_match(sll_date_range, "([:digit:]{1,2})( [:upper:][:lower:]+)? - ")[, 2]
   day[nchar(day) == 1] <- paste0("0", day[nchar(day) == 1])
 
   testthat::expect_equal(nchar(day), rep(2, length(day)))

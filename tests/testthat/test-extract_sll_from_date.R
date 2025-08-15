@@ -8,4 +8,8 @@ test_that("minimal use", {
     ),
     c("2025-09-09", "2025-11-24")
   )
+  expect_equal(
+    extract_sll_from_date(sll_date_range = "1 July - 31 December 2025"),
+    "2025-07-01"
+  )
 })
