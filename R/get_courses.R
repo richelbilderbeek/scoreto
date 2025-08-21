@@ -22,8 +22,8 @@ get_courses <- function() {
   tibbles[[9]] <- scoreto::get_naiss_courses()
   tibbles[[10]] <- scoreto::get_nsc_courses()
   tibbles[[11]] <- scoreto::get_pdc_courses()
-  # tibbles[[12]] <- scoreto::get_sll_courses()
   tibbles[[12]] <- scoreto::get_uppmax_courses()
+  # Consider adding 'scoreto::get_sll_courses()' after #3 has been resolved
 
   # Check again
   for (i in seq_len(length(tibbles))) {
