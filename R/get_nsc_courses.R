@@ -1,12 +1,9 @@
 #' Get the NSC courses
 #' @return a table with all NSC courses.
 #' @export
-get_nsc_courses <- function() {
-  nsc_training_url <- "https://www.nsc.liu.se/support/Events/"
-  all_lines <- readr::read_lines(nsc_training_url)
-
+get_nsc_courses <- function(html_text = scoreto::get_nsc_html()) {
   line <- stringr::str_subset(
-    all_lines,
+    html_text,
     "<div class=\"row col-md-12 sub-sub-nav\"><ul><li class=\"sub\" onclick=\"window.location='/support/Events/Berzelius_training" # nolint
   )
   testthat::expect_equal(1, length(line))

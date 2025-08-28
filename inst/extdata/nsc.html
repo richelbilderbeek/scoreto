@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+	<!-- Page html head section -->
+	<head>
+	<title>Events</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!-- Bootstrap -->
+	<link href="/assets/css/bootstrap-3.4.1.min.css" rel="stylesheet" media="screen">
+	<link href="/assets/css/custom.css" rel="stylesheet" media="screen">
+	<link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.png" />
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="../../assets/js/html5shiv.js"></script>
+		<script src="../../assets/js/respond.min.js"></script>
+	<![endif]-->
+	<!-- Typekit fonts -->
+	<script type="text/javascript" src="/assets/js/fonts.js"></script>
+</head>
+
+	<body>
+
+	<div id="wrap">
+
+		<!-- Top menu -->
+		<nav class="navbar navbar-default">
+<div class="container">
+
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="/">
+			<img src="/assets/img/nsclogo.png" border="0" alt="NSC">
+		</a>
+	</div>
+	<div id="navbar" class="collapse navbar-collapse">
+		<ul class="nav navbar-nav pull-right">
+			<li class="interm"><a href="/">Start</a></li>
+			<li><a href="/systems/">Systems</a></li>
+			<li><a href="/storage/">Storage</a></li>
+			<li><a href="/software/">Software</a></li>
+			<li><a href="/about/">About</a></li>
+			<li class="nav-login"><a href="#customers-area" class="scrollto" onclick="showCustomersArea();" title="Portal for new and existing users">User Area <span class="caret"></span></a></li>
+			<li class="interm" id="nav-search-icon"><a href="#"><img src="/assets/img/header-search.png" border="0" alt="" title="Search" onclick="$('#search-box').slideToggle(); return false;"></a></li>
+			<li id="nav-search" class="nav-search">
+				<form action="" method="get" id="search-form1" onsubmit="return siteSearch1();">
+					<input type="search" id="see" value="" name="se"><img src="/assets/img/header-search.png" border="0" alt="" onclick="$('#search-form1').submit();">
+				</form>
+			</li>
+		</ul>
+	</div><!--/.nav-collapse -->
+
+	<div id="search-box" class="search-box">
+		<form action="" method="get" id="search-form" onsubmit="return siteSearch();">
+			<input type="search" id="s" value="" name="s"><button class="button" onclick="$('#search-form').submit();">Search</button>
+		</form>
+	</div>
+
+</div>
+</nav>
+
+		<div class="container">
+
+			<!-- Menu for navigating to other pages at same folder level -->
+			<div class="row subnav"><ul><li><a id="subnav-getting-started" href="/support/getting-started/">Getting started</a></li>
+<li><a id="subnav-security" href="/support/security/">Security</a></li>
+<li><a id="subnav-tutorials" href="/support/tutorials/">Tutorials</a></li>
+<li><a id="subnav-two-factor-authentication" href="/support/2fa/">Two-factor authentication</a></li>
+<li><a id="subnav-running-applications" href="/support/running-applications/">Running applications</a></li>
+<li><a id="subnav-running-graphical-applications" href="/support/graphics/">Running graphical applications</a></li>
+<li><a id="subnav-batch-jobs-and-scheduling" href="/support/batch-jobs/">Batch jobs and scheduling</a></li>
+<li><a id="subnav-application-expert-help" href="/support/ae-support/">Application expert help</a></li>
+<li><a id="subnav-copying-data" href="/support/copying-data/">Copying data</a></li>
+<li><a id="subnav-events" href="/support/Events/">Events</a></li>
+<li><a id="subnav-getting-help" href="/support/getting-help/">Getting help</a></li>
+<li><a id="subnav-memory-management" href="/support/memory-management/">Memory management</a></li>
+<li><a id="subnav-past-events" href="/support/past-events/">Past events</a></li>
+<li><a id="subnav-singularity" href="/support/singularity/">Singularity</a></li>
+<li><a id="subnav-storage" href="/support/storage/">Storage</a></li>
+<li><a id="subnav-system-specific-information" href="/support/systems/">System-specific information</a></li>
+<li><a id="subnav-presto-docs" href="/support/presto/">PReSTO docs</a></li>
+</ul></div>
+
+			<div class="row">
+
+				<div class="col-md-12">
+					<!-- 
+
+The script written by Joost van der Schee (@jhvanderschee or jhvanderschee@gmail.com) and taken from https://jekyllcodex.org/ 
+
+Copyright:
+Feel free to use all code presented on this website. The code of the website itself may also be used, as this website is a demo of the code it presents. However, respect the copyright of the used trademarks and the licenses of the open-source software used, as their rights belong to their respective owners. All images are CC0 images from Unsplash
+
+-->
+
+
+<div id="breadcrumbs">
+
+<a href="/">NSC</a>
+
+  
+    / <a href="/support/">Support</a>
+  
+
+  
+    / Events
+  
+
+</div>
+
+				</div>
+
+				
+
+			</div>
+
+			<div class="row article">
+				<div class="col-md-12">
+                            <h1 id="nsc-events">NSC events</h1>
+
+<p>This is the page where you find information about events and training arranged by NSC. <a href="../past-events">Past events are found here</a>.</p>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="container">
+			<!-- Menu for navigating to pages at sub-folder level -->
+			<div class="row col-md-12 sub-sub-nav"><ul><li class="sub" onclick="window.location='/support/Events/Berzelius_training_Sep2025/';"><a href="/support/Events/Berzelius_training_Sep2025/">Berzelius Training - Introduction to Berzelius</a><p>Information about online event 9th Sep 2025</p></li><li class="sub" onclick="window.location='/support/Events/Berzelius_training_Oct2025/';"><a href="/support/Events/Berzelius_training_Oct2025/">Berzelius Training - Practical Machine Learning</a><p>Information about online event Oct. 9th, 2025</p></li><li class="sub" onclick="window.location='/support/Events/Mondays_with_MATLAB_Sep2025/';"><a href="/support/Events/Mondays_with_MATLAB_Sep2025/">Mondays with MATLAB - online workshops</a><p>Information about online workshops 9th and 23rd Sep 2025</p></li><li class="sub" onclick="window.location='/support/Events/NSC_intro_Nov2024/';"><a href="/support/Events/NSC_intro_Nov2024/">NSC introduction to Tetralith/Sigma (Nov 2024)</a><p>Information about online event 12th Nov 2024</p></li><li class="sub" onclick="window.location='/support/Events/berzelius_ai/';"><a href="/support/Events/berzelius_ai/">Berzelius AI Symposium</a><p>Information page regarding the Berzelius AI Symposium at NSC</p></li><li class="sub" onclick="window.location='/support/Events/NSC_intro_Apr2025/';"><a href="/support/Events/NSC_intro_Apr2025/">NSC introduction to Tetralith/Sigma - online event</a><p>Information about online event 15th Apr 2025</p></li><li class="sub" onclick="window.location='/support/Events/dcache_swestore_Mar2022/';"><a href="/support/Events/dcache_swestore_Mar2022/">Handling large data within SNIC using Swestore</a><p>Information about online event 15th Mar 2022</p></li><li class="sub" onclick="window.location='/support/Events/NSC_intro_Mar2021/';"><a href="/support/Events/NSC_intro_Mar2021/">Introduction to NSC (Mar 2021)</a><p>Information about online event 31st Mar 2021</p></li><li class="sub" onclick="window.location='/support/Events/NSC_intro_Nov2021/';"><a href="/support/Events/NSC_intro_Nov2021/">Introduction to NSC (Nov 2021)</a><p>Information about online event 17th Nov 2021</p></li><li class="sub" onclick="window.location='/support/Events/NSC_intro_Dec2020/';"><a href="/support/Events/NSC_intro_Dec2020/">Introduction to NSC and Open Forum (Dec 2020)</a><p>Information about online event 3rd Dec 2020</p></li><li class="sub" onclick="window.location='/support/Events/WIEN2k_intro_Nov2021/';"><a href="/support/Events/WIEN2k_intro_Nov2021/">Introduction to WIEN2k - online event</a><p>Information about the WIEN2k introduction 18th Nov 2021</p></li><li class="sub" onclick="window.location='/support/Events/NSC_intro_Apr2022/';"><a href="/support/Events/NSC_intro_Apr2022/">NSC introduction to Tetralith/Sigma (Apr 2022)</a><p>Information about online event 26th Apr 2022</p></li><li class="sub" onclick="window.location='/support/Events/NSC_intro_Apr2023/';"><a href="/support/Events/NSC_intro_Apr2023/">NSC introduction to Tetralith/Sigma (Apr 2023)</a><p>Information about online event 25th Apr 2023</p></li><li class="sub" onclick="window.location='/support/Events/NSC_intro_Apr2024/';"><a href="/support/Events/NSC_intro_Apr2024/">NSC introduction to Tetralith/Sigma (Apr 2024)</a><p>Information about online event 23rd Apr 2024</p></li><li class="sub" onclick="window.location='/support/Events/NSC_intro_Nov2022/';"><a href="/support/Events/NSC_intro_Nov2022/">NSC introduction to Tetralith/Sigma (Nov 2022)</a><p>Information about online event 16th Nov 2022</p></li><li class="sub" onclick="window.location='/support/Events/NSC_intro_Nov2023/';"><a href="/support/Events/NSC_intro_Nov2023/">NSC introduction to Tetralith/Sigma (Nov 2023)</a><p>Information about online event 7th Nov 2023</p></li><li class="sub" onclick="window.location='/support/Events/VASP_seminar_2025/';"><a href="/support/Events/VASP_seminar_2025/">VASP best practices seminar - online event</a><p>Information about the VASP seminar 3rd Oct 2025</p></li><li class="sub" onclick="window.location='/support/Events/VASP_workshop_2023/';"><a href="/support/Events/VASP_workshop_2023/">VASP best practices workshop (Apr 2023)</a><p>Information about the VASP workshop 4-5th Apr 2023</p></li><li class="sub" onclick="window.location='/support/Events/VASP_workshop_2024/';"><a href="/support/Events/VASP_workshop_2024/">VASP best practices workshop (Apr 2024)</a><p>Information about the VASP workshop 17-18th Apr 2024</p></li><li class="sub" onclick="window.location='/support/Events/VASP_workshop_2022/';"><a href="/support/Events/VASP_workshop_2022/">VASP best practices workshop (Feb 2022)</a><p>Information about the VASP workshop 22-23rd Feb 2022</p></li><li class="sub" onclick="window.location='/support/Events/VASP_workshop_2020/';"><a href="/support/Events/VASP_workshop_2020/">VASP best practices workshop (Oct 2020)</a><p>Information about the VASP workshop 19-20th Oct 2020</p></li><li class="sub" onclick="window.location='/support/Events/HPC_course_2020/';"><a href="/support/Events/HPC_course_2020/">Working effectively with HPC systems - online event</a><p>Information about online seminar in Spring 2021</p></li><li class="sub" onclick="window.location='/support/Events/NSC_PDC_support_drop-in_May2020/';"><a href="/support/Events/NSC_PDC_support_drop-in_May2020/">NSC and PDC support drop-in - online event</a><p>Information on support drop-in 19th May 2020</p></li></ul></div>
+		</div>
+
+	</div> <!-- end site wrap -->
+
+	<!-- User area -->
+	<div class="container-fluid" id="customers-area">
+	<div class="customers-area-wrap" style="margin:0">
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="customers-area-toggle" onclick="$('#customers-area-div').slideToggle(); return false;" title="Portal for new and existing users">
+					<img style="vertical-align:text-top;" src="/assets/img/ico-ca.png" alt="" title="Portal for new and existing users"> User Area
+				</div>
+			</div>
+		</div>
+
+		<div class="customers-area-div" id="customers-area-div">
+			<div class="row">
+				<div class="col-md-6">
+					<h3><a href="/support/" title="">User support</a></h3>
+					<p>Guides, documentation and FAQ.</p>
+				</div>
+				<div class="col-md-6">
+					<h3><a href="/access/" title="">Getting access</a></h3>
+					<p>Applying for projects and login accounts.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<!-- <div class="system-status"> -->
+						<!-- 
+						 
+						-->
+						
+						<div class="alert alert-success system-status">
+							<p class="bottom-vspace"><a href="/systemstatus/" title="System status" class="status">System status</a></p>
+							
+								<h4>Everything OK!</h4> <p>No reported problems</p>
+							
+						</div>
+						
+					<!-- </div> -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h3>Self-service</h3>
+					<div class="nsc-alert button" onclick="window.location='https://supr.naiss.se/';" title="Swedish User and Project Repository">
+						SUPR
+					</div>
+					<div class="nsc-alert button" onclick="window.location='https://nim.nsc.liu.se/express/login/';">
+						NSC Express
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+	<!-- Footer -->
+	<div id="footer">
+	<div class="container narrow row-fluid">
+		<div class="row">
+
+			<div class="col-md-2 hidden-sm hidden-xs">
+				<img src="/assets/img/nsc-footer.png" border="0" title="">
+			</div>
+			<div class="col-md-3">
+				<p><b>National Supercomputer Centre</b><br>
+					Linköping University<br>
+					581 83 LINKÖPING<br>
+					SWEDEN
+					<br><br>
+					Org.nr: 202100-3096<br>
+					VAT.nr: SE202100309601<br>
+				</p>
+			</div>
+
+			<div class="col-md-3 hidden-sm hidden-xs">
+				E-mail: <a href="mailto:support@nsc.liu.se">support@nsc.liu.se</a><br>
+				Tel.: <a href="callto:013281000">013-281000</a> (switchboard)<br>
+				Fax.: 013-149403<br>
+				<a href="/about/addresses">Further address information</a>
+			</div>
+
+			<div class="col-md-4 hidden-sm hidden-xs">
+				NSC is part of Linköping University and a branch in the National Academic Infrastructure for Super­computing in Sweden.<br>
+				<img src="/assets/img/liu_naiss_footer_v2.png" border="0" title="">
+				<br>
+				<a href="#top">Top of Page</a>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+	<!-- Body tail -->
+	<!-- Scripts to include just before the end-body tag -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/assets/js/jquery-1.11.3.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/assets/js/bootstrap-3.4.1.min.js"></script>
+<script type="text/javascript" src="/assets/js/grids.js"></script>
+<script src="/assets/js/site.js?d=20150911"></script>
+
+	</body>
+</html>

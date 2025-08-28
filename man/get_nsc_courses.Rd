@@ -4,7 +4,7 @@
 \alias{get_nsc_courses}
 \title{Get the NSC courses}
 \usage{
-get_nsc_courses()
+get_nsc_courses(html_text = scoreto::get_nsc_html())
 }
 \value{
 a table with all NSC courses.

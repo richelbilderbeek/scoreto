@@ -5,11 +5,11 @@ extract_nsc_from_dates <- function(nsc_courses_text) {
 
   dates_1 <- stringr::str_match(
     nsc_courses_text,
-    "[:digit:]+th [:upper:][:lower:]+.*[:digit:]{4}"
+    "[:digit:]+(th|rd) [:upper:][:lower:]+.*[:digit:]{4}"
   )[, 1]
   dates_2 <- stringr::str_match(
     nsc_courses_text,
-    "[:upper:][:lower:]+\\.? [:digit:]+th,? [:digit:]{4}"
+    "[:upper:][:lower:]+\\.? [:digit:]+(th|rd),? [:digit:]{4}"
   )[, 1]
   dates <- dates_1
   na_indices <- which(is.na(dates))
@@ -17,7 +17,7 @@ extract_nsc_from_dates <- function(nsc_courses_text) {
   testthat::expect_equal(0, sum(is.na(dates)))
 
 
-  day <- stringr::str_match(dates, "([:digit:]+)th")[, 2]
+  day <- stringr::str_match(dates, "([:digit:]+)(th|rd)")[, 2]
   day[nchar(day) == 1] <- paste0("0", day[nchar(day) == 1])
   testthat::expect_true(all(2 == nchar(day)))
 
