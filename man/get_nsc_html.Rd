@@ -15,9 +15,6 @@ the HTML text of the NSC courses.
 \description{
 Get the NSC courses as HTML
 }
-\examples{
-get_nsc_html()
-}
 \seealso{
 use \link{get_nsc_courses} to get the NSC courses as a table
 }

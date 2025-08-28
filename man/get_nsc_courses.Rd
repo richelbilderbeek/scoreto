@@ -15,3 +15,7 @@ a table with all NSC courses.
 \description{
 Get the NSC courses
 }
+\examples{
+html_text <- readr::read_lines(get_scoreto_path("nsc.html"))
+get_nsc_courses(html_text)
+}

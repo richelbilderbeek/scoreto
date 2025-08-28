@@ -1,6 +1,9 @@
 #' Get the NSC courses
 #' @param html_text HTML text
 #' @return a table with all NSC courses.
+#' @examples
+#' html_text <- readr::read_lines(get_scoreto_path("nsc.html"))
+#' get_nsc_courses(html_text)
 #' @export
 get_nsc_courses <- function(html_text = scoreto::get_nsc_html()) {
   line <- stringr::str_subset(
