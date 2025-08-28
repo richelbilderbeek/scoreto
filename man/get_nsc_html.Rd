@@ -4,7 +4,7 @@
 \alias{get_nsc_html}
 \title{Get the NSC courses as HTML}
 \usage{
-get_nsc_html(nsc_training_url = "https://www.nsc.liu.se/support/Events/")
+get_nsc_html(nsc_training_url = scoreto::get_nsc_training_url())
 }
 \arguments{
 \item{nsc_training_url}{the URL of the NSC training webpage}

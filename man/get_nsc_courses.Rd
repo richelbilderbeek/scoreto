@@ -6,6 +6,9 @@
 \usage{
 get_nsc_courses(html_text = scoreto::get_nsc_html())
 }
+\arguments{
+\item{html_text}{HTML text}
+}
 \value{
 a table with all NSC courses.
 }
