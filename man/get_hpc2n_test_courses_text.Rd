@@ -6,6 +6,10 @@
 \usage{
 get_hpc2n_test_courses_text()
 }
+\value{
+a text to extract the dates from
+}
 \description{
-Get a testing text for HPC2N courses
+This text is a patchwork of entries from the HPC2N website
+collected over time.
 }

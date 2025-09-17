@@ -1,4 +1,4 @@
-test_that("use", {
+test_that("use on today's data", {
   t <- get_hpc2n_courses()
   expect_true(is_correctly_formatted_courses_table(t))
 })
