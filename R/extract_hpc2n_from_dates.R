@@ -5,7 +5,7 @@ extract_hpc2n_from_dates <- function(hpc2n_courses_text) {
 
   hpc2n_dates <- stringr::str_match(
     hpc2n_courses_text,
-    ", ([:digit:].*[reyt]( [:digit:]{4})?),"
+    ", ([:digit:].*[reytc]( [:digit:]{4})?)[,[:space:]<]"
   )[, 2]
   testthat::expect_equal(0, sum(is.na(hpc2n_dates)))
   hpc2n_dates

@@ -4,7 +4,7 @@
 \alias{get_hpc2n_courses}
 \title{Get the HPC2N courses}
 \usage{
-get_hpc2n_courses()
+get_hpc2n_courses(html_text = scoreto::get_hpc2n_html())
 }
 \value{
 a table with all HPC2N courses.

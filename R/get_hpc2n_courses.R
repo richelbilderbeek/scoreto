@@ -1,15 +1,14 @@
 #' Get the HPC2N courses
 #' @return a table with all HPC2N courses.
 #' @export
-get_hpc2n_courses <- function() {
-  hpc2n_courses_url <- "https://www.hpc2n.umu.se/events/courses"
-  all_lines <- readr::read_lines(hpc2n_courses_url)
+get_hpc2n_courses <- function(html_text = scoreto::get_hpc2n_html()) {
+  all_lines <- html_text
   from_index <- 2 + stringr::str_which(all_lines, "Upcoming")
   to_index <- stringr::str_which(all_lines, "Previous") - 2
 
   lines <- all_lines[from_index:to_index]
 
-  from_dates <- scoreto::extract_hpc2n_from_dates(lines)
+  from_dates <- scoreto::extract_hpc2n_from_dates(hpc2n_courses_text = lines)
   to_dates <- scoreto::extract_hpc2n_to_dates(lines)
   course_names <- scoreto::extract_hpc2n_course_names(lines)
   course_urls <- scoreto::extract_hpc2n_course_urls(lines)
