@@ -38,7 +38,7 @@ get_nsc_courses <- function(html_text = scoreto::get_nsc_html()) {
     date_to = to_dates,
     course_name = course_names,
     course_url = course_urls,
-    provider_courses_url = get_nsc_training_url(),
+    provider_courses_url = scoreto::get_nsc_training_url(),
     provider_name = "NSC"
   )
 }
