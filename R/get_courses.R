@@ -24,6 +24,7 @@ get_courses <- function() {
   tibbles[[11]] <- scoreto::get_pdc_courses()
   tibbles[[12]] <- scoreto::get_sll_courses()
   tibbles[[13]] <- scoreto::get_uppmax_courses()
+  tibbles[[14]] <- scoreto::get_slubi_courses()
 
   # Check again
   for (i in seq_len(length(tibbles))) {
