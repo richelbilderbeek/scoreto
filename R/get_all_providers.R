@@ -24,6 +24,7 @@ get_all_providers <- function() {
     "SBDI",
     "SciLifeLab",
     "SITES",
+    "SLUBI",
     "SND",
     "Stockholm University",
     "Swestore",

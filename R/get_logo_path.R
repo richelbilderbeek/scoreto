@@ -36,6 +36,7 @@ get_logo_path <- function(provider_name) {
   if (provider_name == "NSC") return("logo/nsc_logo_66_x_24.png")
   if (provider_name == "PDC") return("logo/pdc_logo_21_x_24.png")
   if (provider_name == "SciLifeLab") return("logo/sll_logo_110_x_24.png")
+  if (provider_name == "SLUBI") return("logo/slubi_logo_20_x_24.png")
   if (provider_name == "SND") return("logo/snd_logo_83_x_24.png")
   if (provider_name == "Swestore") return("logo/swestore_logo_24_x_24.png")
   if (provider_name == "University of Gothenburg") {

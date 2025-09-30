@@ -5,6 +5,7 @@ test_that("minimal use", {
   expect_equal(get_logo_path("SciLifeLab"), "logo/sll_logo_110_x_24.png")
   expect_equal(get_logo_path("UPPMAX"), "logo/uppmax_logo_116_x_24.png")
   expect_equal(get_logo_path("SND"), "logo/snd_logo_83_x_24.png")
+  expect_equal(get_logo_path("SLUBI"), "logo/slubi_logo_20_x_24.png")
 
   expect_error(get_logo_path("Nonsense"), "Invalid provider name")
   expect_error(
