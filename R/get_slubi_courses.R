@@ -7,7 +7,9 @@
 #' @export
 get_slubi_courses <- function(html_text = scoreto::get_slubi_html()) {
   all_lines <- html_text
-  from_index <- 2 + stringr::str_which(all_lines, "<h1 class=\"title\">Courses</h1>")
+  from_index <- 2 + stringr::str_which(
+    all_lines, "<h1 class=\"title\">Courses</h1>"
+  )
   to_index <- stringr::str_which(all_lines, "</main> <!-- /main -->") - 2
 
   lines <- all_lines[from_index:to_index]
