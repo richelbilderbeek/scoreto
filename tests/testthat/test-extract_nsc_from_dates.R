@@ -4,6 +4,7 @@ test_that("use", {
   expect_equal(length(nsc_courses_text), length(from_dates))
 })
 
+
 test_that("example cases", {
   nsc_courses_text <- "onclick=\"window.location='/support/Events/Berzelius_training_Sep2025/';\"><a href=\"/support/Events/Berzelius_training_Sep2025/\">Berzelius Training - Introduction to Berzelius</a><p>Information about online event 9th Sep 2025</p></li>" # nolint
   from_dates <- extract_nsc_from_dates(nsc_courses_text)

@@ -3,6 +3,7 @@
 export(are_correctly_formatted_dates)
 export(are_valid_links)
 export(convert_enccs_dates)
+export(create_test_courses_table)
 export(extract_code_refinery_course_names)
 export(extract_code_refinery_course_urls)
 export(extract_code_refinery_from_dates)

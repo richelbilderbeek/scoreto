@@ -9,6 +9,10 @@ get_pdc_courses <- function() {
     all_lines,
     "<li class=\"calendar__event\">"
   )
+  if (length(event_indices) == 0) {
+    empty_tibble <- scoreto::create_test_courses_table()[c(), ]
+    return(empty_tibble)
+  }
   titles <- all_lines[event_indices + 3]
   dates <- all_lines[event_indices + 6]
 

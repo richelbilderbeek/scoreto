@@ -19,9 +19,13 @@ get_nsc_courses <- function(html_text = scoreto::get_nsc_html()) {
   )
   nsc_courses_text <- stringr::str_subset(
     all_nsc_courses_text,
-    "2020|2021|2022|2023|2024",
+    "2020|2021|2022|2023|2024|2025",
     negate = TRUE
   )
+  if (length(nsc_courses_text) == 0) {
+    empty_tibble <- scoreto::create_test_courses_table()[c(), ]
+    return(empty_tibble)
+  }
 
   from_dates <- scoreto::extract_nsc_from_dates(nsc_courses_text)
   to_dates <- scoreto::extract_nsc_to_dates(nsc_courses_text)
