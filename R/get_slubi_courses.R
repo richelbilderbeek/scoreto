@@ -1,5 +1,9 @@
 #' Get the SLUBI courses
-#' @return a table with all SLUBI courses.
+#' @param html_text HTML text to parse, as can be obtained by
+#' \link{get_slubi_html} or \link{get_test_slubi_html}
+#' @return a table with all SLUBI courses, where
+#' the table will pass the test of
+#' \link{is_correctly_formatted_courses_table}
 #' @export
 get_slubi_courses <- function(html_text = scoreto::get_slubi_html()) {
   all_lines <- html_text

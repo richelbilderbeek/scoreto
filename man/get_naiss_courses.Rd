@@ -7,7 +7,9 @@
 get_naiss_courses()
 }
 \value{
-a table with all NAISS courses.
+a table with all NAISS courses, where
+the table will pass the test of
+\link{is_correctly_formatted_courses_table}
 }
 \description{
 Get the NAISS courses

@@ -6,8 +6,14 @@
 \usage{
 get_hpc2n_courses(html_text = scoreto::get_hpc2n_html())
 }
+\arguments{
+\item{html_text}{HTML text to parse, as can be obtained by
+\link{get_hpc2n_html} or \link{get_test_hpc2n_html}}
+}
 \value{
-a table with all HPC2N courses.
+a table with all HPC2N courses, where
+the table will pass the test of
+\link{is_correctly_formatted_courses_table}
 }
 \description{
 Get the HPC2N courses

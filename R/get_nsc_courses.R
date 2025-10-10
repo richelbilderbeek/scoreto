@@ -1,6 +1,9 @@
 #' Get the NSC courses
-#' @param html_text HTML text
-#' @return a table with all NSC courses.
+#' @param html_text HTML text to parse, as can be obtained by
+#' \link{get_nsc_html} or \link{get_test_nsc_html}
+#' @return a table with all NSC courses, where
+#' the table will pass the test of
+#' \link{is_correctly_formatted_courses_table}
 #' @examples
 #' html_text <- readr::read_lines(get_scoreto_path("nsc.html"))
 #' get_nsc_courses(html_text)

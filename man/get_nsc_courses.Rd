@@ -7,10 +7,13 @@
 get_nsc_courses(html_text = scoreto::get_nsc_html())
 }
 \arguments{
-\item{html_text}{HTML text}
+\item{html_text}{HTML text to parse, as can be obtained by
+\link{get_nsc_html} or \link{get_test_nsc_html}}
 }
 \value{
-a table with all NSC courses.
+a table with all NSC courses, where
+the table will pass the test of
+\link{is_correctly_formatted_courses_table}
 }
 \description{
 Get the NSC courses

@@ -16,5 +16,6 @@ the HTML text of the NSC courses.
 Get the NSC courses as HTML
 }
 \seealso{
-use \link{get_nsc_courses} to get the NSC courses as a table
+use \link{get_nsc_courses} to get the NSC courses as a table.
+Use \link{get_test_nsc_html} to get testing HTML.
 }

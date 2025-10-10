@@ -1,5 +1,7 @@
 #' Get the NAISS courses
-#' @return a table with all NAISS courses.
+#' @return a table with all NAISS courses, where
+#' the table will pass the test of
+#' \link{is_correctly_formatted_courses_table}
 #' @export
 get_naiss_courses <- function() {
   naiss_url <- "https://www.naiss.se/events/"

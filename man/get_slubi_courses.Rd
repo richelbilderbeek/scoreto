@@ -6,8 +6,14 @@
 \usage{
 get_slubi_courses(html_text = scoreto::get_slubi_html())
 }
+\arguments{
+\item{html_text}{HTML text to parse, as can be obtained by
+\link{get_slubi_html} or \link{get_test_slubi_html}}
+}
 \value{
-a table with all SLUBI courses.
+a table with all SLUBI courses, where
+the table will pass the test of
+\link{is_correctly_formatted_courses_table}
 }
 \description{
 Get the SLUBI courses
