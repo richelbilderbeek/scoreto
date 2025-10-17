@@ -1,25 +1,25 @@
 #' Get the InfraViz courses
-#' @return a table with all InfraViz courses.
+#' @param html_text HTML text to parse, as can be obtained by
+#' \link{get_infraviz_html} or \link{get_test_infraviz_html}
+#' @return a table with all InfraViz courses, where
+#' the table will pass the test of
+#' \link{is_correctly_formatted_courses_table}
 #' @export
-get_infraviz_courses <- function() {
-  infraviz_training_url <- "https://infravis.se/news-events/"
-  all_lines <- readr::read_lines(infraviz_training_url)
-
-
+get_infraviz_courses <- function(html_text = scoreto::get_infraviz_html()) {
   from_index <- stringr::str_which(
-    all_lines,
+    html_text,
     "<strong>More News</strong>"
   ) + 1
   testthat::expect_equal(1, length(from_index))
 
   to_index <- stringr::str_which(
-    all_lines,
+    html_text,
     "<strong>Past Events</strong>"
   ) - 5
   testthat::expect_equal(1, length(to_index))
 
 
-  lines <- all_lines[from_index:to_index]
+  lines <- html_text[from_index:to_index]
   lines
 
   workshop_title_indices <- stringr::str_which(
@@ -46,7 +46,7 @@ get_infraviz_courses <- function() {
     date_to = to_dates,
     course_name = course_names,
     course_url = course_urls,
-    provider_courses_url = infraviz_training_url,
+    provider_courses_url = scoreto::get_infraviz_courses_url(),
     provider_name = "InfraViz"
   )
 }

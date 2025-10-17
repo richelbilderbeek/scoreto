@@ -4,10 +4,16 @@
 \alias{get_infraviz_courses}
 \title{Get the InfraViz courses}
 \usage{
-get_infraviz_courses()
+get_infraviz_courses(html_text = scoreto::get_infraviz_html())
+}
+\arguments{
+\item{html_text}{HTML text to parse, as can be obtained by
+\link{get_infraviz_html} or \link{get_test_infraviz_html}}
 }
 \value{
-a table with all InfraViz courses.
+a table with all InfraViz courses, where
+the table will pass the test of
+\link{is_correctly_formatted_courses_table}
 }
 \description{
 Get the InfraViz courses
