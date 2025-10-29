@@ -12,3 +12,4 @@
 ^mlc_config\.json$
 ^scripts$
 
+^CITATION\.cff$
