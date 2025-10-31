@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_hpc2n_html.R
 \name{get_hpc2n_html}
 \alias{get_hpc2n_html}
-\title{Get the HPC2n courses website as HTML}
+\title{Get the HPC2N courses website as HTML}
 \usage{
 get_hpc2n_html()
 }
@@ -10,7 +10,7 @@ get_hpc2n_html()
 HTML text
 }
 \description{
-Get the HPC2n courses website as HTML
+Get the HPC2N courses website as HTML
 }
 \seealso{
 use \link{get_test_hpc2n_html} to get similar HTML text to be
