@@ -4,7 +4,7 @@
 \alias{get_enccs_courses}
 \title{Get the ENCCS courses}
 \usage{
-get_enccs_courses()
+get_enccs_courses(html_text = scoreto::get_enccs_html())
 }
 \value{
 a table with all ENCCS courses.

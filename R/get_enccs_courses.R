@@ -1,13 +1,9 @@
 #' Get the ENCCS courses
 #' @return a table with all ENCCS courses.
 #' @export
-get_enccs_courses <- function() {
+get_enccs_courses <- function(html_text = scoreto::get_enccs_html()) {
 
-  # Cannot use the pretty rendered source at
-  # https://docs.enccs.uu.se/courses_workshops/courses_workshops/
-  # because it cannot be read
-  enccs_url <- "https://enccs.se/events"
-  all_lines <- readr::read_lines(enccs_url)
+  all_lines <- html_text
 
 
   last_useless_line_index <- stringr::str_which(all_lines, "<body ")

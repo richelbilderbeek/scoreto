@@ -5,20 +5,37 @@
 #' @export
 get_lunarc_courses <- function(html_text = scoreto::get_lunarc_html()) {
 
-  full_line <- stringr::str_subset(
+  course_titles_line_indices <- stringr::str_which(
     html_text,
-    "The following events are currently scheduled"
+    "<i class=\"fal fa-chevron-circle-right\""
   )
-  line <- stringr::str_match(full_line, "<ul>(.*)</ul>")[, 2]
-  lines_as_list <- stringr::str_split(line, pattern = "</li><li>")
-  lines <- sapply(lines_as_list, "[[", 1)
+  if (length(course_titles_line_indices) == 0) {
+    empty_tibble <- scoreto::create_test_courses_table()[c(), ]
+    return(empty_tibble)
+  }
+  course_title_lines <- html_text[course_titles_line_indices]
+  course_titles_with_dates <- stringr::str_match(
+    course_title_lines,
+    " title=\"(.*)\">"
+  )[, 2]
+  course_names <- stringr::str_match(
+    course_titles_with_dates,
+    "(.*)(, | in)"
+  )[, 2]
+  course_dates <- stringr::str_match(
+    course_titles_with_dates,
+    ".*(, | in )(.*)"
+  )[, 3]
 
-  from_dates <- scoreto::extract_lunarc_from_dates(lines)
-  to_dates <- scoreto::extract_lunarc_to_dates(lines)
-  course_names <- scoreto::extract_lunarc_course_names(lines)
-  course_urls <- scoreto::extract_lunarc_course_urls(
-    lunarc_courses_text = lines
-  )
+  from_dates <- scoreto::convert_english_dates_to_iso_8601(course_dates)
+  to_dates <- from_dates
+  #from_dates <- scoreto::extract_lunarc_from_dates(lines)
+  #to_dates <- scoreto::extract_lunarc_to_dates(lines)
+  # course_names <- scoreto::extract_lunarc_course_names(lines)
+  #course_urls <- scoreto::extract_lunarc_course_urls(
+  #  lunarc_courses_text = lines
+  #)
+  course_urls <- scoreto::get_lunarc_courses_url()
 
   tibble::tibble(
     date_from = from_dates,
