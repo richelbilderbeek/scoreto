@@ -1,5 +1,10 @@
 test_that("use", {
 
+  expect_equal(
+    extract_slubi_to_date(english_to_date = "and Feb 16-17th, 2026"),
+    "2026-02-17"
+  )
+
 
   english_to_dates <- c(
     "Jan 18th, 2026", "and Feb 16-17th, 2026", "Jan 30th, 2026",
@@ -12,9 +17,10 @@ test_that("use", {
     "Jan 15th, 2023", "Dec 17th, 2021", "Jan 16th, 2022",
     "Mar 03rd, 2020"
   )
-  to_dates <- extract_slubi_to_dates(english_to_dates)
-  expect_equal(
-    length(english_to_dates), length(to_dates)
-  )
-
+  for (english_to_date in english_to_dates) {
+    to_date <- extract_slubi_to_date(english_to_date)
+    expect_equal(
+      length(english_to_date), length(to_date)
+    )
+  }
 })

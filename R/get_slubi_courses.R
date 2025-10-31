@@ -9,35 +9,31 @@ get_slubi_courses <- function(html_text = scoreto::get_slubi_html()) {
 
   website <- rvest::read_html(paste(html_text, collapse = "\n"))
   body <- website |> rvest::html_element("body")
+  container <- body |> rvest::html_element(".quarto-container")
+  content <- container |> rvest::html_element(".content")
+  course_listing <- content |> rvest::html_element(".quarto-listing")
+  courses_list <- course_listing |> rvest::html_element(".list")
 
-  HIERO: dit ziet er veelbelovend uit
-  course_names <- body |> rvest::html_elements(".listing-title") |> rvest::html_text()
+  course_names <- courses_list |>
+    rvest::html_elements(".listing-title") |>
+    rvest::html_text(trim = TRUE)
+  english_from_dates <- courses_list |>
+    rvest::html_elements(".listing-start") |>
+    rvest::html_text(trim = TRUE)
+  testthat::expect_equal(length(course_names), length(english_from_dates))
+  english_to_dates <- courses_list |>
+    rvest::html_elements(".listing-end") |>
+    rvest::html_text(trim = TRUE)
+  testthat::expect_equal(length(course_names), length(english_to_dates))
+  relative_urls <- courses_list |>
+    rvest::html_elements(".thumbnail") |>
+    rvest::html_node("a") |>
+    rvest::html_attr("href")
+  testthat::expect_equal(length(course_names), length(relative_urls))
 
-  from_dates <- body |> rvest::html_elements(".listing-start") |> rvest::html_text()
-  to_dates <- body |> rvest::html_elements(".listing-end") |> rvest::html_text()
-
-
-
-  rvest::
-
-  html_attr(
-
-  website |> rvest::html_nodes(xpath = '//*[@id="a"]') %>%
-
-
-  all_lines <- html_text
-  from_index <- 2 + stringr::str_which(
-    all_lines, "<h1 class=\"title\">Courses</h1>"
-  )
-  to_index <- stringr::str_which(all_lines, "</main> <!-- /main -->") - 2
-
-  lines <- all_lines[from_index:to_index]
-
-  from_dates <- scoreto::extract_slubi_from_dates(slubi_courses_text = lines)
-  to_dates <- scoreto::extract_slubi_to_dates(lines)
-  course_names <- scoreto::extract_slubi_course_names(lines)
-  course_urls <- scoreto::extract_slubi_course_urls(lines)
-  course_urls[is.na(course_urls)] <- scoreto::get_slubi_courses_url()
+  from_dates <- scoreto::extract_slubi_from_dates(english_from_dates)
+  to_dates <- scoreto::extract_slubi_to_dates(english_to_dates)
+  course_urls <- scoreto::extract_slubi_course_urls(relative_urls)
 
   tibble::tibble(
     date_from = from_dates,

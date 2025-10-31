@@ -4,7 +4,7 @@
 \alias{extract_slubi_course_names}
 \title{Extract the course names from an SLUBI courses text}
 \usage{
-extract_slubi_course_names(slubi_courses_text)
+extract_slubi_course_names(course_names)
 }
 \arguments{
 \item{slubi_courses_text}{subset of raw HTML from the SLUBI website.}

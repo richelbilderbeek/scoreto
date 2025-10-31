@@ -28,9 +28,7 @@ convert_english_date_to_iso_8601 <- function(english_date) {
     day[nchar(day) == 1] <- paste0("0", day[nchar(day) == 1])
 
     year <- stringr::str_match(english_date, "([:digit:]{4})")[, 2]
-  }
-  # September/October 2025
-  if (
+  } else if ( # September/October 2025
     stringr::str_detect(
       english_date,
       "^[:upper:][:lower:]+/[:upper:][:lower:]+ [:digit:]{1,4}$"
@@ -45,6 +43,38 @@ convert_english_date_to_iso_8601 <- function(english_date) {
     day <- "01"
 
     year <- stringr::str_match(english_date, "([:digit:]{4})")[, 2]
+  } else if ( # Nov 3 2025
+    stringr::str_detect(
+      english_date,
+      "^[:upper:][:lower:]{2} [:digit:]+ [:digit:]{1,4}$"
+    )
+  ) {
+    # Will take the first month
+    month_str <- stringr::str_match(english_date, "([:upper:][:lower:]+)")[, 2]
+    month <- lubridate::month(lubridate::mdy(paste0(month_str, "/01/2000")))
+    month[nchar(month) == 1] <- paste0("0", month[nchar(month) == 1])
+
+    # Will take the first day of the first month
+    day <- stringr::str_match(english_date, " ([:digit:]+) ")[, 2]
+    day[nchar(day) == 1] <- paste0("0", day[nchar(day) == 1])
+
+    year <- stringr::str_match(english_date, "([:digit:]{4})")[, 2]
+  }  else if ( # Nov 3
+    stringr::str_detect(
+      english_date,
+      "^[:upper:][:lower:]{2} [:digit:]+$"
+    )
+  ) {
+    # Will take the first month
+    month_str <- stringr::str_match(english_date, "([:upper:][:lower:]+)")[, 2]
+    month <- lubridate::month(lubridate::mdy(paste0(month_str, "/01/2000")))
+    month[nchar(month) == 1] <- paste0("0", month[nchar(month) == 1])
+
+    # Will take the first day of the first month
+    day <- stringr::str_match(english_date, "([:digit:]+)")[, 2]
+    day[nchar(day) == 1] <- paste0("0", day[nchar(day) == 1])
+
+    year <- lubridate::year(lubridate::today())
   }
 
   testthat::expect_false(is.na(day))

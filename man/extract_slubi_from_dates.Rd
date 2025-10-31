@@ -4,10 +4,10 @@
 \alias{extract_slubi_from_dates}
 \title{Extract the from dates from an SLUBI courses text}
 \usage{
-extract_slubi_from_dates(slubi_courses_text)
+extract_slubi_from_dates(english_from_dates)
 }
 \arguments{
-\item{slubi_courses_text}{subset of raw HTML from the SLUBI website.}
+\item{english_from_dates}{subset of raw HTML from the SLUBI website.}
 }
 \description{
 Extract the from dates from an SLUBI courses text
