@@ -1,4 +1,6 @@
 #' Get the Code Refinery courses
+#' @param html_text HTML text to parse, as can be obtained by
+#' \link{get_code_refinery_html} or \link{get_test_code_refinery_html}
 #' @return a table with all Code Refinery courses.
 #' @export
 get_code_refinery_courses <- function(html_text = scoreto::get_code_refinery_html()) {
@@ -40,7 +42,7 @@ get_code_refinery_courses <- function(html_text = scoreto::get_code_refinery_htm
     date_to = to_dates,
     course_name = course_names,
     course_url = course_urls,
-    provider_courses_url = scoreto::get_code_refinery_training_url(),
+    provider_courses_url = scoreto::get_code_refinery_courses_url(),
     provider_name = "Code Refinery"
   )
 }

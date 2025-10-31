@@ -1,6 +1,6 @@
 #' Convert one or more dates written in English
 #' to the ISO 8601 `YYYY-MM-DD` format
-#' @param english_date a date in Enlish
+#' @param english_dates one or more dates in Enlish
 #' @return one or more strings in `YYYY-MM-DD` format
 #' @examples
 #' convert_english_dates_to_iso_8601("25 November 2025") # 2025-11-25

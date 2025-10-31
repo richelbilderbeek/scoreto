@@ -7,7 +7,7 @@
 extract_slubi_course_names(course_names)
 }
 \arguments{
-\item{slubi_courses_text}{subset of raw HTML from the SLUBI website.}
+\item{course_names}{subset of raw HTML from the SLUBI website.}
 }
 \description{
 Extract the course names from an SLUBI courses text

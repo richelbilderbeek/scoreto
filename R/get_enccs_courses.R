@@ -1,4 +1,6 @@
 #' Get the ENCCS courses
+#' @param html_text HTML text to parse, as can be obtained by
+#' \link{get_enccs_html} or \link{get_test_enccs_html}
 #' @return a table with all ENCCS courses.
 #' @export
 get_enccs_courses <- function(html_text = scoreto::get_enccs_html()) {

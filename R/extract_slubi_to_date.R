@@ -1,5 +1,5 @@
 #' Extract the to date from an SLUBI courses text
-#' @param english_date a datte from the SLUBI website.
+#' @param english_to_date one date from the SLUBI website.
 #' @export
 extract_slubi_to_date <- function(english_to_date) {
   testthat::expect_equal(1, length(english_to_date))

@@ -7,7 +7,7 @@
 extract_slubi_to_dates(english_to_dates)
 }
 \arguments{
-\item{english_dates}{subset of raw HTML from the SLUBI website.}
+\item{english_to_dates}{subset of raw HTML from the SLUBI website.}
 }
 \description{
 Extract the to dates from an SLUBI courses text

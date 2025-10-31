@@ -8,7 +8,7 @@ to the ISO 8601 \code{YYYY-MM-DD} format}
 convert_english_dates_to_iso_8601(english_dates)
 }
 \arguments{
-\item{english_date}{a date in Enlish}
+\item{english_dates}{one or more dates in Enlish}
 }
 \value{
 one or more strings in \code{YYYY-MM-DD} format

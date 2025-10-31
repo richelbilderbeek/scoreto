@@ -24,6 +24,7 @@ Imports:
     knitr,
     lubridate,
     readr,
+    rvest,
     stringr,
     tibble,
     tidyr

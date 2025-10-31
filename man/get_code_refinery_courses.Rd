@@ -6,6 +6,10 @@
 \usage{
 get_code_refinery_courses(html_text = scoreto::get_code_refinery_html())
 }
+\arguments{
+\item{html_text}{HTML text to parse, as can be obtained by
+\link{get_code_refinery_html} or \link{get_test_code_refinery_html}}
+}
 \value{
 a table with all Code Refinery courses.
 }

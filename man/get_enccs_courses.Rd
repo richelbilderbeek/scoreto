@@ -6,6 +6,10 @@
 \usage{
 get_enccs_courses(html_text = scoreto::get_enccs_html())
 }
+\arguments{
+\item{html_text}{HTML text to parse, as can be obtained by
+\link{get_enccs_html} or \link{get_test_enccs_html}}
+}
 \value{
 a table with all ENCCS courses.
 }

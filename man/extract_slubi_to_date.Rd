@@ -7,7 +7,7 @@
 extract_slubi_to_date(english_to_date)
 }
 \arguments{
-\item{english_date}{a datte from the SLUBI website.}
+\item{english_to_date}{one date from the SLUBI website.}
 }
 \description{
 Extract the to date from an SLUBI courses text
