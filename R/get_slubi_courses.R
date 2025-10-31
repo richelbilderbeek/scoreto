@@ -6,6 +6,25 @@
 #' \link{is_correctly_formatted_courses_table}
 #' @export
 get_slubi_courses <- function(html_text = scoreto::get_slubi_html()) {
+
+  website <- rvest::read_html(paste(html_text, collapse = "\n"))
+  body <- website |> rvest::html_element("body")
+
+  HIERO: dit ziet er veelbelovend uit
+  course_names <- body |> rvest::html_elements(".listing-title") |> rvest::html_text()
+
+  from_dates <- body |> rvest::html_elements(".listing-start") |> rvest::html_text()
+  to_dates <- body |> rvest::html_elements(".listing-end") |> rvest::html_text()
+
+
+
+  rvest::
+
+  html_attr(
+
+  website |> rvest::html_nodes(xpath = '//*[@id="a"]') %>%
+
+
   all_lines <- html_text
   from_index <- 2 + stringr::str_which(
     all_lines, "<h1 class=\"title\">Courses</h1>"

@@ -3,6 +3,21 @@
 #' @export
 extract_slubi_from_dates <- function(slubi_courses_text) {
 
+
+  stringr::str_subset(
+    slubi_courses_text,
+    stringr::regex("Nov.*\n</div>", multiline = TRUE)
+  )
+
+  stringr::str_subset(
+    slubi_courses_text,
+    stringr::regex("<div class=\"metadata-value listing-start\">\n.*\n</div>", multiline = TRUE)
+  )
+
+
+
+
+
   # Nov 29, 2021
   slubi_dates <- stringr::str_subset(
     slubi_courses_text,

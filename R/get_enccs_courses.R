@@ -4,8 +4,6 @@
 get_enccs_courses <- function(html_text = scoreto::get_enccs_html()) {
 
   all_lines <- html_text
-
-
   last_useless_line_index <- stringr::str_which(all_lines, "<body ")
   lines <- all_lines[-(1:last_useless_line_index)]
 
@@ -14,8 +12,8 @@ get_enccs_courses <- function(html_text = scoreto::get_enccs_html()) {
     lines[date_indices],
     paste0(
       "<span class=\"tribe-event-date-start\">",
-      "([:upper:][:lower:]{2} [:digit:]{1,2}) .*",
-      "</span>"
+      "(.*) . [:digit:]{2}\\:[:digit:]{2}",
+      "</span> - "
     )
   )[, 2]
   from_dates_enccs <- as.character(stats::na.omit(from_dates_with_nas))
@@ -28,7 +26,7 @@ get_enccs_courses <- function(html_text = scoreto::get_enccs_html()) {
     lines[date_indices],
     paste0(
       "<span class=\"tribe-event-date-end\">",
-      "([:upper:][:lower:]{2} [:digit:]{1,2}) .*",
+      "(.*) . [:digit:]{2}\\:[:digit:]{2}",
       "</span>"
     )
   )[, 2]
@@ -56,7 +54,7 @@ get_enccs_courses <- function(html_text = scoreto::get_enccs_html()) {
     date_to = to_dates,
     course_name = course_names,
     course_url = urls,
-    provider_courses_url = enccs_url,
+    provider_courses_url = scoreto::get_enccs_courses_url(),
     provider_name = "ENCCS"
   )
 }
