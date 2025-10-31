@@ -4,7 +4,7 @@
 \alias{get_code_refinery_courses}
 \title{Get the Code Refinery courses}
 \usage{
-get_code_refinery_courses()
+get_code_refinery_courses(html_text = scoreto::get_code_refinery_html())
 }
 \value{
 a table with all Code Refinery courses.

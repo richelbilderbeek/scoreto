@@ -1,9 +1,9 @@
 #' Get the Code Refinery courses
 #' @return a table with all Code Refinery courses.
 #' @export
-get_code_refinery_courses <- function() {
-  code_refinery_training_url <- "https://coderefinery.org/workshops/upcoming/"
-  all_lines <- readr::read_lines(code_refinery_training_url)
+get_code_refinery_courses <- function(html_text = scoreto::get_code_refinery_html()) {
+
+  all_lines <- html_text
 
   from_index <- stringr::str_which(
     all_lines,
@@ -33,7 +33,7 @@ get_code_refinery_courses <- function() {
     date_to = to_dates,
     course_name = course_names,
     course_url = course_urls,
-    provider_courses_url = code_refinery_training_url,
+    provider_courses_url = scoreto::get_code_refinery_training_url(),
     provider_name = "Code Refinery"
   )
 }

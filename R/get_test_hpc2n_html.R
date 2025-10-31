@@ -1,4 +1,4 @@
-#' Get testing HTML of the HPC2n courses website
+#' Get testing HTML of the HPC2N courses website
 #' @seealso use \link{get_hpc2n_html} to get HTML text read from the
 #' HPC2N courses website
 #' @return HTML text

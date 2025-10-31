@@ -1,4 +1,4 @@
-#' Get the HPC2n courses website as HTML
+#' Get the HPC2N courses website as HTML
 #' @seealso use \link{get_test_slubi_html} to get similar HTML text to be
 #' used in testing
 #' @return HTML text
