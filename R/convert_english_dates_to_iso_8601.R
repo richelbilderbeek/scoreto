@@ -5,11 +5,11 @@
 #' @examples
 #' convert_english_dates_to_iso_8601("25 November 2025") # 2025-11-25
 #' @export
-convert_english_dates_to_iso_8601 <- function(english_dates) {
+convert_english_dates_to_iso_8601 <- function(english_dates) { # nolint a long function name is fine
   testthat::expect_true(length(english_dates) > 0)
   testthat::expect_true(is.character(english_dates))
   iso_dates <- as.character(
-    Vectorize(convert_english_date_to_iso_8601)(english_dates)
+    Vectorize(scoreto::convert_english_date_to_iso_8601)(english_dates)
   )
   testthat::expect_equal(length(english_dates), length(iso_dates))
   iso_dates

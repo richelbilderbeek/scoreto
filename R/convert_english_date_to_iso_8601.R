@@ -5,7 +5,7 @@
 #' @examples
 #' convert_english_date_to_iso_8601("25 November 2025") # 2025-11-25
 #' @export
-convert_english_date_to_iso_8601 <- function(english_date) {
+convert_english_date_to_iso_8601 <- function(english_date) { # nolint a long function name is fine
   testthat::expect_equal(1, length(english_date))
   testthat::expect_true(is.character(english_date))
 
