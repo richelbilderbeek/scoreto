@@ -29,12 +29,6 @@ get_lunarc_courses <- function(html_text = scoreto::get_lunarc_html()) {
 
   from_dates <- scoreto::convert_english_dates_to_iso_8601(course_dates)
   to_dates <- from_dates
-  #from_dates <- scoreto::extract_lunarc_from_dates(lines)
-  #to_dates <- scoreto::extract_lunarc_to_dates(lines)
-  # course_names <- scoreto::extract_lunarc_course_names(lines)
-  #course_urls <- scoreto::extract_lunarc_course_urls(
-  #  lunarc_courses_text = lines
-  #)
   course_urls <- scoreto::get_lunarc_courses_url()
 
   tibble::tibble(

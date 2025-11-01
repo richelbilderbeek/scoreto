@@ -13,6 +13,7 @@ HTML text
 Get the Code Refinery courses website as HTML
 }
 \seealso{
-use \link{get_test_code_refinery_html} to get similar HTML text to be
+use \link{get_test_code_refinery_html}
+to get similar HTML text to be
 used in testing
 }

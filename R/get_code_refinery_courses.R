@@ -3,7 +3,9 @@
 #' \link{get_code_refinery_html} or \link{get_test_code_refinery_html}
 #' @return a table with all Code Refinery courses.
 #' @export
-get_code_refinery_courses <- function(html_text = scoreto::get_code_refinery_html()) {
+get_code_refinery_courses <- function(
+  html_text = scoreto::get_code_refinery_html()
+) {
 
   all_lines <- html_text
 
