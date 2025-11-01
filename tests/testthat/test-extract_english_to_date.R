@@ -1,4 +1,5 @@
 test_that("use", {
+
   english_date_ranges <- c(
     "Nov 3rd, 2025 - Jan 18th, 2026",
     "Nov 20th, Dec 4th, 2025 and Feb 16-17th, 2026",
@@ -27,9 +28,9 @@ test_that("use", {
     "Mar 02nd & Mar 03rd, 2020"
   )
   for (english_date_range in english_date_ranges) {
-    from_date <- extract_slubi_from_date(english_date_range)
+    to_date <- extract_english_to_date(english_date_range)
     expect_equal(
-      length(english_date_range), length(from_date)
+      length(english_date_range), length(to_date)
     )
   }
 })

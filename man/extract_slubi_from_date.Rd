@@ -4,11 +4,15 @@
 \alias{extract_slubi_from_date}
 \title{Extract the from date from an SLUBI courses text}
 \usage{
-extract_slubi_from_date(english_from_date)
+extract_slubi_from_date(english_date_range)
 }
 \arguments{
-\item{english_from_date}{subset of raw HTML from the SLUBI website.}
+\item{english_date_range}{a data range in English}
 }
 \description{
 Extract the from date from an SLUBI courses text
+}
+\examples{
+extract_slubi_from_date("Nov 07th - Nov 25th, 2022")
+
 }

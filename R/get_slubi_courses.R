@@ -31,8 +31,10 @@ get_slubi_courses <- function(html_text = scoreto::get_slubi_html()) {
     rvest::html_attr("href")
   testthat::expect_equal(length(course_names), length(relative_urls))
 
-  from_dates <- scoreto::extract_slubi_from_dates(english_from_dates)
-  to_dates <- scoreto::extract_slubi_to_dates(english_to_dates)
+  english_date_ranges <- paste(english_from_dates, english_to_dates)
+
+  from_dates <- scoreto::extract_slubi_from_dates(english_date_ranges)
+  to_dates <- scoreto::extract_slubi_to_dates(english_date_ranges)
   course_urls <- scoreto::extract_slubi_course_urls(relative_urls)
 
   tibble::tibble(

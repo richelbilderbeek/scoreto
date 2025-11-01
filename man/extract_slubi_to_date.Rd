@@ -4,10 +4,10 @@
 \alias{extract_slubi_to_date}
 \title{Extract the to date from an SLUBI courses text}
 \usage{
-extract_slubi_to_date(english_to_date)
+extract_slubi_to_date(english_date_range)
 }
 \arguments{
-\item{english_to_date}{one date from the SLUBI website.}
+\item{english_date_range}{a data range in English}
 }
 \description{
 Extract the to date from an SLUBI courses text
