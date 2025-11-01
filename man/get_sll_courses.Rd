@@ -6,6 +6,10 @@
 \usage{
 get_sll_courses(html_text = scoreto::get_sll_html())
 }
+\arguments{
+\item{html_text}{HTML text to parse, as can be obtained by
+\link{get_sll_html} or \link{get_test_sll_html}}
+}
 \value{
 a table with all SciLifeLab courses.
 }

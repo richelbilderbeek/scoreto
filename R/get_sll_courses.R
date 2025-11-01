@@ -1,4 +1,6 @@
 #' Get the SciLifeLab courses
+#' @param html_text HTML text to parse, as can be obtained by
+#' \link{get_sll_html} or \link{get_test_sll_html}
 #' @return a table with all SciLifeLab courses.
 #' @export
 get_sll_courses <- function(html_text = scoreto::get_sll_html()) {
