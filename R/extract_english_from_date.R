@@ -17,7 +17,7 @@ extract_english_from_date <- function(english_date_range) {
   )[, 2]
   day <- stringr::str_match(
     english_date_range,
-    "([:digit:]{1,2})([:lower:])"
+    "([:digit:]{1,2})([:lower:])?"
   )[, 2]
 
   paste(day, month, year)

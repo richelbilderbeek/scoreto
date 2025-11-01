@@ -4,7 +4,7 @@
 \alias{get_sll_courses}
 \title{Get the SciLifeLab courses}
 \usage{
-get_sll_courses()
+get_sll_courses(html_text = scoreto::get_sll_html())
 }
 \value{
 a table with all SciLifeLab courses.

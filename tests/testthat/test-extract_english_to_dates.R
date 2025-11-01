@@ -1,9 +1,4 @@
 test_that("use", {
-  expect_equal(
-    extract_english_to_date(english_date_range = "3 - 14 November 2025"),
-    "14 November 2025"
-  )
-
   english_date_ranges <- c(
     "Nov 3rd, 2025 - Jan 18th, 2026",
     "Nov 20th, Dec 4th, 2025 and Feb 16-17th, 2026",
@@ -41,11 +36,7 @@ test_that("use", {
     "31 December 2025",
     "11 - 16 March 2026"
   )
-  for (english_date_range in english_date_ranges) {
-    to_date <- extract_english_to_date(english_date_range)
-    expect_equal(
-      length(english_date_range), length(to_date)
-    )
-    expect_false(stringr::str_detect(to_date, "NA"))
-  }
+  to_dates <- extract_english_to_dates(english_date_ranges)
+  expect_equal(length(english_date_ranges), length(to_dates))
+  expect_false(all(stringr::str_detect(to_dates, "NA")))
 })

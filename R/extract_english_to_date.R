@@ -24,7 +24,7 @@ extract_english_to_date <- function(english_date_range) {
   day <- scoreto::get_last_row(
     stringr::str_match_all(
       english_date_range,
-      "([:digit:]{1,2})([:lower:])"
+      "([:digit:]{1,2})([:lower:])?[^[:digit:]]"
     )[[1]]
   )[2]
 

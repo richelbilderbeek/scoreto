@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_test_slubi_html.R
 \name{get_test_slubi_html}
 \alias{get_test_slubi_html}
-\title{Get testing HTML of the HPC2N courses website}
+\title{Get testing HTML of the SLUBI courses website}
 \usage{
 get_test_slubi_html()
 }
@@ -10,7 +10,7 @@ get_test_slubi_html()
 HTML text
 }
 \description{
-Get testing HTML of the HPC2N courses website
+Get testing HTML of the SLUBI courses website
 }
 \seealso{
 use \link{get_slubi_html} to get HTML text read from the

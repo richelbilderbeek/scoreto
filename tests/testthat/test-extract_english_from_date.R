@@ -1,4 +1,11 @@
 test_that("use", {
+  expect_equal(
+    extract_english_from_date(english_date_range = "3 - 14 November 2025"),
+    "3 November 2025"
+  )
+
+
+
 
   english_date_ranges <- c(
     "Nov 3rd, 2025 - Jan 18th, 2026",
@@ -25,12 +32,23 @@ test_that("use", {
     "Nov 01st, 2022 - Jan 15th, 2023",
     "Nov 29th - Dec 17th, 2021",
     "Oct 4th, 2021 Jan 16th, 2022",
-    "Mar 02nd & Mar 03rd, 2020"
+    "Mar 02nd & Mar 03rd, 2020",
+    "3 - 14 November 2025",
+    "10 - 14 November 2025",
+    "11 - 14 November 2025",
+    "17 - 21 November 2025",
+    "24 - 28 November 2025",
+    "1 - 5 December 2025",
+    "8 - 12 December 2025",
+    "31 December 2025",
+    "31 December 2025",
+    "11 - 16 March 2026"
   )
   for (english_date_range in english_date_ranges) {
     from_date <- extract_english_from_date(english_date_range)
     expect_equal(
       length(english_date_range), length(from_date)
     )
+    expect_false(stringr::str_detect(from_date, "NA"))
   }
 })
