@@ -1,9 +1,8 @@
 #' Get the CSC courses
 #' @return a table with all CSC courses.
 #' @export
-get_csc_courses <- function() {
-  csc_training_url <- "https://lumi-supercomputer.eu/events/"
-  all_lines <- readr::read_lines(csc_training_url)
+get_csc_courses <- function(html_text = scoreto::get_csc_html()) {
+  all_lines <- html_text
 
   from_index <- stringr::str_which(
     all_lines,

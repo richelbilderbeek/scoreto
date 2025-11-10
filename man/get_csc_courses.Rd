@@ -4,7 +4,7 @@
 \alias{get_csc_courses}
 \title{Get the CSC courses}
 \usage{
-get_csc_courses()
+get_csc_courses(html_text = scoreto::get_csc_html())
 }
 \value{
 a table with all CSC courses.
