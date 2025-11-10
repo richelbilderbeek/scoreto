@@ -18,7 +18,9 @@ get_naiss_courses <- function(html_text = scoreto::get_naiss_html()) {
   english_date_ranges <- t$date_range
   testthat::expect_equal(length(course_names), length(english_date_ranges))
 
-  row_texts <- as.character(table |> rvest::html_element("tbody") |> rvest::html_elements("tr"))
+  row_texts <- as.character(
+    table |> rvest::html_element("tbody") |> rvest::html_elements("tr")
+  )
   course_urls <- stringr::str_match(row_texts, "a href=\"([^\"]+)")[, 2]
   testthat::expect_equal(length(course_names), length(course_urls))
 

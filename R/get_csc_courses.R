@@ -42,9 +42,15 @@ get_csc_courses <- function(html_text = scoreto::get_csc_html()) {
   # Cannot use event types, because an event can have multiple types
   # event_types <- content |> rvest::html_elements(".event-badge") |> rvest::html_text(trim = TRUE) # nolint
 
-  csc_date_ranges <- content |> rvest::html_elements(".event-date") |> rvest::html_text(trim = TRUE)
-  course_names <- content |> rvest::html_elements(".card-action") |> rvest::html_text(trim = TRUE)
-  course_urls <- content |> rvest::html_elements(".card-action") |> rvest::html_attr("href")
+  csc_date_ranges <- content |>
+    rvest::html_elements(".event-date") |>
+    rvest::html_text(trim = TRUE)
+  course_names <- content |>
+    rvest::html_elements(".card-action") |>
+    rvest::html_text(trim = TRUE)
+  course_urls <- content |>
+    rvest::html_elements(".card-action") |>
+    rvest::html_attr("href")
   testthat::expect_equal(length(csc_date_ranges), length(course_names))
   testthat::expect_equal(length(csc_date_ranges), length(course_urls))
 
@@ -56,7 +62,9 @@ get_csc_courses <- function(html_text = scoreto::get_csc_html()) {
   testthat::expect_equal(length(csc_date_ranges), length(course_names))
   testthat::expect_equal(length(csc_date_ranges), length(course_urls))
 
-  from_dates <- scoreto::extract_csc_from_dates(csc_date_ranges = csc_date_ranges)
+  from_dates <- scoreto::extract_csc_from_dates(
+    csc_date_ranges = csc_date_ranges
+  )
   to_dates <- scoreto::extract_csc_to_dates(csc_date_ranges = csc_date_ranges)
 
   testthat::expect_equal(length(from_dates), length(to_dates))
