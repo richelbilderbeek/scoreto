@@ -2,13 +2,22 @@
 % Please edit documentation in R/extract_csc_from_dates.R
 \name{extract_csc_from_dates}
 \alias{extract_csc_from_dates}
-\title{Extract the from dates from an CSC courses text}
+\title{Extract the from dates from an CSC date ranges}
 \usage{
-extract_csc_from_dates(csc_courses_text)
+extract_csc_from_dates(csc_date_ranges)
 }
 \arguments{
-\item{csc_courses_text}{subset of raw HTML from the CSC website.}
+\item{csc_date_ranges}{date ranges as used at the CSC website.}
+}
+\value{
+from date in ISO 8601 format
 }
 \description{
-Extract the from dates from an CSC courses text
+Extract the from dates from an CSC date ranges
+}
+\examples{
+extract_csc_from_dates("18.-20.11.2025")
+extract_csc_from_dates("25.11.2025")
+extract_csc_from_dates("25.-27.11.2025")
+extract_csc_from_dates("2.-4.12.2025")
 }
