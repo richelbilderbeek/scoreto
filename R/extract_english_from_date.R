@@ -11,6 +11,9 @@ extract_english_from_date <- function(english_date_range) {
     english_date_range,
     "([:digit:]{4})"
   )[, 2]
+  if (is.na(year)) {
+    year <- lubridate::year(lubridate::today())
+  }
   month <- stringr::str_match(
     english_date_range,
     "([:upper:][:lower:]+)"

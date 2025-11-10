@@ -8,34 +8,29 @@
 get_naiss_courses <- function(html_text = scoreto::get_naiss_html()) {
 
   website <- rvest::read_html(paste(html_text, collapse = "\n"))
-  body <- website |> rvest::html_element("body")
-  container <- body |> rvest::html_element(".quarto-container")
-  content <- container |> rvest::html_element(".content")
-  course_listing <- content |> rvest::html_element(".quarto-listing")
-  courses_list <- course_listing |> rvest::html_element(".list")
+  table <- website |> rvest::html_element("table")
 
-  course_names <- courses_list |>
-    rvest::html_elements(".listing-title") |>
-    rvest::html_text(trim = TRUE)
-  english_from_dates <- courses_list |>
-    rvest::html_elements(".listing-start") |>
-    rvest::html_text(trim = TRUE)
-  testthat::expect_equal(length(course_names), length(english_from_dates))
-  english_to_dates <- courses_list |>
-    rvest::html_elements(".listing-end") |>
-    rvest::html_text(trim = TRUE)
-  testthat::expect_equal(length(course_names), length(english_to_dates))
-  relative_urls <- courses_list |>
-    rvest::html_elements(".thumbnail") |>
-    rvest::html_node("a") |>
-    rvest::html_attr("href")
-  testthat::expect_equal(length(course_names), length(relative_urls))
+  t <- table |> rvest::html_table()
+  testthat::expect_true(all(names(t) == c("X1", "X2", "X3")))
+  names(t) <- c("date_range", "course_name", "course_type")
 
-  english_date_ranges <- paste(english_from_dates, english_to_dates)
+  course_names <- t$course_name
+  english_date_ranges <- t$date_range
+  testthat::expect_equal(length(course_names), length(english_date_ranges))
 
-  from_dates <- scoreto::extract_naiss_from_dates(english_date_ranges)
-  to_dates <- scoreto::extract_naiss_to_dates(english_date_ranges)
-  course_urls <- scoreto::extract_naiss_course_urls(relative_urls)
+  row_texts <- as.character(table |> rvest::html_element("tbody") |> rvest::html_elements("tr"))
+  course_urls <- stringr::str_match(row_texts, "a href=\"([^\"]+)")[, 2]
+  testthat::expect_equal(length(course_names), length(course_urls))
+
+  from_dates <- scoreto::convert_english_dates_to_iso_8601(
+    scoreto::extract_english_from_dates(english_date_ranges)
+  )
+  testthat::expect_true(scoreto::are_correctly_formatted_dates(from_dates))
+
+  to_dates <- scoreto::convert_english_dates_to_iso_8601(
+    scoreto::extract_english_to_dates(english_date_ranges)
+  )
+  testthat::expect_true(scoreto::are_correctly_formatted_dates(to_dates))
 
   tibble::tibble(
     date_from = from_dates,

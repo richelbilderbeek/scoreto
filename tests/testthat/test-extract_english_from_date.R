@@ -4,9 +4,6 @@ test_that("use", {
     "3 November 2025"
   )
 
-
-
-
   english_date_ranges <- c(
     "Nov 3rd, 2025 - Jan 18th, 2026",
     "Nov 20th, Dec 4th, 2025 and Feb 16-17th, 2026",

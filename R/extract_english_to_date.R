@@ -13,7 +13,9 @@ extract_english_to_date <- function(english_date_range) {
       "([:digit:]{4})"
     )[[1]]
   )[2]
-
+  if (is.na(year)) {
+    year <- lubridate::year(lubridate::today())
+  }
   month <- scoreto::get_last_row(
     stringr::str_match_all(
       english_date_range,
