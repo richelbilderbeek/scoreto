@@ -6,6 +6,10 @@
 \usage{
 get_csc_courses(html_text = scoreto::get_csc_html())
 }
+\arguments{
+\item{html_text}{HTML text to parse, as can be obtained by
+\link{get_csc_html} or \link{get_test_csc_html}}
+}
 \value{
 a table with all CSC courses.
 }

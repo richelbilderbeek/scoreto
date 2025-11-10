@@ -1,4 +1,6 @@
 #' Get the CSC courses
+#' @param html_text HTML text to parse, as can be obtained by
+#' \link{get_csc_html} or \link{get_test_csc_html}
 #' @return a table with all CSC courses.
 #' @export
 get_csc_courses <- function(html_text = scoreto::get_csc_html()) {
