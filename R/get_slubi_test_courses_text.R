@@ -5,6 +5,7 @@
 #' @return a text to extract the dates from
 #' @export
 get_slubi_test_courses_text <- function() {
+  stop("DEPRECATED")
   c(
     "<h1 class=\"title\">Courses</h1>",
     "</div>",

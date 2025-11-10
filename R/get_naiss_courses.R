@@ -1,34 +1,48 @@
 #' Get the NAISS courses
+#' @param html_text HTML text to parse, as can be obtained by
+#' \link{get_naiss_html} or \link{get_test_naiss_html}
 #' @return a table with all NAISS courses, where
 #' the table will pass the test of
 #' \link{is_correctly_formatted_courses_table}
 #' @export
-get_naiss_courses <- function() {
-  naiss_url <- "https://www.naiss.se/events/"
-  lines <- readr::read_lines(naiss_url)
-  testthat::expect_true(length(lines) > 0)
-  dates <- NA
+get_naiss_courses <- function(html_text = scoreto::get_naiss_html()) {
 
-  course_names <- NA
+  website <- rvest::read_html(paste(html_text, collapse = "\n"))
+  body <- website |> rvest::html_element("body")
+  container <- body |> rvest::html_element(".quarto-container")
+  content <- container |> rvest::html_element(".content")
+  course_listing <- content |> rvest::html_element(".quarto-listing")
+  courses_list <- course_listing |> rvest::html_element(".list")
 
-  urls <- NA
+  course_names <- courses_list |>
+    rvest::html_elements(".listing-title") |>
+    rvest::html_text(trim = TRUE)
+  english_from_dates <- courses_list |>
+    rvest::html_elements(".listing-start") |>
+    rvest::html_text(trim = TRUE)
+  testthat::expect_equal(length(course_names), length(english_from_dates))
+  english_to_dates <- courses_list |>
+    rvest::html_elements(".listing-end") |>
+    rvest::html_text(trim = TRUE)
+  testthat::expect_equal(length(course_names), length(english_to_dates))
+  relative_urls <- courses_list |>
+    rvest::html_elements(".thumbnail") |>
+    rvest::html_node("a") |>
+    rvest::html_attr("href")
+  testthat::expect_equal(length(course_names), length(relative_urls))
 
-  testthat::expect_equal(length(course_names), length(urls))
+  english_date_ranges <- paste(english_from_dates, english_to_dates)
 
-  t <- tibble::tibble(
-    date_from = dates,
-    date_to = dates,
+  from_dates <- scoreto::extract_naiss_from_dates(english_date_ranges)
+  to_dates <- scoreto::extract_naiss_to_dates(english_date_ranges)
+  course_urls <- scoreto::extract_naiss_course_urls(relative_urls)
+
+  tibble::tibble(
+    date_from = from_dates,
+    date_to = to_dates,
     course_name = course_names,
-    course_url = urls,
-    provider_courses_url = naiss_url,
+    course_url = course_urls,
+    provider_courses_url = scoreto::get_naiss_courses_url(),
     provider_name = "NAISS"
   )
-  t$date_from <- as.character(t$date_from)
-  t$date_to <- as.character(t$date_to)
-  t$course_name <- as.character(t$course_name)
-  t$course_url <- as.character(t$course_url)
-  t$provider_courses_url <- as.character(t$provider_courses_url)
-  t$provider_courses_url <- as.character(t$provider_courses_url)
-
-  t[-1, ]
 }
