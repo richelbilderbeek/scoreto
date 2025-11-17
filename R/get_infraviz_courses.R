@@ -14,7 +14,6 @@
 #' @export
 get_infraviz_courses <- function(html_text = scoreto::get_infraviz_html()) {
 
-
   website <- rvest::read_html(paste(html_text, collapse = "\n"))
   body <- website |> rvest::html_element("body")
   testthat::expect_true(length(body) > 0)

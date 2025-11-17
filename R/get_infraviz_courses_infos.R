@@ -1,6 +1,6 @@
 #' Extract the course info from an InfraViz page
 #' @param course_pages_urls one or more URLs to the course page(s)
-#' @return a \link{tibble::tibble}
+#' @return a \link[tibble]{tibble}
 #' with column names `date_from` and `date_to`
 #' @seealso use \link{get_infraviz_course_info} for one course page URL
 #' @export

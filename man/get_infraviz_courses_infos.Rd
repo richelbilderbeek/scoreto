@@ -10,7 +10,7 @@ get_infraviz_courses_infos(course_pages_urls)
 \item{course_pages_urls}{one or more URLs to the course page(s)}
 }
 \value{
-a \link{tibble::tibble}
+a \link[tibble]{tibble}
 with column names \code{date_from} and \code{date_to}
 }
 \description{

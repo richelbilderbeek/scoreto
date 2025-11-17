@@ -1,6 +1,6 @@
 #' Extract the course info from an InfraViz page
 #' @param course_page_url URL to the course page
-#' @return a \link{tibble::tibble}
+#' @return a \link[tibble]{tibble}
 #' with column names `date_from` and `date_to`
 #' @export
 get_infraviz_course_info <- function(course_page_url) {
