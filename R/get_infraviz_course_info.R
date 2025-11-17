@@ -15,7 +15,9 @@ get_infraviz_course_info <- function(course_page_url) {
   article <- main |> rvest::html_element("article")
   testthat::expect_true(length(article) > 0)
 
-  column_text <- article |> rvest::html_element(".wp-block-columns") |> rvest::html_text(trim = TRUE)
+  column_text <- article |>
+    rvest::html_element(".wp-block-columns") |>
+    rvest::html_text(trim = TRUE)
 
   english_date_range <- stringr::str_match(
     column_text,

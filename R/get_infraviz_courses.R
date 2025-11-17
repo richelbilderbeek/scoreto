@@ -14,6 +14,13 @@
 #' @export
 get_infraviz_courses <- function(html_text = scoreto::get_infraviz_html()) {
 
+  date_from <- NULL # No visible binding for global variable
+  date_to <- NULL # No visible binding for global variable
+  course_name <- NULL # No visible binding for global variable
+  course_url <- NULL # No visible binding for global variable
+  provider_courses_url <- NULL # No visible binding for global variable
+  provider_name <- NULL # No visible binding for global variable
+
   website <- rvest::read_html(paste(html_text, collapse = "\n"))
   body <- website |> rvest::html_element("body")
   testthat::expect_true(length(body) > 0)
@@ -28,11 +35,9 @@ get_infraviz_courses <- function(html_text = scoreto::get_infraviz_html()) {
 
   # All content part of 'More news'. Remove highlights and past events
   if ("use_spelling" == "old") {
-    news_content <- content |>
-      rvest::html_nodes(xpath = '//*[@id="news"]')
+    news_content <- content |> rvest::html_nodes(xpath = '//*[@id="news"]')
   } else {
-    news_content <- content |>
-      rvest::html_nodes("#news")
+    news_content <- content |> rvest::html_nodes("#news")
   }
   testthat::expect_true(length(news_content) > 0)
 
@@ -53,7 +58,9 @@ get_infraviz_courses <- function(html_text = scoreto::get_infraviz_html()) {
   workshops <- all_news |>
     dplyr::filter(stringr::str_detect(course_name, "[wW]orkshop"))
 
-  workshop_dates <- scoreto::get_infraviz_courses_infos(course_pages_urls = workshops$course_url)
+  workshop_dates <- scoreto::get_infraviz_courses_infos(
+    course_pages_urls = workshops$course_url
+  )
   workshop_dates$course_url <- workshops$course_url
   testthat::expect_true("course_name" %in% names(workshops))
   testthat::expect_true("course_url" %in% names(workshops))
