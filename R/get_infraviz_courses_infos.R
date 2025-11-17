@@ -22,4 +22,3 @@ get_infraviz_courses_infos <- function(course_pages_urls) {
   testthat::expect_equal(nrow(t), length(course_pages_urls))
   t
 }
-

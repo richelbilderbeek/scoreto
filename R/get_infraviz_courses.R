@@ -84,7 +84,7 @@ get_infraviz_courses <- function(html_text = scoreto::get_infraviz_html()) {
     course_url,
     provider_courses_url,
     provider_name
-    )
+  )
   testthat::expect_true(scoreto::is_correctly_formatted_courses_table(t))
   t
 }
