@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_infraviz_courses.R
 \name{get_infraviz_courses}
 \alias{get_infraviz_courses}
-\title{Get the InfraViz courses}
+\title{Get the InfraViz courses.}
 \usage{
 get_infraviz_courses(html_text = scoreto::get_infraviz_html())
 }
@@ -16,5 +16,10 @@ the table will pass the test of
 \link{is_correctly_formatted_courses_table}
 }
 \description{
-Get the InfraViz courses
+This function searches for the titles and URLs
+of workshops. Unlike other course providers, the course
+dates are not shown at this overview, but can only be found
+in the specific pages of the workshop.
+The function \link{get_infraviz_course_info}
+extracts the information from a workshop page.
 }

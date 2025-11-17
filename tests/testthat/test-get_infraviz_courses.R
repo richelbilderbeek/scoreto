@@ -1,5 +1,5 @@
 test_that("use", {
-  t <- get_infraviz_courses()
+  t <- get_infraviz_courses(html_text = get_infraviz_html())
   expect_true(is_correctly_formatted_courses_table(t))
 })
 
