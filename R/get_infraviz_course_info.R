@@ -19,10 +19,7 @@ get_infraviz_course_info <- function(course_page_url) {
     rvest::html_element(".wp-block-columns") |>
     rvest::html_text(trim = TRUE)
 
-  english_date_range <- stringr::str_match(
-    column_text,
-    "Date:[:blank:]?([:digit:]+[:blank:][:upper:][:lower:]+[:blank:][:digit:]{4})" # nolint
-  )[, 2]
+  english_date_range <- scoreto::extract_english_range(column_text)
 
   english_date_from <- scoreto::extract_english_from_date(
     english_date_range = english_date_range
