@@ -7,6 +7,7 @@ extract_english_range <- function(text) {
 
   # Fix: '27 November2025'
   text <- stringr::str_replace(text, "November2025", "November 2025")
+  text <- stringr::str_replace(text, "December2025", "December 2025")
 
   patterns <- c(
     # Date:27 November

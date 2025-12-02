@@ -15,9 +15,3 @@ test_that("use on testing data", {
   expect_true(are_correctly_formatted_dates(t$date_from))
   expect_true(are_correctly_formatted_dates(t$date_to))
 })
-
-
-# [1] "https://infravis.se/workshop-python/"
-# [2] "https://infravis.se/workshop-nodegoat/"
-# [3] "https://infravis.se/infravis-user-training-workshop-introduction-to-geographic-information-systems/"
-# [4] "https://infravis.se/infravis-at-treesearch-formax-workshop-at-max-iv/"
