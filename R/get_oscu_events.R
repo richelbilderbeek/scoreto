@@ -34,7 +34,7 @@ get_oscu_events <- function(html_text = scoreto::get_oscu_html()) {
     date_to = t_valid$to_dates,
     course_name = t_valid$course_names,
     course_url = t_valid$course_urls,
-    provider_events_url = scoreto::get_oscu_events_url(),
+    provider_courses_url = scoreto::get_oscu_events_url(),
     provider_name = "OSCU"
   )
 }
