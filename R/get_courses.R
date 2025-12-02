@@ -26,7 +26,7 @@ get_courses <- function() {
   tibbles[[13]] <- scoreto::get_uppmax_courses()
   tibbles[[14]] <- scoreto::get_slubi_courses()
   tibbles[[15]] <- scoreto::get_oscu_events()
-  tibbles[[16]] <- scoreto::get_ai_factory_courses()
+  tibbles[[16]] <- scoreto::get_mimer_courses()
 
   # Check again
   for (i in seq_len(length(tibbles))) {

@@ -5,7 +5,7 @@
 extract_english_range <- function(text) {
   testthat::expect_equal(1, length(text))
 
-  # Fix: '27 November2025'
+  # Fix human errors
   text <- stringr::str_replace(text, "November2025", "November 2025")
   text <- stringr::str_replace(text, "December2025", "December 2025")
 

@@ -14,31 +14,26 @@ get_oscu_events <- function(html_text = scoreto::get_oscu_html()) {
   testthat::expect_true(length(main) > 0)
   article <- main |> rvest::html_element("article")
   testthat::expect_true(length(article) > 0)
-  HIERO
-  article <- main |> rvest::html_element(".md-typeset___table")
-  testthat::expect_true(length(article) > 0)
+  table <- main |> rvest::html_element("table")
+  testthat::expect_true(length(table) > 0)
+  t <- table |> rvest::html_table()
+  testthat::expect_true(stringr::str_detect(names(t)[1], "When"))
+  testthat::expect_true(stringr::str_detect(names(t)[2], "Where"))
+  testthat::expect_true(stringr::str_detect(names(t)[3], "What"))
+  names(t) <- c("when", "where", "what")
 
-  article |> rvest::html_table()
+  t_valid <- t |> dplyr::filter(stringr::str_detect(when, "^[:digit:]{4}-[:digit:]{2}-[:digit:]{2}"))
 
-  # All content
-  #content <- container |> rvest::html_element(".entry-content")
-  #content <- container |> rvest::html_element(".md-typeset_table")
-  #testthat::expect_true(length(content) > 0)
-
-  website |> rvest::html_table()
-  stringr::str_subset(html_text, "[:digit:]{4}-[:digit:]{2}-[:digit:]{2}")
-
-  from_dates <- scoreto::extract_oscu_from_dates(oscu_events_text = lines)
-  to_dates <- scoreto::extract_oscu_to_dates(lines)
-  course_names <- scoreto::extract_oscu_course_names(lines)
-  course_urls <- scoreto::extract_oscu_course_urls(lines)
-  course_urls[is.na(course_urls)] <- scoreto::get_oscu_events_url()
+  t_valid$from_dates <- stringr::str_sub(t_valid$when, 1, 10)
+  t_valid$to_dates <- t_valid$from_dates
+  t_valid$course_names <- t_valid$what
+  t_valid$course_urls <- scoreto::get_oscu_events_url()
 
   tibble::tibble(
-    date_from = from_dates,
-    date_to = to_dates,
-    course_name = course_names,
-    course_url = course_urls,
+    date_from = t_valid$from_dates,
+    date_to = t_valid$to_dates,
+    course_name = t_valid$course_names,
+    course_url = t_valid$course_urls,
     provider_events_url = scoreto::get_oscu_events_url(),
     provider_name = "OSCU"
   )
