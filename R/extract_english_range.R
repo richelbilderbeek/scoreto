@@ -5,8 +5,11 @@
 extract_english_range <- function(text) {
   testthat::expect_equal(1, length(text))
 
+  # Fix: '27 November2025'
+  text <- stringr::str_replace(text, "November2025", "November 2025")
+
   patterns <- c(
-    # Date:27-28 November
+    # Date:27 November
     "Date:[:blank:]?([:digit:]+[:blank:][:upper:][:lower:]+[:blank:][:digit:]{4})", # nolint
     # Date:27-28 November
     "Date:[:blank:]?([:digit:]+-[:digit:]+[:blank:][:upper:][:lower:]+[:blank:][:digit:]{4})", # nolint
