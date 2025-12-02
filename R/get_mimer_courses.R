@@ -21,15 +21,18 @@ get_mimer_courses <- function(html_text = scoreto::get_mimer_html()) {
 
   english_date_ranges <- events |> rvest::html_elements("time") |> rvest::html_text(trim = TRUE)
 
-  from_dates <- scoreto::extract_english_from_dates(english_date_ranges = english_date_ranges)
-  to_dates <- scoreto::extract_english_to_dates(english_date_ranges = english_date_ranges)
-  testthat::expect_equal(length(from_dates), length(to_dates))
+  english_from_dates <- scoreto::extract_english_from_dates(english_date_ranges = english_date_ranges)
+  english_to_dates <- scoreto::extract_english_to_dates(english_date_ranges = english_date_ranges)
+  testthat::expect_equal(length(english_from_dates), length(english_to_dates))
 
   course_names <- events |> rvest::html_node("a") |> rvest::html_attr("title")
-  testthat::expect_equal(length(from_dates), length(course_names))
+  testthat::expect_equal(length(english_from_dates), length(course_names))
 
   course_urls <- events |> rvest::html_node("a") |> rvest::html_attr("href")
-  testthat::expect_equal(length(from_dates), length(course_urls))
+  testthat::expect_equal(length(english_from_dates), length(course_urls))
+
+  from_dates <- scoreto::convert_english_dates_to_iso_8601(english_from_dates)
+  to_dates <- scoreto::convert_english_dates_to_iso_8601(english_to_dates)
 
   tibble::tibble(
     date_from = from_dates,

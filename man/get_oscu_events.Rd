@@ -13,7 +13,7 @@ get_oscu_events(html_text = scoreto::get_oscu_html())
 \value{
 a table with all OSCU events, where
 the table will pass the test of
-\link{is_correctly_formatted_events_table}
+\link{is_correctly_formatted_courses_table}
 }
 \description{
 Get the OSCU events

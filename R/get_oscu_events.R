@@ -3,9 +3,10 @@
 #' \link{get_oscu_html} or \link{get_test_oscu_html}
 #' @return a table with all OSCU events, where
 #' the table will pass the test of
-#' \link{is_correctly_formatted_events_table}
+#' \link{is_correctly_formatted_courses_table}
 #' @export
 get_oscu_events <- function(html_text = scoreto::get_oscu_html()) {
+  when <- NULL # No visible binding for global variable
 
   website <- rvest::read_html(paste(html_text, collapse = "\n"))
   body <- website |> rvest::html_element("body")
