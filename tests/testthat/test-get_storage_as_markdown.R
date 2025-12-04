@@ -4,6 +4,10 @@ test_that("minimal use", {
 
 test_that("use", {
   t <- get_storage_as_markdown()
+
+  # Remove Markdown linter texts
+  t <- t[c(-1, -2, -(length(t) - 1), -length(t))]
+
   expect_equal(
     t[1],
     paste0(

@@ -41,5 +41,5 @@ get_web_host_as_markdown <- function(t = scoreto::get_web_host()) {
     "User fee|Accessible for|Center(s)|"
   )
   text[2] <- scoreto::get_optimal_markdown_divider(text)
-  text
+  scoreto::surround_markdown_with_lintignore(markdown_text = text)
 }

@@ -52,5 +52,5 @@ get_courses_as_markdown <- function(t = scoreto::get_courses()) {
     "|**Provider site**|**Provider name**|"
   )
   text[2] <- scoreto::get_optimal_markdown_divider(text)
-  text
+  scoreto::surround_markdown_with_lintignore(markdown_text = text)
 }
