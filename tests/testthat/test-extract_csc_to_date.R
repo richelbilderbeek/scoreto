@@ -14,4 +14,9 @@ test_that("use", {
   csc_date_range <- "2.-4.12.2025"
   to_date <- extract_csc_to_date(csc_date_range = csc_date_range)
   expect_equal(to_date, "2025-12-04")
+
+  csc_date_range <- "22.1.2026"
+  to_date <- extract_csc_to_date(csc_date_range = csc_date_range)
+  expect_equal(to_date, "2026-01-22")
+
 })

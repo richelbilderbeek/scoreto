@@ -25,6 +25,10 @@ extract_csc_to_date <- function(csc_date_range) {
   }
 
   month <- date_elements[2]
+  if (nchar(month) == 1) {
+    month <- paste0("0", month)
+  }
+
   year <- date_elements[3]
 
   to_date <- paste0(year, "-", month, "-", to_day)
