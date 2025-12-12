@@ -2,7 +2,8 @@
 #' @param english_date_range a date range in English
 #' @export
 #' @examples
-#' extract_english_to_date("Nov 07th - Nov 25th, 2022")
+#' extract_english_to_date("Nov 07th - Nov 25th, 2022") # 25 Nov 2022
+#' extract_english_to_date("September/October 2025") # 1 October 2025
 extract_english_to_date <- function(english_date_range) {
 
   testthat::expect_equal(1, length(english_date_range))
@@ -29,6 +30,10 @@ extract_english_to_date <- function(english_date_range) {
       "([:digit:]{1,2})([:lower:])?[^[:digit:]]"
     )[[1]]
   )[2]
+
+  if (is.na(day)) {
+    day <- 1
+  }
 
   paste(day, month, year)
 }

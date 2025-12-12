@@ -1,5 +1,5 @@
 test_that("use from website", {
-  t <- get_lunarc_courses()
+  t <- get_lunarc_courses(html_text = get_lunarc_html())
   expect_true(is_correctly_formatted_courses_table(t))
 })
 

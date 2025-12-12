@@ -13,5 +13,6 @@ extract_english_to_date(english_date_range)
 Extract the to date from an English range
 }
 \examples{
-extract_english_to_date("Nov 07th - Nov 25th, 2022")
+extract_english_to_date("Nov 07th - Nov 25th, 2022") # 25 Nov 2022
+extract_english_to_date("September/October 2025") # 1 October 2025
 }

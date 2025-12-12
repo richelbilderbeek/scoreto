@@ -3,6 +3,11 @@ test_that("use", {
     extract_english_to_date(english_date_range = "3 - 14 November 2025"),
     "14 November 2025"
   )
+  expect_equal(
+    extract_english_to_date(english_date_range = "September/October 2025"),
+    "1 October 2025"
+  )
+
 
   english_date_ranges <- c(
     "Nov 3rd, 2025 - Jan 18th, 2026",
