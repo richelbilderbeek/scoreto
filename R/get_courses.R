@@ -29,7 +29,7 @@ get_courses <- function() {
   tibbles[[16]] <- scoreto::get_mimer_courses()
 
   # Check again
-  for (i in seq_len(length(tibbles))) {
+  for (i in seq_along(tibbles)) {
     t <- tibbles[[i]]
     testthat::expect_true(scoreto::is_correctly_formatted_courses_table(t))
   }

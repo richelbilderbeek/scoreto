@@ -32,4 +32,3 @@ extract_english_range <- function(text) {
   testthat::expect_true(!is.na(result))
   result
 }
-
