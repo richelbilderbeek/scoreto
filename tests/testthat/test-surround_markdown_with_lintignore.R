@@ -6,9 +6,9 @@ test_that("use", {
     created[1],
     "<!-- markdownlint-disable MD060 --><!-- The pipes must not line up -->"
   )
-  expect_equal(created[2],"")
-  expect_equal(created[3],"Test")
-  expect_equal(created[4],"")
+  expect_equal(created[2], "")
+  expect_equal(created[3], "Test")
+  expect_equal(created[4], "")
   expect_equal(
     created[5],
     "<!-- markdownlint-enable MD060 -->"
@@ -23,10 +23,10 @@ test_that("use", {
     created[1],
     "<!-- markdownlint-disable MD060 --><!-- The pipes must not line up -->"
   )
-  expect_equal(created[2],"")
-  expect_equal(created[3],"Line 1")
-  expect_equal(created[4],"Line 2")
-  expect_equal(created[5],"")
+  expect_equal(created[2], "")
+  expect_equal(created[3], "Line 1")
+  expect_equal(created[4], "Line 2")
+  expect_equal(created[5], "")
   expect_equal(
     created[6],
     "<!-- markdownlint-enable MD060 -->"

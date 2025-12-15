@@ -23,7 +23,10 @@ get_oscu_events <- function(html_text = scoreto::get_oscu_html()) {
   testthat::expect_true(stringr::str_detect(names(t)[3], "What"))
   names(t) <- c("when", "where", "what")
 
-  t_valid <- t |> dplyr::filter(stringr::str_detect(when, "^[:digit:]{4}-[:digit:]{2}-[:digit:]{2}"))
+  t_valid <- t |> 
+    dplyr::filter(
+      stringr::str_detect(when, "^[:digit:]{4}-[:digit:]{2}-[:digit:]{2}")
+    )
 
   t_valid$from_dates <- stringr::str_sub(t_valid$when, 1, 10)
   t_valid$to_dates <- t_valid$from_dates

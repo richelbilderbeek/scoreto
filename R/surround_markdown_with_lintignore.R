@@ -2,7 +2,7 @@
 #' @param markdown_text Markdown text
 #' @return Markdown surrounded by Markdownlint ignores
 #' @export
-surround_markdown_with_lintignore <- function(markdown_text) {
+surround_markdown_with_lintignore <- function(markdown_text) { # nolint a long function name indeed :-)
   c(
     "<!-- markdownlint-disable MD060 --><!-- The pipes must not line up -->",
     "",

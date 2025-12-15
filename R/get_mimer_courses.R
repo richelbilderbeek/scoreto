@@ -19,10 +19,16 @@ get_mimer_courses <- function(html_text = scoreto::get_mimer_html()) {
   events <- calendar_list |> rvest::html_elements("article")
   testthat::expect_true(length(events) > 0)
 
-  english_date_ranges <- events |> rvest::html_elements("time") |> rvest::html_text(trim = TRUE)
+  english_date_ranges <- events |> 
+    rvest::html_elements("time") |> 
+    rvest::html_text(trim = TRUE)
 
-  english_from_dates <- scoreto::extract_english_from_dates(english_date_ranges = english_date_ranges)
-  english_to_dates <- scoreto::extract_english_to_dates(english_date_ranges = english_date_ranges)
+  english_from_dates <- scoreto::extract_english_from_dates(
+    english_date_ranges = english_date_ranges
+  )
+  english_to_dates <- scoreto::extract_english_to_dates(
+    english_date_ranges = english_date_ranges
+  )
   testthat::expect_equal(length(english_from_dates), length(english_to_dates))
 
   course_names <- events |> rvest::html_node("a") |> rvest::html_attr("title")
