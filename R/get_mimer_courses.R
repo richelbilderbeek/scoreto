@@ -19,8 +19,8 @@ get_mimer_courses <- function(html_text = scoreto::get_mimer_html()) {
   events <- calendar_list |> rvest::html_elements("article")
   testthat::expect_true(length(events) > 0)
 
-  english_date_ranges <- events |> 
-    rvest::html_elements("time") |> 
+  english_date_ranges <- events |>
+    rvest::html_elements("time") |>
     rvest::html_text(trim = TRUE)
 
   english_from_dates <- scoreto::extract_english_from_dates(
