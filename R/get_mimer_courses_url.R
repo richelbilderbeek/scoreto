@@ -2,5 +2,5 @@
 #' @return the URL to the Mimer courses page
 #' @export
 get_mimer_courses_url <- function() {
-  "https://mimer-ai.eu/events-and-learning/"
+  scoreto::get_provider_courses_url("Mimer")
 }

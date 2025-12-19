@@ -20,7 +20,7 @@ test_that("use", {
   expect_true("Doris SND" %in% get_all_providers())
   expect_true("Stockholm University" %in% get_all_providers())
   expect_true("FEGA Sweden" %in% get_all_providers())
-  expect_true("GBIF" %in% get_all_providers())
+  expect_true("GBIF Sweden" %in% get_all_providers())
   expect_true("SITES" %in% get_all_providers())
   expect_true("SBDI" %in% get_all_providers())
 

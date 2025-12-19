@@ -2,5 +2,5 @@
 #' @return the URL to the SciLifeLab courses page
 #' @export
 get_sll_courses_url <- function() {
-  "https://training.scilifelab.se/events"
+  scoreto::get_provider_courses_url("SciLifeLab")
 }

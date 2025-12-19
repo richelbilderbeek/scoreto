@@ -2,7 +2,7 @@
 #' @return a table with all AIDA Data Hub courses.
 #' @export
 get_adh_courses <- function() {
-  adh_home_url <- "https://datahub.aida.scilifelab.se"
+  adh_home_url <- scoreto::get_provider_home_url("AIDA Data Hub")
   adh_training_url <- paste0(adh_home_url, "/training/")
   all_lines <- readr::read_lines(adh_training_url)
   lines <- stringr::str_subset(all_lines, "<li style=")

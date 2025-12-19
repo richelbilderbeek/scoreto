@@ -2,7 +2,7 @@
 #' @return a table with all PDC courses.
 #' @export
 get_pdc_courses <- function() {
-  pdc_training_url <- "https://www.pdc.kth.se/about/events"
+  pdc_training_url <- scoreto::get_provider_courses_url("PDC")
   all_lines <- readr::read_lines(pdc_training_url)
 
   event_indices <- stringr::str_which(

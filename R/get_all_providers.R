@@ -5,32 +5,5 @@
 #' get_all_providers()
 #' @export
 get_all_providers <- function() {
-  c(
-    "AIDA Data Hub",
-    "C3SE",
-    "Code Refinery",
-    "CSC",
-    "Doris SND",
-    "ENCCS",
-    "EOSC",
-    "FEGA Sweden",
-    "GBIF",
-    "HPC2N",
-    "InfraViz",
-    "LUNARC",
-    "Mimer",
-    "NAISS",
-    "NSC",
-    "OSCU",
-    "PDC",
-    "SBDI",
-    "SciLifeLab",
-    "SITES",
-    "SLUBI",
-    "SND",
-    "Stockholm University",
-    "Swestore",
-    "University of Gothenburg",
-    "UPPMAX"
-  )
+  scoreto::get_all_providers_info()$name
 }

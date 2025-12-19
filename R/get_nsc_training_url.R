@@ -4,5 +4,5 @@
 #' get_nsc_training_url()
 #' @export
 get_nsc_training_url <- function() {
-  "https://www.nsc.liu.se/support/Events/"
+  scoreto::get_provider_courses_url("NSC")
 }

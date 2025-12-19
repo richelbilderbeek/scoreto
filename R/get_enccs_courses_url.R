@@ -4,5 +4,5 @@
 #' @examples
 #' get_enccs_courses_url()
 get_enccs_courses_url <- function() {
-  "https://enccs.se/events"
+  scoreto::get_provider_courses_url("ENCCS")
 }

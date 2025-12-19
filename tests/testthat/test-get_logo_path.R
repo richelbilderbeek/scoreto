@@ -22,7 +22,7 @@ test_that("minimal use", {
   expect_silent(get_logo_path("Doris SND"))
   expect_silent(get_logo_path("Stockholm University"))
   expect_silent(get_logo_path("FEGA Sweden"))
-  expect_silent(get_logo_path("GBIF"))
+  expect_silent(get_logo_path("GBIF Sweden"))
   expect_silent(get_logo_path("SITES"))
   expect_silent(get_logo_path("SBDI"))
 

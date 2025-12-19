@@ -2,7 +2,7 @@
 #' @return a table with all C3SE courses.
 #' @export
 get_c3se_courses <- function() {
-  c3se_training_url <- "https://www.c3se.chalmers.se/"
+  c3se_training_url <- scoreto::get_provider_courses_url("C3SE")
   all_lines <- readr::read_lines(c3se_training_url)
 
   from_index <- 1 + stringr::str_which(

@@ -8,5 +8,6 @@ extract_slubi_course_urls <- function(slubi_courses_text) {
     "^<a href=\"./(.*)\" class=\"no-external\">(.*)</a>$"
   )[, 2]
   course_urls <- course_urls_html[!is.na(course_urls_html)]
-  paste0("https://www.slubi.se/", course_urls)
+
+  paste0(scoreto::get_provider_home_url("SLUBI"), "/", course_urls)
 }

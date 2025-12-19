@@ -51,7 +51,7 @@ get_logo_path <- function(provider_name) {
   if (provider_name == "FEGA Sweden") {
     return("logo/fega_sweden_logo_71_x_24.png")
   }
-  if (provider_name == "GBIF") return("logo/gbif_logo_48_x_24.png")
+  if (provider_name == "GBIF Sweden") return("logo/gbif_sweden_logo_48_x_24.png")
   if (provider_name == "SITES") return("logo/sites_logo_68_x_24.png")
   if (provider_name == "SBDI") return("logo/sbdi_logo_26_x_24.png")
 

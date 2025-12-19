@@ -4,5 +4,5 @@
 #' @examples
 #' get_infraviz_courses_url()
 get_infraviz_courses_url <- function() {
-  "https://infravis.se/news-events/"
+  scoreto::get_provider_courses_url("InfraViz")
 }

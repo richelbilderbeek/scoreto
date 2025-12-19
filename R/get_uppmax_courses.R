@@ -37,17 +37,12 @@ get_uppmax_courses <- function() {
 
   testthat::expect_equal(length(course_names), length(urls))
 
-  provider_courses_url <- paste0(
-    "https://docs.uppmax.uu.se/",
-    "courses_workshops/courses_workshops/"
-  )
-
   tibble::tibble(
     date_from = from_dates,
     date_to = to_dates,
     course_name = course_names,
     course_url = urls,
-    provider_courses_url = provider_courses_url,
+    provider_courses_url = scoreto::get_provider_courses_url("UPPMAX"),
     provider_name = "UPPMAX"
   )
 }

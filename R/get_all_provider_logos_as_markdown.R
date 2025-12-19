@@ -4,9 +4,9 @@
 #' get_all_provider_logos_as_markdown()
 #' @export
 get_all_provider_logos_as_markdown <- function() { # nolint long name is fine
-  providers <- scoreto::get_all_providers()
-  logo_paths <- scoreto::get_logo_paths(providers)
-  testthat::expect_equal(length(providers), length(logo_paths))
-  markdown_text <- paste0("![", providers, "](", logo_paths, ")")
+  t <- scoreto::get_all_providers_info()
+  links_to_home <- paste0("[", t$name, "](", t$home_url, ")")
+  logo_paths <- scoreto::get_logo_paths(t$name)
+  markdown_text <- paste0("![", links_to_home, "](", logo_paths, ")")
   scoreto::surround_markdown_with_lintignore(markdown_text = markdown_text)
 }

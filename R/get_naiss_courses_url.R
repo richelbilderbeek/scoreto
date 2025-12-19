@@ -2,5 +2,5 @@
 #' @return the URL to the NAISS courses page
 #' @export
 get_naiss_courses_url <- function() {
-  "https://www.naiss.se/training/"
+  scoreto::get_provider_courses_url("NAISS")
 }

@@ -5,7 +5,7 @@
 #' @export
 extract_lunarc_course_urls <- function(
   lunarc_courses_text,
-  lunarc_home_url = "https://www.lunarc.lu.se/"
+  lunarc_home_url = scoreto::get_provider_home_url("LUNARC")
 ) {
   rel_urls <- stringr::str_match(
     lunarc_courses_text,

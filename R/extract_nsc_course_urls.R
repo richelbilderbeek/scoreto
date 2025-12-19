@@ -5,7 +5,7 @@
 #' @export
 extract_nsc_course_urls <- function(
   nsc_courses_text,
-  nsc_home_url = "https://www.nsc.liu.se"
+  nsc_home_url = scoreto::get_provider_home_url("NSC")
 ) {
   rel_urls <- stringr::str_match(
     nsc_courses_text,
