@@ -7,7 +7,6 @@ mark_file_as_computer_generated <- function(filename) {
   testthat::expect_true(file.exists(filename))
 
   lines <- readr::read_lines(filename)
-
   is_mermaid_line <- scoreto::is_mermaid_line(lines)
   is_indented <- stringr::str_detect(lines, "^    ")
   is_next_indented <- is_indented[-1]
