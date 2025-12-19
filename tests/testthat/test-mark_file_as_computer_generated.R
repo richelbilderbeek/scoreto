@@ -30,5 +30,5 @@ test_that("use file with markdown", {
   expect_true(after[10] == "") # Should be left untouched
   expect_true(after[11] == before[11])
 
-  expect_false(all(text == new_text))
+  expect_false(all(before == after))
 })
