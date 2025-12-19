@@ -19,8 +19,8 @@ get_uppmax_courses <- function() {
 
 
   dates <- stringr::str_match(lines, "<br> _(.*)_\\]")[, 2]
-  from_dates <- scoreto::extract_uppmax_from_dates(dates)
-  to_dates <- scoreto::extract_uppmax_to_dates(dates)
+  from_dates <- scoreto::extract_english_from_dates(dates)
+  to_dates <- scoreto::extract_english_to_dates(dates)
   course_names_with_brs <- stringr::str_match(lines, "\\[(.*) <br>")[, 2]
   course_names <- stringr::str_replace_all(course_names_with_brs, "<br> ", "")
   relative_urls <- stringr::str_match(lines, "\\((.*)\\)")[, 2]
