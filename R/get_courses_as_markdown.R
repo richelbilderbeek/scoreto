@@ -37,13 +37,7 @@ get_courses_as_markdown <- function(t = scoreto::get_courses()) {
   t$provider_courses_url <- provider_courses_url
 
   # Add logo and link
-  t$provider_name <- paste0(
-    "![",
-    t$provider_name,
-    " logo](",
-    scoreto::get_logo_paths(t$provider_name),
-    ")"
-  )
+  t$provider_name <- scoreto::get_provider_logos_as_markdown(t$provider_name)
 
   text <- knitr::kable(t)
   names(t)

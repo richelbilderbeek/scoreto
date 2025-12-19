@@ -15,3 +15,7 @@ Get the logos of all the providers as Markdown
 \examples{
 get_all_provider_logos_as_markdown()
 }
+\seealso{
+use \link{get_provider_logo_as_markdown} to get the
+Markdown of a single clickable logo
+}
