@@ -6,6 +6,9 @@
 \usage{
 get_providers_home_urls(provider_names)
 }
+\arguments{
+\item{provider_names}{names of the providers}
+}
 \description{
 get the URLs to the homepages of multiple providers
 }

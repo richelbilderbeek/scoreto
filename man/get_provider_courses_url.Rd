@@ -6,6 +6,9 @@
 \usage{
 get_provider_courses_url(provider_name)
 }
+\arguments{
+\item{provider_name}{name of the provider}
+}
 \description{
 Get a URL to the courses page of a provider
 }

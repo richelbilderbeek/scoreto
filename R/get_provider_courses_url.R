@@ -1,4 +1,5 @@
 #' Get a URL to the courses page of a provider
+#' @param provider_name name of the provider
 #' @seealso \link{get_provider_home_url}
 #' @export
 #' @examples

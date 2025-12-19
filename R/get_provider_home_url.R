@@ -1,4 +1,5 @@
 #' Get a URL to the homepage of a provider
+#' @param provider_name name of the provider
 #' @seealso
 #'   - \link{get_providers_home_urls}: get the URLs to the homepages
 #'     of multiple providers
