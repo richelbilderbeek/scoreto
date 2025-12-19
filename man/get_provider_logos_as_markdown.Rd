@@ -6,6 +6,9 @@
 \usage{
 get_provider_logos_as_markdown(provider_names)
 }
+\arguments{
+\item{provider_names}{names of the provider}
+}
 \value{
 the logo of the providers as Markdown
 }
@@ -13,7 +16,7 @@ the logo of the providers as Markdown
 Get the logo of the provider as Markdown
 }
 \examples{
-get_provider_logo_as_markdown("UPPMAX")
+get_provider_logos_as_markdown(c("NAISS", "UPPMAX"))
 }
 \seealso{
 use \link{get_all_provider_logos_as_markdown} to get the

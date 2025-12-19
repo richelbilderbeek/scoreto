@@ -6,6 +6,9 @@
 \usage{
 get_provider_logo_as_markdown(provider_name)
 }
+\arguments{
+\item{provider_name}{name of the provider}
+}
 \value{
 the logo of the providers as Markdown
 }

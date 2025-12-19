@@ -1,4 +1,5 @@
 #' Get the logo of the provider as Markdown
+#' @param provider_name name of the provider
 #' @return the logo of the providers as Markdown
 #' @seealso use \link{get_all_provider_logos_as_markdown} to get the
 #' Markdown of all these
