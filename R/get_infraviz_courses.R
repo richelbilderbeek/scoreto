@@ -32,13 +32,7 @@ get_infraviz_courses <- function(html_text = scoreto::get_infraviz_html()) {
   content <- container |> rvest::html_element(".entry-content")
   testthat::expect_true(length(content) > 0)
 
-
-  # All content part of 'More news'. Remove highlights and past events
-  if ("use_spelling" == "old") {
-    news_content <- content |> rvest::html_nodes(xpath = '//*[@id="news"]')
-  } else {
-    news_content <- content |> rvest::html_nodes("#news")
-  }
+  news_content <- content |> rvest::html_nodes("#news")
   testthat::expect_true(length(news_content) > 0)
 
   posts <- news_content |> rvest::html_elements(".wp-block-post")
