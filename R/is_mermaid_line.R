@@ -9,10 +9,10 @@ is_mermaid_line <- function(text) {
     if (text[i] == "```mermaid") {
       writer_state <- TRUE
     }
+    booleans[i] <- writer_state
     if (text[i] == "```") {
       writer_state <- FALSE
     }
-    booleans[i] <- writer_state
   }
   booleans
 }

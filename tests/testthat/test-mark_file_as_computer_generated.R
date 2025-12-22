@@ -42,6 +42,7 @@ test_that("use file with markdown", {
   mark_file_as_computer_generated(filename)
   after <- readr::read_lines(filename)
 
+  # Start does well
   expect_true(before[15] == "```mermaid")
   expect_true(before[16] == "flowchart TD")
   expect_true(before[17] == "")
@@ -49,8 +50,18 @@ test_that("use file with markdown", {
 
   expect_true(after[15] == before[15])
   expect_true(after[16] == before[16])
-  expect_true(after[17] == "") # Should be left untouched
+  expect_true(after[17] == before[17]) # Should be left untouched
   expect_true(after[18] == before[18])
+
+  # End does bad
+  expect_true(before[91] == "  end")
+  expect_true(before[92] == "")
+  expect_true(before[93] == "```")
+
+  expect_true(after[91] == before[91])
+  expect_true(after[92] == before[92]) # Should be left untouched
+  expect_true(after[93] == before[93])
+
 
   expect_false(all(before == after))
 })
