@@ -69,7 +69,7 @@ test_that("use", {
   )
   expect_equal(
     get_provider_home_url("OSCU"),
-    "https://open-science-community-uppsala.github.io/open_science_community_uppsala"
+    "https://open-science-community-uppsala.github.io/open_science_community_uppsala" # nolint
   )
   expect_equal(
     get_provider_home_url("PDC"),
@@ -109,5 +109,6 @@ test_that("use", {
   )
   expect_equal(
     get_provider_home_url("UPPMAX"),
-    "https://www.uu.se/en/centre/uppmax.html")
+    "https://www.uu.se/en/centre/uppmax.html"
+  )
 })
