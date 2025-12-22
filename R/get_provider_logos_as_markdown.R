@@ -7,5 +7,7 @@
 #' get_provider_logos_as_markdown(c("NAISS", "UPPMAX"))
 #' @export
 get_provider_logos_as_markdown <- function(provider_names) { # nolint long name is fine
-  as.character(Vectorize(scoreto::get_provider_logo_as_markdown)(provider_names))
+  as.character(
+    Vectorize(scoreto::get_provider_logo_as_markdown)(provider_names)
+  )
 }

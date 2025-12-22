@@ -2,7 +2,7 @@
 #' by adding comments to indicate this
 #' @param filename name of the file to be changed
 #' @export
-mark_file_as_computer_generated <- function(filename) {
+mark_file_as_computer_generated <- function(filename) { # nolint long function name is fine
 
   testthat::expect_true(file.exists(filename))
 
@@ -24,7 +24,10 @@ mark_file_as_computer_generated <- function(filename) {
   # This is the file to edit instead
   filename_for_humans <- stringr::str_replace(filename, "\\.md", "_1.md")
 
-  comment_line <- paste0("<!-- DO NOT EDIT THIS COMPUTER GENERATED FILE. EDIT '", filename_for_humans, "' INSTEAD -->")
+  comment_line <- paste0(
+    "<!-- DO NOT EDIT THIS COMPUTER GENERATED FILE. EDIT '",
+    filename_for_humans, "' INSTEAD -->"
+  )
   lines[place_comment] <- comment_line
 
   readr::write_lines(lines, filename)

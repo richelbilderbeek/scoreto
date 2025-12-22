@@ -25,7 +25,9 @@ get_logo_path <- function(provider_name) {
   }
   if (provider_name == "AIDA Data Hub") return("logo/aida_logo_24_x_24.png")
   if (provider_name == "C3SE") return("logo/c3se_logo_134_x_24.png")
-  if (provider_name == "Code Refinery") return("logo/coderefinery_logo_32_x_24.png") # nolint
+  if (provider_name == "Code Refinery") {
+    return("logo/coderefinery_logo_32_x_24.png")
+  }
   if (provider_name == "CSC") return("logo/csc_logo_31_x_24.png")
   if (provider_name == "ENCCS") return("logo/enccs_logo_103_x_24.png")
   if (provider_name == "EOSC") return("logo/eosc_logo_77_x_24.png")
@@ -51,7 +53,9 @@ get_logo_path <- function(provider_name) {
   if (provider_name == "FEGA Sweden") {
     return("logo/fega_sweden_logo_71_x_24.png")
   }
-  if (provider_name == "GBIF Sweden") return("logo/gbif_sweden_logo_48_x_24.png")
+  if (provider_name == "GBIF Sweden") {
+    return("logo/gbif_sweden_logo_48_x_24.png")
+  }
   if (provider_name == "SITES") return("logo/sites_logo_68_x_24.png")
   if (provider_name == "SBDI") return("logo/sbdi_logo_26_x_24.png")
 
