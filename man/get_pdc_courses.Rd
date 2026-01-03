@@ -4,7 +4,11 @@
 \alias{get_pdc_courses}
 \title{Get the PDC courses}
 \usage{
-get_pdc_courses()
+get_pdc_courses(html_text = scoreto::get_pdc_html())
+}
+\arguments{
+\item{html_text}{HTML text of the PDC courses page
+(as obtained with \link{get_pdc_html})}
 }
 \value{
 a table with all PDC courses.

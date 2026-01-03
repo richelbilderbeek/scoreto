@@ -1,9 +1,10 @@
 #' Get the PDC courses
+#' @param html_text HTML text of the PDC courses page
+#' (as obtained with \link{get_pdc_html})
 #' @return a table with all PDC courses.
 #' @export
-get_pdc_courses <- function() {
-  pdc_training_url <- scoreto::get_provider_courses_url("PDC")
-  all_lines <- readr::read_lines(pdc_training_url)
+get_pdc_courses <- function(html_text = scoreto::get_pdc_html()) {
+  all_lines <- html_text
 
   event_indices <- stringr::str_which(
     all_lines,
@@ -32,7 +33,7 @@ get_pdc_courses <- function() {
     date_to = to_dates,
     course_name = course_names,
     course_url = course_urls,
-    provider_courses_url = pdc_training_url,
+    provider_courses_url = scoreto::get_provider_courses_url("PDC"),
     provider_name = "PDC"
   )
 }
