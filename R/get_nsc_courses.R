@@ -30,8 +30,14 @@ get_nsc_courses <- function(html_text = scoreto::get_nsc_html()) {
     return(empty_tibble)
   }
 
-  from_dates <- scoreto::extract_nsc_from_dates(nsc_courses_text)
-  to_dates <- scoreto::extract_nsc_to_dates(nsc_courses_text)
+  english_from_dates <- scoreto::extract_english_from_dates(
+    scoreto::extract_english_ranges(nsc_courses_text)
+  )
+  english_to_dates <- scoreto::extract_english_to_dates(
+    scoreto::extract_english_ranges(nsc_courses_text)
+  )
+  from_dates <- scoreto::convert_english_dates_to_iso_8601(english_from_dates)
+  to_dates <- scoreto::convert_english_dates_to_iso_8601(english_to_dates)
   course_names <- scoreto::extract_nsc_course_names(nsc_courses_text)
   course_urls <- scoreto::extract_nsc_course_urls(nsc_courses_text)
 
@@ -45,7 +51,7 @@ get_nsc_courses <- function(html_text = scoreto::get_nsc_html()) {
     date_to = to_dates,
     course_name = course_names,
     course_url = course_urls,
-    provider_courses_url = scoreto::get_nsc_training_url(),
+    provider_courses_url = scoreto::get_training_url(course_provider = "NSC"),
     provider_name = "NSC"
   )
 }

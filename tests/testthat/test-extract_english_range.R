@@ -22,3 +22,13 @@ test_that("use", {
     "27-28 November & 1-2 December 2025"
   )
 })
+
+test_that("use", {
+  expect_equal(
+    extract_english_range(text = "onclick=\"window.location='/support/Events/Berzelius_training_Mar2026/';\"><a href=\"/support/Events/Berzelius_training_Mar2026/\">Berzelius Training - Introduction to Berzelius</a><p>Information about online event March 10, 2026</p></li>"), # nolint
+    "March 10, 2026"
+  )
+})
+
+
+

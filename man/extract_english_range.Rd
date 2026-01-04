@@ -13,5 +13,8 @@ extract_english_range(text)
 the English range
 }
 \description{
-Extract an English range from a piece of text
+The text can be messy :-)
+}
+\examples{
+extract_english_range("nonsense 27-28 November 2025 lalala")
 }
