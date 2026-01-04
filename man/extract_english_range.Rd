@@ -16,5 +16,5 @@ the English range
 The text can be messy :-)
 }
 \examples{
-extract_english_range("nonsense 27-28 November 2025 lalala")
+extract_english_range("<p>event 15th Apr 2025</p></li>") # 15th Apr 2025
 }
