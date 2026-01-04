@@ -7,7 +7,7 @@
 #' from one line of text
 #' @export
 #' @examples
-#' extract_english_ranges("nonsense 27-28 November 2025 lalala")
+#' extract_english_ranges("<p>27th Nov 2025</p>") # 27th Nov 2025
 extract_english_ranges <- function(text) {
   as.character(Vectorize(scoreto::extract_english_range)(text))
 }

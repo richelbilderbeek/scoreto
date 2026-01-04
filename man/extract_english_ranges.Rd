@@ -16,7 +16,7 @@ the English ranges
 The text can be messy :-)
 }
 \examples{
-extract_english_ranges("nonsense 27-28 November 2025 lalala")
+extract_english_ranges("<p>27th Nov 2025</p>") # 27th Nov 2025
 }
 \seealso{
 use \link{extract_english_range} to extract the date range
