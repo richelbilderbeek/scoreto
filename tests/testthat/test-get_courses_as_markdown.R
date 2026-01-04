@@ -1,4 +1,10 @@
-test_that("use", {
+test_that("use on current online websites", {
+  if (beautier::is_on_ci()) {
+    expect_silent(get_courses_as_markdown())
+  }
+})
+
+test_that("use on test data", {
   expect_silent(get_courses_as_markdown(t = get_test_courses_table()))
 })
 

@@ -19,6 +19,7 @@ BugReports: https://github.com/richelbilderbeek/scoreto/issues
 Depends:
     R (>= 4.1.0)
 Imports:
+    beautier,
     dplyr,
     httr,
     knitr,

@@ -18,3 +18,7 @@ The text can be messy :-)
 \examples{
 extract_english_ranges("nonsense 27-28 November 2025 lalala")
 }
+\seealso{
+use \link{extract_english_range} to extract the date range
+from one line of text
+}
