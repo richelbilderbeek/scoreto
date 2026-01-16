@@ -21,7 +21,7 @@ test_that("use", {
   )
   expect_equal(
     get_provider_home_url("CSC"),
-    "https://www.lumi.csc.fi/public"
+    "https://lumi-supercomputer.eu"
   )
   expect_equal(
     get_provider_home_url("Doris SND"),
