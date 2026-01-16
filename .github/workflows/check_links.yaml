@@ -15,7 +15,7 @@ on:
 name: check-links
 
 jobs:
-  check-links:
+  check_links:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -24,8 +24,9 @@ jobs:
 
 
       - name: Remove files that do not need to have their links checked
-        run: rm inst/extdata/compute_1.md
-
+        run: | 
+          rm inst/extdata/compute_1.md
+          rm inst/extdata/storage_1.md
 
       - uses: gaurav-nelson/github-action-markdown-link-check@v1
         with:
