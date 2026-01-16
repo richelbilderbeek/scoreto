@@ -23,6 +23,9 @@ get_naiss_courses <- function(html_text = scoreto::get_naiss_html()) {
   )
   course_urls <- stringr::str_match(row_texts, "a href=\"([^\"]+)")[, 2]
   testthat::expect_equal(length(course_names), length(course_urls))
+  na_indices <- which(is.na(course_urls))
+  course_urls[na_indices] <- scoreto::get_naiss_courses_url()
+  testthat::expect_equal(0, sum(is.na(course_urls)))
 
   from_dates <- scoreto::convert_english_dates_to_iso_8601(
     scoreto::extract_english_from_dates(english_date_ranges)
