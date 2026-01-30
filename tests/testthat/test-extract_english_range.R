@@ -36,5 +36,10 @@ test_that("use", {
     extract_english_range(text = "onclick=\"window.location='/support/Events/VASP_seminar_2025/';\"><a href=\"/support/Events/VASP_seminar_2025/\">VASP best practices seminar - online event</a><p>Information about the VASP seminar 3rd Oct 2025</p></li>"), # nolint
     "3rd Oct 2025"
   )
+
+  expect_equal(
+    extract_english_range(text = "<li><a href=\"https://coderefinery.github.io/2026-03-17-workshop/\">CodeRefinery tools workshop (online)</a> - March 17-19 and 24-26 2026 (compact format)</li>"), # nolint
+    "March 17-19 and 24-26 2026"
+  )
 })
 

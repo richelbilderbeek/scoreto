@@ -13,8 +13,12 @@ extract_english_range <- function(text) {
   text <- stringr::str_replace(text, "November2025", "November 2025")
   text <- stringr::str_replace(text, "December2025", "December 2025")
 
+  full_months_pattern <- "(January|February|March|April|May|June|July|August|September|October|November|December)" # nolint
+  short_months_pattern <- "(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)"
 
   patterns <- c(
+    # March 17-19 and 24-26 2026
+    paste0("(", full_months_pattern, "[:blank:][:digit:]+-[:digit:]+[:blank:]and[:blank:][:digit:]+-[:digit:]+[:blank:][:digit:]{4}", ")"),
     # Date:27 November
     "Date:[:blank:]?([:digit:]+[:blank:][:upper:][:lower:]+[:blank:][:digit:]{4})", # nolint
     # Date:27-28 November
@@ -42,8 +46,6 @@ extract_english_range <- function(text) {
   }
 
   testthat::expect_true(!is.na(result))
-  full_months_pattern <- "(January|February|March|April|May|June|July|August|September|October|November|December)" # nolint
-  short_months_pattern <- "(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)"
   testthat::expect_true(
     all(
       stringr::str_detect(result, full_months_pattern) |

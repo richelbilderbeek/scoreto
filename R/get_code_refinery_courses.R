@@ -29,8 +29,11 @@ get_code_refinery_courses <- function(
     return(empty_tibble)
   }
 
-  from_dates <- scoreto::extract_code_refinery_from_dates(lines)
-  to_dates <- scoreto::extract_code_refinery_to_dates(lines)
+  english_ranges <- scoreto::extract_english_ranges(lines)
+  english_from_dates <- scoreto::extract_english_from_dates(english_ranges)
+  english_to_dates <- scoreto::extract_english_to_dates(english_ranges)
+  from_dates <- scoreto::convert_english_dates_to_iso_8601(english_from_dates)
+  to_dates <- scoreto::convert_english_dates_to_iso_8601(english_to_dates)
   course_names <- scoreto::extract_code_refinery_course_names(lines)
   course_urls <- scoreto::extract_code_refinery_course_urls(lines)
 
