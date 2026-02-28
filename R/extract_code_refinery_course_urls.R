@@ -6,6 +6,6 @@
 extract_code_refinery_course_urls <- function(text) { # nolint
   stringr::str_match(
     text,
-    "<a href=\"(.*)\">"
-  )[, 2]
+    "<a (rel=\"external\" )?href=\"(.*)\">"
+  )[, 3]
 }
