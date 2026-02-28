@@ -4,5 +4,5 @@
 #' @return HTML text
 #' @export
 get_test_mimer_html <- function() {
-  readr::read_lines(scoreto::get_scoreto_path("mimer.html"))
+  readr::read_lines(scoreto::get_scoreto_path("mimer_20260225.html"))
 }
