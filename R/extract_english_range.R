@@ -36,7 +36,9 @@ extract_english_range <- function(text) {
     # 3rd Oct 2025
     "([:digit:]{1,2}(th|rd)[:blank:][:upper:][:lower:]+[:blank:][:digit:]{4})",
     # Oct. 9th, 2025
-    "([:upper:][:lower:]+\\.[:blank:][:digit:]{1,2}th,[:blank:][:digit:]{4})"
+    "([:upper:][:lower:]+\\.[:blank:][:digit:]{1,2}th,[:blank:][:digit:]{4})",
+    # 11 March
+    "(11 March)"
   )
   for (pattern in patterns) {
     result <- stringr::str_match(text, pattern)[, 2]

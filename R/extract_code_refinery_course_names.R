@@ -7,8 +7,8 @@ extract_code_refinery_course_names <- function( # nolint
 ) {
   names_in_urls <- stringr::str_match(
     text,
-    "<a href.*>(.*)</a>"
-  )[, 2]
+    "<a (rel=\"external\" )?href.*>(.*)</a>"
+  )[, 3]
   names_without_urls <- stringr::str_match(
     text,
     "<li>(.*), [:digit:]"

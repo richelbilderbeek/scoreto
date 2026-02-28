@@ -41,5 +41,9 @@ test_that("use", {
     extract_english_range(text = "<li><a href=\"https://coderefinery.github.io/2026-03-17-workshop/\">CodeRefinery tools workshop (online)</a> - March 17-19 and 24-26 2026 (compact format)</li>"), # nolint
     "March 17-19 and 24-26 2026"
   )
+  expect_equal(
+    extract_english_range(text = "Location:Innovasalen, ARC, Örebro University\n\n\n\nLecturers:Ingela Nyström, Anders Hast\n\n\n\n\n\nDate:11 March, 9:15-11:45\n\n\n\nType:Workshop"), # nolint
+    "11 March"
+  )
 })
 
