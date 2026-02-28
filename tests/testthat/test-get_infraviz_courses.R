@@ -15,3 +15,11 @@ test_that("use on testing data 1", {
   t <- get_infraviz_courses(html_text = html_text)
   expect_true(is_correctly_formatted_courses_table(t))
 })
+
+test_that("use on testing data 1", {
+  html_text <- readr::read_lines(
+    scoreto::get_scoreto_path("infraviz_20260228.html")
+  )
+  t <- get_infraviz_courses(html_text = html_text)
+  expect_true(is_correctly_formatted_courses_table(t))
+})

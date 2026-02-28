@@ -4,7 +4,9 @@ test_that("use on testing data", {
     "https://raw.githubusercontent.com/richelbilderbeek/scoreto/refs/heads/main/inst/extdata/infraviz_course_2.html", # nolint
     "https://raw.githubusercontent.com/richelbilderbeek/scoreto/refs/heads/main/inst/extdata/infraviz_course_3.html", # nolint
     "https://raw.githubusercontent.com/richelbilderbeek/scoreto/refs/heads/main/inst/extdata/infraviz_course_4.html", # nolint
-    "https://raw.githubusercontent.com/richelbilderbeek/scoreto/refs/heads/main/inst/extdata/infraviz_course_5.html" # nolint
+    "https://raw.githubusercontent.com/richelbilderbeek/scoreto/refs/heads/main/inst/extdata/infraviz_course_5.html", # nolint
+    "https://raw.githubusercontent.com/richelbilderbeek/scoreto/refs/heads/main/inst/extdata/infraviz_course_6.html", # nolint
+    "https://raw.githubusercontent.com/richelbilderbeek/scoreto/refs/heads/main/inst/extdata/infraviz_course_7.html" # nolint
   )
   t <- get_infraviz_courses_infos(course_pages_urls = course_pages_urls)
 
