@@ -8,10 +8,12 @@ get_c3se_courses <- function(html_text = scoreto::get_c3se) {
     all_lines,
     "<h2.*Current and upcoming events"
   )
+  testthat::expect_equal(1, length(from_index))
   to_index <- stringr::str_which(
     all_lines,
     "<h2.*Acknowledgement suggestion"
   ) - 1
+  testthat::expect_equal(1, length(to_index))
 
   table_lines <- all_lines[from_index:to_index]
   from_index <- 1 + which(table_lines == "<tbody>")

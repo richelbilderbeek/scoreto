@@ -7,6 +7,7 @@ get_enccs_courses <- function(html_text = scoreto::get_enccs_html()) {
 
   all_lines <- html_text
   last_useless_line_index <- stringr::str_which(all_lines, "<body ")
+  testthat::expect_equal(1, length(last_useless_line_index))
   lines <- all_lines[-(1:last_useless_line_index)]
 
   date_indices <- stringr::str_which(lines, "tribe-event-date-start")
@@ -42,11 +43,13 @@ get_enccs_courses <- function(html_text = scoreto::get_enccs_html()) {
 
   title_lines <- lines[date_indices + 5]
   course_names_with_unicode <- stringr::str_match(title_lines, "\"(.*)\"")[, 2]
+  testthat::expect_equal(0, sum(is.na(course_names_with_unicode)))
   course_names <- stringr::str_replace(
     course_names_with_unicode,
     "&#8211;",
     "-"
   )
+
 
   url_lines <- lines[date_indices + 4]
   urls <- stringr::str_match(url_lines, "\"(.*)\"")[, 2]
