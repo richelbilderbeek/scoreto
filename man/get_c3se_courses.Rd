@@ -4,7 +4,7 @@
 \alias{get_c3se_courses}
 \title{Get the C3SE courses}
 \usage{
-get_c3se_courses()
+get_c3se_courses(html_text = scoreto::get_c3se)
 }
 \value{
 a table with all C3SE courses.

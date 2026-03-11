@@ -1,9 +1,8 @@
 #' Get the C3SE courses
 #' @return a table with all C3SE courses.
 #' @export
-get_c3se_courses <- function() {
-  c3se_training_url <- scoreto::get_provider_courses_url("C3SE")
-  all_lines <- readr::read_lines(c3se_training_url)
+get_c3se_courses <- function(html_text = scoreto::get_c3se) {
+  all_lines <- html_text
 
   from_index <- 1 + stringr::str_which(
     all_lines,
