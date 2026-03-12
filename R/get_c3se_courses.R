@@ -1,12 +1,12 @@
 #' Get the C3SE courses
 #' @return a table with all C3SE courses.
 #' @export
-get_c3se_courses <- function(html_text = scoreto::get_c3se) {
+get_c3se_courses <- function(html_text = scoreto::get_c3se_html()) {
   all_lines <- html_text
 
   from_index <- 1 + stringr::str_which(
     all_lines,
-    "<h2.*Current and upcoming events"
+    "<h2.*News and upcoming events"
   )
   testthat::expect_equal(1, length(from_index))
   to_index <- stringr::str_which(
@@ -22,14 +22,16 @@ get_c3se_courses <- function(html_text = scoreto::get_c3se) {
 
   dates_with_na <- stringr::str_match(
     lines,
-    "<td><nobr>([[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2})</nobr></td>"
-  )[, 2]
+    "<td>(<nobr>)?([[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2})(</nobr>)?</td>"
+  )[, 3]
+  testthat::expect_false(all(is.na(dates_with_na)))
   dates <- as.character(stats::na.omit(dates_with_na))
 
   course_descriptions_with_nas <- stringr::str_match(
     lines,
-    "^<td>([:upper:].*)</td>"
-  )[, 2]
+    "^<td>(<p>)?([:upper:].*)(</p>)?</td>"
+  )[, 3]
+  testthat::expect_false(all(is.na(course_descriptions_with_nas)))
   course_descriptions <- as.character(
     stats::na.omit(course_descriptions_with_nas)
   )
@@ -56,7 +58,7 @@ get_c3se_courses <- function(html_text = scoreto::get_c3se) {
     date_to = dates,
     course_name = course_names,
     course_url = urls,
-    provider_courses_url = c3se_training_url,
+    provider_courses_url = scoreto::get_provider_courses_url("C3SE"),
     provider_name = "C3SE"
   )
 }
