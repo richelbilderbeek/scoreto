@@ -5,61 +5,34 @@
 #' @export
 get_enccs_courses <- function(html_text = scoreto::get_enccs_html()) {
 
-  all_lines <- html_text
-  last_useless_line_index <- stringr::str_which(all_lines, "<body ")
-  testthat::expect_equal(1, length(last_useless_line_index))
-  lines <- all_lines[-(1:last_useless_line_index)]
+  website <- rvest::read_html(paste(html_text, collapse = "\n"))
+  testthat::expect_true(length(website) > 0)
+  body <- website |> rvest::html_element("body")
+  testthat::expect_true(length(body) > 0)
+  site <- body |> rvest::html_element(".site")
+  testthat::expect_true(length(site) > 0)
 
-  date_indices <- stringr::str_which(lines, "tribe-event-date-start")
-  from_dates_with_nas <- stringr::str_match(
-    lines[date_indices],
-    paste0(
-      "<span class=\"tribe-event-date-start\">",
-      "(.*) . [:digit:]{2}\\:[:digit:]{2}",
-      "</span> - "
-    )
-  )[, 2]
-  from_dates_enccs <- as.character(stats::na.omit(from_dates_with_nas))
-  from_dates <- scoreto::convert_enccs_dates(from_dates_enccs)
-  testthat::expect_equal(length(date_indices), length(from_dates))
+  events <- site |> rvest::html_element(".tribe-events-calendar-list")
+  testthat::expect_true(length(events) > 0)
 
+  title_links <- events |> rvest::html_elements(".tribe-events-calendar-list__event-title-link")
+  testthat::expect_true(length(title_links) > 0)
 
-  # NA if the event is one day
-  to_dates_with_nas <- stringr::str_match(
-    lines[date_indices],
-    paste0(
-      "<span class=\"tribe-event-date-end\">",
-      "(.*) . [:digit:]{2}\\:[:digit:]{2}",
-      "</span>"
-    )
-  )[, 2]
-  na_indices <- which(is.na(to_dates_with_nas))
-  to_dates_enccs <- to_dates_with_nas
-  to_dates_enccs[na_indices] <- from_dates_enccs[na_indices]
-  to_dates <- scoreto::convert_enccs_dates(to_dates_enccs)
-  testthat::expect_equal(length(date_indices), length(from_dates))
+  course_urls <- title_links |> rvest::html_attr("href")
+  course_names <- title_links |> rvest::html_text(trim = TRUE)
+  testthat::expect_equal(length(course_urls), length(course_urls))
 
-
-
-  title_lines <- lines[date_indices + 5]
-  course_names_with_unicode <- stringr::str_match(title_lines, "\"(.*)\"")[, 2]
-  testthat::expect_equal(0, sum(is.na(course_names_with_unicode)))
-  course_names <- stringr::str_replace(
-    course_names_with_unicode,
-    "&#8211;",
-    "-"
-  )
-
-
-  url_lines <- lines[date_indices + 4]
-  urls <- stringr::str_match(url_lines, "\"(.*)\"")[, 2]
+  from_dates <- events |> rvest::html_elements(".tribe-events-calendar-list__event-datetime") |> rvest::html_attr("datetime")
+  testthat::expect_equal(length(course_urls), length(from_dates))
+  to_dates <- from_dates
+  testthat::expect_equal(length(course_urls), length(to_dates))
 
   tibble::tibble(
     date_from = from_dates,
     date_to = to_dates,
     course_name = course_names,
-    course_url = urls,
-    provider_courses_url = scoreto::get_enccs_courses_url(),
+    course_url = course_urls,
+    provider_courses_url = scoreto::get_provider_courses_url("ENCCS"),
     provider_name = "ENCCS"
   )
 }
