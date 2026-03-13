@@ -4,7 +4,7 @@
 \alias{get_uppmax_courses}
 \title{Get the NAISS courses}
 \usage{
-get_uppmax_courses()
+get_uppmax_courses(html_text = scoreto::get_uppmax_html())
 }
 \value{
 a table with all UPPMAX courses, where

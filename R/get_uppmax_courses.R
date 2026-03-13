@@ -3,17 +3,9 @@
 #' the table will pass the test of
 #' \link{is_correctly_formatted_courses_table}
 #' @export
-get_uppmax_courses <- function() {
+get_uppmax_courses <- function(html_text = scoreto::get_uppmax_html()) {
 
-  # Cannot use the pretty rendered source at
-  # https://docs.uppmax.uu.se/courses_workshops/courses_workshops/
-  # because it cannot be read
-  uppmax_url <- paste0(
-    "https://raw.githubusercontent.com/",
-    "UPPMAX/UPPMAX-documentation/refs/heads/main/",
-    "docs/courses_workshops/courses_workshops.md"
-  )
-  all_lines <- readr::read_lines(uppmax_url)
+  all_lines <- html_text
 
   all_button_lines <- stringr::str_subset(all_lines, ".md-button--primary")
   lines <- stringr::str_subset(
@@ -21,7 +13,6 @@ get_uppmax_courses <- function() {
     "NAISS training page",
     negate = TRUE
   )
-
 
   dates <- stringr::str_match(lines, "<br> _(.*)_\\]")[, 2]
 
