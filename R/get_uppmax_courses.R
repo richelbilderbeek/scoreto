@@ -15,7 +15,12 @@ get_uppmax_courses <- function() {
   )
   all_lines <- readr::read_lines(uppmax_url)
 
-  lines <- stringr::str_subset(all_lines, ".md-button--primary")
+  all_button_lines <- stringr::str_subset(all_lines, ".md-button--primary")
+  lines <- stringr::str_subset(
+    all_button_lines,
+    "NAISS training page",
+    negate = TRUE
+  )
 
 
   dates <- stringr::str_match(lines, "<br> _(.*)_\\]")[, 2]
