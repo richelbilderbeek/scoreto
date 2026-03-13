@@ -14,7 +14,7 @@ get_uppmax_courses <- function(html_text = scoreto::get_uppmax_html()) {
     negate = TRUE
   )
 
-  dates <- stringr::str_match(lines, "<br> _(.*)_\\]")[, 2]
+  dates <- stringr::str_match(lines, "<em>(.*)</em>")[, 2]
 
   from_dates <- scoreto::convert_english_dates_to_iso_8601(
     scoreto::extract_english_from_dates(dates)
@@ -22,9 +22,10 @@ get_uppmax_courses <- function(html_text = scoreto::get_uppmax_html()) {
   to_dates <- scoreto::convert_english_dates_to_iso_8601(
     scoreto::extract_english_to_dates(dates)
   )
-  course_names_with_brs <- stringr::str_match(lines, "\\[(.*) <br>")[, 2]
+  course_names_with_brs <- stringr::str_match(lines, "\\\">(.*) <br>")[, 2]
   course_names <- stringr::str_replace_all(course_names_with_brs, "<br> ", "")
-  relative_urls <- stringr::str_match(lines, "\\((.*)\\)")[, 2]
+  relative_urls <- stringr::str_match(lines, "href=\\\"(.*)/\\\">")[, 2]
+  testthat::expect_equal(0, sum(is.na(relative_urls)))
   urls <- relative_urls
   index_with_relative_urls <- stringr::str_which(urls, pattern = "\\md$")
   urls[index_with_relative_urls] <-
