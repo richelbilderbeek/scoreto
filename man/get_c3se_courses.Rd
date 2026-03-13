@@ -6,6 +6,10 @@
 \usage{
 get_c3se_courses(html_text = scoreto::get_c3se_html())
 }
+\arguments{
+\item{html_text}{HTML text to parse, as can be obtained by
+\link{get_c3se_html}}
+}
 \value{
 a table with all C3SE courses.
 }

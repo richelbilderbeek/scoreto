@@ -1,4 +1,6 @@
 #' Get the C3SE courses
+#' @param html_text HTML text to parse, as can be obtained by
+#' \link{get_c3se_html}
 #' @return a table with all C3SE courses.
 #' @export
 get_c3se_courses <- function(html_text = scoreto::get_c3se_html()) {
