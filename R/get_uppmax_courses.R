@@ -36,7 +36,6 @@ get_uppmax_courses <- function(html_text = scoreto::get_uppmax_html()) {
   relative_urls <- stringr::str_match(lines, "(href=\\\"|_\\]\\()(.*.md)(/\\\">|\\))")[, 3]
   testthat::expect_equal(0, sum(is.na(relative_urls)))
 
-  testthat::expect_equal(0, sum(is.na(relative_urls)))
   urls <- relative_urls
   index_with_relative_urls <- stringr::str_which(urls, pattern = "\\md$")
   urls[index_with_relative_urls] <-
