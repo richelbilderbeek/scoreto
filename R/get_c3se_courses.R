@@ -55,6 +55,13 @@ get_c3se_courses <- function(html_text = scoreto::get_c3se_html()) {
   )[, 2]
   testthat::expect_equal(length(dates), length(urls))
 
+  dates <- dates[!is.na(urls)]
+  course_names <- course_names[!is.na(urls)]
+
+  if (length(dates) == 0) {
+    return(scoreto::create_empty_courses_table())
+  }
+
   tibble::tibble(
     date_from = dates,
     date_to = dates,

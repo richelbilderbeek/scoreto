@@ -1,4 +1,19 @@
-test_that("us", {
+test_that("test table 1", {
+  t <- get_test_courses_table()
+  expect_true(is_correctly_formatted_courses_table(t))
+})
+
+test_that("test table 2", {
+  t <- create_test_courses_table()
+  expect_true(is_correctly_formatted_courses_table(t))
+})
+
+test_that("empty table", {
+  t <- create_empty_courses_table()
+  expect_true(is_correctly_formatted_courses_table(t))
+})
+
+test_that("detailed (ab)use", {
 
   # Correct
   t <- get_test_courses_table()
@@ -66,3 +81,4 @@ test_that("us", {
 
 
 })
+
