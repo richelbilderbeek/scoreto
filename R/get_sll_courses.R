@@ -14,21 +14,25 @@ get_sll_courses <- function(html_text = scoreto::get_sll_html()) {
     rvest::html_element(".masonry")
 
   course_titles <- course_items |>
-    rvest::html_elements(".right-container") |>
-    rvest::html_element("h4") |>
+    rvest::html_elements(".masonry-brick") |>
+    rvest::html_element(".course-card__title-text") |>
     rvest::html_text(trim = TRUE)
+  testthat::expect_true(length(course_titles) > 0)
   english_date_ranges <- course_items |>
-    rvest::html_elements(".right-container") |>
-    rvest::html_element("p") |>
+    rvest::html_elements(".masonry-brick") |>
+    rvest::html_element(".course-card__meta-item") |>
+    rvest::html_element("span") |>
     rvest::html_text(trim = TRUE)
   testthat::expect_equal(length(course_titles), length(english_date_ranges))
 
-  rel_urls_with_nas <- course_items |>
-    rvest::html_elements(".with-left-icon") |>
+  rel_urls <- course_items |>
+    rvest::html_elements(".masonry-brick") |>
+    rvest::html_element(".course-card__stretched-link") |>
     rvest::html_attr("href")
-  # Half of the entries is NA for some reason ...?
-  rel_urls <- rel_urls_with_nas[!is.na(rel_urls_with_nas)]
   testthat::expect_equal(length(course_titles), length(rel_urls))
+
+  urls <- paste0("https://training.scilifelab.se/", rel_urls)
+  testthat::expect_equal(length(course_titles), length(urls))
 
   from_dates <- scoreto::convert_english_dates_to_iso_8601(
     scoreto::extract_english_from_dates(
@@ -40,13 +44,6 @@ get_sll_courses <- function(html_text = scoreto::get_sll_html()) {
       english_date_ranges
     )
   )
-
-  urls <- stringr::str_replace_all(
-    paste0(scoreto::get_sll_courses_url(), rel_urls),
-    "events/events/",
-    "events/"
-  )
-
 
   testthat::expect_equal(length(course_titles), length(from_dates))
   testthat::expect_equal(length(course_titles), length(urls))

@@ -3,7 +3,7 @@ test_that("use on today's data", {
   expect_true(is_correctly_formatted_courses_table(t))
 })
 
-test_that("use on testing data", {
-  t <- get_sll_courses(html_text = get_test_sll_html())
+test_that("use on testing data, 2026-03-25", {
+  t <- get_sll_courses(html_text = readr::read_lines(get_scoreto_path("sll_20260325.html")))
   expect_true(is_correctly_formatted_courses_table(t))
 })
