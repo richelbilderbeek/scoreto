@@ -12,7 +12,3 @@ HTML text
 \description{
 Get the SciLifeLab courses website as HTML
 }
-\seealso{
-use \link{get_test_sll_html} to get similar HTML text to be
-used in testing
-}

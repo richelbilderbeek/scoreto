@@ -1,4 +1,7 @@
 #' Get the NAISS courses
+#' @inheritParams default_params_doc
+#' @param html_text HTML text to parse, as can be obtained by
+#' \link{get_uppmax_html}
 #' @return a table with all UPPMAX courses, where
 #' the table will pass the test of
 #' \link{is_correctly_formatted_courses_table}
