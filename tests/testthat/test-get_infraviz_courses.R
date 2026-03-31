@@ -16,7 +16,7 @@ test_that("use on testing data 1", {
   expect_true(is_correctly_formatted_courses_table(t))
 })
 
-test_that("use on testing data 1", {
+test_that("use on data of 2026-02-28", {
   html_text <- readr::read_lines(
     scoreto::get_scoreto_path("infraviz_20260228.html")
   )
@@ -24,7 +24,7 @@ test_that("use on testing data 1", {
   expect_true(is_correctly_formatted_courses_table(t))
 })
 
-test_that("use on testing data 1", {
+test_that("use on data of 2026-03-26", {
   html_text <- readr::read_lines(
     scoreto::get_scoreto_path("infraviz_20260326.html")
   )
