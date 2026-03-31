@@ -45,5 +45,9 @@ test_that("use", {
     extract_english_range(text = "Location:Innovasalen, ARC, Örebro University\n\n\n\nLecturers:Ingela Nyström, Anders Hast\n\n\n\n\n\nDate:11 March, 9:15-11:45\n\n\n\nType:Workshop"), # nolint
     "11 March"
   )
+  expect_equal(
+    extract_english_range(text = "Location:K1051V, K-building, Linnéuniversitetet, Växjö\n\n\n\nLecturers:Anders Hast and Ingela Nyström\n\n\n\n\n\nDate:21 April, 9:15-11:45\n\n\n\nType:Workshop"), # nolint
+    "21 April"
+  )
 })
 
