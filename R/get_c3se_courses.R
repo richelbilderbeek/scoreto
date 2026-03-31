@@ -26,6 +26,12 @@ get_c3se_courses <- function(html_text = scoreto::get_c3se_html()) {
     lines,
     "<td>(<nobr>)?([[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2})(</nobr>)?</td>"
   )[, 3]
+
+  # No courses
+  if (all(is.na(dates_with_na))) {
+    return(scoreto::create_empty_courses_table())
+  }
+
   testthat::expect_false(all(is.na(dates_with_na)))
   dates <- as.character(stats::na.omit(dates_with_na))
 
