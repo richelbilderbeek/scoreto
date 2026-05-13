@@ -24,7 +24,7 @@ get_c3se_courses <- function(html_text = scoreto::get_c3se_html()) {
 
   dates_with_na <- stringr::str_match(
     lines,
-    "<td>(<nobr>)?([[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2})(</nobr>)?</td>"
+    "<td>(<nobr>)?([[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2})(</nobr>)?( [[:digit:]]{2}:[[:digit:]]{2}:[[:digit:]]{2})?</td>"
   )[, 3]
 
   # No courses
@@ -43,6 +43,7 @@ get_c3se_courses <- function(html_text = scoreto::get_c3se_html()) {
   course_descriptions <- as.character(
     stats::na.omit(course_descriptions_with_nas)
   )
+  testthat::expect_equal(length(dates), length(course_descriptions))
   course_description_sentences <- stringr::str_split(
     course_descriptions,
     "\\. "
@@ -57,8 +58,12 @@ get_c3se_courses <- function(html_text = scoreto::get_c3se_html()) {
 
   urls <- stringr::str_match(
     course_descriptions,
-    "<a href=\"(.*)\">.*</a>"
+    "<a href=\"([a-z0-9:\\./_]+)\">.*</a>"
   )[, 2]
+  testthat::expect_equal(length(dates), length(urls))
+
+  # Remove links to Alvis due to security warning
+  urls[urls == "https://alvis.c3se.chalmers.se"] <- NA
   testthat::expect_equal(length(dates), length(urls))
 
   course_indices <- which(!is.na(urls))

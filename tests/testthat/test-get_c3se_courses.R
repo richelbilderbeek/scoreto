@@ -24,3 +24,8 @@ test_that("use on testing data, 2026-04-10", {
   expect_true(is_correctly_formatted_courses_table(t))
 })
 
+
+test_that("use on testing data, 2026-04-10", {
+  t <- get_c3se_courses(html_text = readr::read_lines(get_scoreto_path("c3se_20260511.html")))
+  expect_true(is_correctly_formatted_courses_table(t))
+})
