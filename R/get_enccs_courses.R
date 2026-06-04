@@ -16,6 +16,11 @@ get_enccs_courses <- function(html_text = scoreto::get_enccs_html()) {
   testthat::expect_true(length(events) > 0)
 
   title_links <- events |> rvest::html_elements(".tribe-events-calendar-list__event-title-link")
+
+  if (length(title_links) == 0) {
+    return(scoreto::create_empty_courses_table())
+  }
+
   testthat::expect_true(length(title_links) > 0)
 
   course_urls <- title_links |> rvest::html_attr("href")

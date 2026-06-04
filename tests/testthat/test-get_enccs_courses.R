@@ -9,7 +9,12 @@ test_that("use on testing data", {
 })
 
 test_that("use on testing data, 2026-03-11", {
-  get_provider_courses_url("ENCCS")
   t <- get_enccs_courses(html_text = readr::read_lines(get_scoreto_path("enccs_20260311.html")))
+  expect_true(is_correctly_formatted_courses_table(t))
+})
+
+test_that("use on testing data, 2026-06-04", {
+  get_provider_courses_url("ENCCS")
+  t <- get_enccs_courses(html_text = readr::read_lines(get_scoreto_path("enccs_20260604.html")))
   expect_true(is_correctly_formatted_courses_table(t))
 })
