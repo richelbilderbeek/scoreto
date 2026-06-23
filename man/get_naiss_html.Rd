@@ -12,7 +12,3 @@ HTML text
 \description{
 Get the NAISS courses website as HTML
 }
-\seealso{
-use \link{get_test_naiss_html} to get similar HTML text to be
-used in testing
-}
