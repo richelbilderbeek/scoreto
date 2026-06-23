@@ -30,4 +30,16 @@ test_that("use on data of 2026-03-26", {
   )
   t <- get_infraviz_courses(html_text = html_text)
   expect_true(is_correctly_formatted_courses_table(t))
+  scoreto::get_provider_courses_url("InfraViz")
 })
+
+test_that("use on data of 2026-06-23", {
+  html_text <- readr::read_lines(
+    scoreto::get_scoreto_path("infraviz_20260623.html")
+  )
+  t <- get_infraviz_courses(html_text = html_text)
+  expect_true(is_correctly_formatted_courses_table(t))
+  scoreto::get_provider_courses_url("InfraViz")
+})
+
+
