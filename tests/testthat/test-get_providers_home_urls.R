@@ -16,6 +16,9 @@ test_that("homepage must exist", {
 
   home_urls <- get_providers_home_urls(get_all_providers())
   for (home_url in home_urls) {
-    expect_true(is_valid_link(url = home_url))
+    expect_true(
+      is_valid_link(url = home_url),
+      paste0("Provider home page at ", home_url, " should exist")
+    )
   }
 })
