@@ -50,4 +50,3 @@ test_that("use", {
     "21 April"
   )
 })
-

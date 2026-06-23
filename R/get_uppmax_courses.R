@@ -28,13 +28,17 @@ get_uppmax_courses <- function(html_text = scoreto::get_uppmax_html()) {
   )
   testthat::expect_equal(0, sum(is.na(to_dates)))
 
-  course_names_with_brs <- stringr::str_match(lines, "(\\\">|\\[)(.*) <br>")[, 3]
+  course_names_with_brs <- stringr::str_match(
+    lines, "(\\\">|\\[)(.*) <br>"
+  )[, 3]
   testthat::expect_equal(0, sum(is.na(course_names_with_brs)))
 
   course_names <- stringr::str_replace_all(course_names_with_brs, "<br> ", "")
   testthat::expect_equal(0, sum(is.na(course_names)))
 
-  relative_urls <- stringr::str_match(lines, "(href=\\\"|_\\]\\()(.*.md)(/\\\">|\\))")[, 3]
+  relative_urls <- stringr::str_match(
+    lines, "(href=\\\"|_\\]\\()(.*.md)(/\\\">|\\))"
+  )[, 3]
   testthat::expect_equal(0, sum(is.na(relative_urls)))
 
   urls <- relative_urls

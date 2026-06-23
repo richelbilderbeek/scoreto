@@ -4,7 +4,6 @@ test_that("use on today's data", {
 })
 
 test_that("use on testing data, 2026-06-23", {
-  # scoreto::get_provider_courses_url("NAISS")
   t <- get_naiss_courses(html_text = get_scoreto_path("naiss_20260623.html"))
   expect_true(is_correctly_formatted_courses_table(t))
 })

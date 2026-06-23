@@ -13,7 +13,9 @@ get_naiss_courses <- function(
   testthat::expect_true(length(table) > 0)
 
   t <- table |> rvest::html_table()
-  testthat::expect_true(all(names(t) == c("Date", "Course", "Location", "Info")))
+  testthat::expect_true(
+    all(names(t) == c("Date", "Course", "Location", "Info"))
+  )
   names(t) <- c("date_range", "course_name", "course_type", "course_info")
 
   course_names <- t$course_name

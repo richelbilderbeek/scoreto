@@ -5,7 +5,10 @@ test_that("use", {
 })
 
 test_that("use", {
-  text <- "<li><a rel=\"external\" href=\"https://coderefinery.github.io/2026-03-17-workshop/\">CodeRefinery tools workshop (online)</a> - March 17-19 and 24-26 2026 (compact format)</li>"
+  text <- "<li><a rel=\"external\" href=\"https://coderefinery.github.io/2026-03-17-workshop/\">CodeRefinery tools workshop (online)</a> - March 17-19 and 24-26 2026 (compact format)</li>" # nolint
   course_urls <- extract_code_refinery_course_urls(text = text)
-  expect_equal(course_urls, "https://coderefinery.github.io/2026-03-17-workshop/")
+  expect_equal(
+    course_urls,
+    "https://coderefinery.github.io/2026-03-17-workshop/"
+  )
 })

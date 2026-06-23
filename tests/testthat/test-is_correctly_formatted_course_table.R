@@ -78,7 +78,4 @@ test_that("detailed (ab)use", {
   t <- get_test_courses_table()
   t$course_url <- NA
   expect_false(is_correctly_formatted_courses_table(t))
-
-
 })
-

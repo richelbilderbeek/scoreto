@@ -10,4 +10,3 @@ test_that("use", {
   course_names <- extract_code_refinery_course_names(text = text)
   expect_equal("CodeRefinery tools workshop (online)", course_names)
 })
-

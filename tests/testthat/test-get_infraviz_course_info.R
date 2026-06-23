@@ -90,7 +90,7 @@ test_that("use on testing data 7", {
 })
 
 test_that("use on testing data 8", {
-  course_page_url <- "https://infravis.se/workshop-visualize-your-research-using-python-2/"
+  course_page_url <- "https://infravis.se/workshop-visualize-your-research-using-python-2/" # nolint
   course_page_url <- "https://raw.githubusercontent.com/richelbilderbeek/scoreto/refs/heads/main/inst/extdata/infraviz_course_8.html" # nolint
   t <- get_infraviz_course_info(
     course_page_url = course_page_url

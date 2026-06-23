@@ -24,7 +24,7 @@ get_c3se_courses <- function(html_text = scoreto::get_c3se_html()) {
 
   dates_with_na <- stringr::str_match(
     lines,
-    "<td>(<nobr>)?([[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2})(</nobr>)?( [[:digit:]]{2}:[[:digit:]]{2}:[[:digit:]]{2})?</td>"
+    "<td>(<nobr>)?([[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2})(</nobr>)?( [[:digit:]]{2}:[[:digit:]]{2}:[[:digit:]]{2})?</td>" # nolint
   )[, 3]
 
   # No courses
