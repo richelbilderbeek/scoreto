@@ -4,7 +4,9 @@
 #' the table will pass the test of
 #' \link{is_correctly_formatted_courses_table}
 #' @export
-get_naiss_courses <- function(html_text = scoreto::get_naiss_html()) {
+get_naiss_courses <- function(
+  html_text = scoreto::get_provider_courses_url("NAISS")
+) {
 
   website <- rvest::read_html(paste(html_text, collapse = "\n"))
   table <- website |> rvest::html_element("table")
@@ -31,7 +33,7 @@ get_naiss_courses <- function(html_text = scoreto::get_naiss_html()) {
   testthat::expect_equal(length(course_names), length(course_urls))
 
   na_indices <- which(is.na(course_urls))
-  course_urls[na_indices] <- scoreto::get_naiss_courses_url()
+  course_urls[na_indices] <- scoreto::get_provider_courses_url("NAISS")
   testthat::expect_equal(0, sum(is.na(course_urls)))
 
   from_dates <- scoreto::convert_english_dates_to_iso_8601(

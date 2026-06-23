@@ -4,7 +4,7 @@
 \alias{get_naiss_courses}
 \title{Get the NAISS courses}
 \usage{
-get_naiss_courses(html_text = scoreto::get_naiss_html())
+get_naiss_courses(html_text = scoreto::get_provider_courses_url("NAISS"))
 }
 \arguments{
 \item{html_text}{HTML text}
