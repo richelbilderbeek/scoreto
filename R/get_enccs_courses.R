@@ -15,7 +15,7 @@ get_enccs_courses <- function(html_text = scoreto::get_enccs_html()) {
   events <- site |> rvest::html_element(".tribe-events-calendar-list")
   testthat::expect_true(length(events) > 0)
 
-  title_links <- events |> 
+  title_links <- events |>
     rvest::html_elements(".tribe-events-calendar-list__event-title-link")
 
   if (length(title_links) == 0) {
@@ -28,8 +28,8 @@ get_enccs_courses <- function(html_text = scoreto::get_enccs_html()) {
   course_names <- title_links |> rvest::html_text(trim = TRUE)
   testthat::expect_equal(length(course_urls), length(course_urls))
 
-  from_dates <- events |> 
-    rvest::html_elements(".tribe-events-calendar-list__event-datetime") |> 
+  from_dates <- events |>
+    rvest::html_elements(".tribe-events-calendar-list__event-datetime") |>
     rvest::html_attr("datetime")
   testthat::expect_equal(length(course_urls), length(from_dates))
   to_dates <- from_dates
