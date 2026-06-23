@@ -24,8 +24,8 @@ get_mimer_courses <- function(html_text = scoreto::get_mimer_html()) {
     rvest::html_attr("datetime")
   testthat::expect_true(length(date_ranges) > 0)
 
-  course_names <- events |> 
-    rvest::html_node("a") |> 
+  course_names <- events |>
+    rvest::html_node("a") |>
     rvest::html_text(trim = TRUE)
   testthat::expect_equal(length(date_ranges), length(course_names))
   testthat::expect_equal(0, sum(is.na(course_names)))

@@ -41,5 +41,3 @@ test_that("use on data of 2026-06-23", {
   expect_true(is_correctly_formatted_courses_table(t))
   scoreto::get_provider_courses_url("InfraViz")
 })
-
-

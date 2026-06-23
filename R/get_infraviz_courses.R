@@ -53,7 +53,7 @@ get_infraviz_courses <- function(html_text = scoreto::get_infraviz_html()) {
     dplyr::filter(stringr::str_detect(course_name, "[wW]orkshop"))
 
   if (nrow(workshops) == 0) {
-    return (scoreto::create_empty_courses_table())
+    return(scoreto::create_empty_courses_table())
   }
 
   workshop_dates <- scoreto::get_infraviz_courses_infos(
