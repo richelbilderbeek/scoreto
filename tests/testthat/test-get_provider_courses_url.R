@@ -41,7 +41,7 @@ test_that("specific use", {
   )
   expect_equal(
     get_provider_courses_url("NAISS"),
-    "https://www.naiss.se/training"
+    "https://hpc.pages.naiss.se/training/naiss-training/courses/upcoming"
   )
   expect_equal(
     get_provider_courses_url("NSC"),
