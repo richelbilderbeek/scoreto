@@ -1,6 +1,5 @@
 #' Get the NAISS courses
-#' @param html_text HTML text to parse, as can be obtained by
-#' \link{get_naiss_html} or \link{get_test_naiss_html}
+#' @inheritParams default_params_doc
 #' @return a table with all NAISS courses, where
 #' the table will pass the test of
 #' \link{is_correctly_formatted_courses_table}
@@ -9,10 +8,11 @@ get_naiss_courses <- function(html_text = scoreto::get_naiss_html()) {
 
   website <- rvest::read_html(paste(html_text, collapse = "\n"))
   table <- website |> rvest::html_element("table")
+  testthat::expect_true(length(table) > 0)
 
   t <- table |> rvest::html_table()
-  testthat::expect_true(all(names(t) == c("X1", "X2", "X3")))
-  names(t) <- c("date_range", "course_name", "course_type")
+  testthat::expect_true(all(names(t) == c("Date", "Course", "Location", "Info")))
+  names(t) <- c("date_range", "course_name", "course_type", "course_info")
 
   course_names <- t$course_name
   english_date_ranges <- t$date_range
@@ -21,8 +21,15 @@ get_naiss_courses <- function(html_text = scoreto::get_naiss_html()) {
   row_texts <- as.character(
     table |> rvest::html_element("tbody") |> rvest::html_elements("tr")
   )
-  course_urls <- stringr::str_match(row_texts, "a href=\"([^\"]+)")[, 2]
+  course_rel_urls <- stringr::str_match(row_texts, "a href=\"([^\"]+)")[, 2]
+  testthat::expect_equal(length(course_names), length(course_rel_urls))
+
+  course_urls <- scoreto::parse_urls(
+    base_url = scoreto::get_provider_courses_url("NAISS"),
+    relative_urls = course_rel_urls
+  )
   testthat::expect_equal(length(course_names), length(course_urls))
+
   na_indices <- which(is.na(course_urls))
   course_urls[na_indices] <- scoreto::get_naiss_courses_url()
   testthat::expect_equal(0, sum(is.na(course_urls)))
@@ -42,7 +49,7 @@ get_naiss_courses <- function(html_text = scoreto::get_naiss_html()) {
     date_to = to_dates,
     course_name = course_names,
     course_url = course_urls,
-    provider_courses_url = scoreto::get_naiss_courses_url(),
+    provider_courses_url = scoreto::get_provider_courses_url("NAISS"),
     provider_name = "NAISS"
   )
 }

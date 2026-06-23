@@ -13,7 +13,6 @@ License: GPL-3
 Encoding: UTF-8
 Language: en-US
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
 URL: https://github.com/richelbilderbeek/scoreto
 BugReports: https://github.com/richelbilderbeek/scoreto/issues
 Depends:
@@ -31,3 +30,4 @@ Imports:
 Suggests:
     beautier,
     testthat
+Config/roxygen2/version: 8.0.0

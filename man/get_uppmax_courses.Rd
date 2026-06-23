@@ -7,8 +7,7 @@
 get_uppmax_courses(html_text = scoreto::get_uppmax_html())
 }
 \arguments{
-\item{html_text}{HTML text to parse, as can be obtained by
-\link{get_uppmax_html}}
+\item{html_text}{HTML text}
 }
 \value{
 a table with all UPPMAX courses, where

@@ -7,8 +7,7 @@
 get_naiss_courses(html_text = scoreto::get_naiss_html())
 }
 \arguments{
-\item{html_text}{HTML text to parse, as can be obtained by
-\link{get_naiss_html} or \link{get_test_naiss_html}}
+\item{html_text}{HTML text}
 }
 \value{
 a table with all NAISS courses, where
