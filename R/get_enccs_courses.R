@@ -9,10 +9,8 @@ get_enccs_courses <- function(html_text = scoreto::get_enccs_html()) {
   testthat::expect_true(length(website) > 0)
   body <- website |> rvest::html_element("body")
   testthat::expect_true(length(body) > 0)
-  site <- body |> rvest::html_element(".site")
-  testthat::expect_true(length(site) > 0)
 
-  events <- site |> rvest::html_element(".tribe-events-calendar-list")
+  events <- body |> rvest::html_element(".tribe-events-calendar-list")
   testthat::expect_true(length(events) > 0)
 
   title_links <- events |>
