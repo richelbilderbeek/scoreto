@@ -1,6 +1,6 @@
-#' Get a table with all of the providers' information
+#' Check the file to provide a table with all of the providers' information
 #'
-#' @return a table with all providers' information,
+#' @return nothing, will \link{stop} if there is a problem with the file
 #' @export
 check_providers_info_file <- function() {
   info_path <- scoreto::get_scoreto_path("providers_info.csv")
