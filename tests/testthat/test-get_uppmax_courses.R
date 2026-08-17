@@ -1,6 +1,8 @@
 test_that("use", {
   t <- get_uppmax_courses()
   expect_true(is_correctly_formatted_courses_table(t))
+  expect_true(all(as.logical(RCurl::url.exists(t$course_url))))
+
 })
 
 
