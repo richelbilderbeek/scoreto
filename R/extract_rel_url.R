@@ -13,12 +13,23 @@
 #' extract_rel_url(text) # ../uppmax_intro_course
 extract_rel_url <- function(text) {
   testthat::expect_equal(1, length(text))
+  # Assume a href
   matches <- stringr::str_match(text, "href=\\\"([A-Za-z\\._/]+[A-Za-z\\._])")
   testthat::expect_equal(1, nrow(matches))
   testthat::expect_equal(2, ncol(matches))
-  # Absolute URLs are not welcome
-  if (!is.na(scoreto::extract_abs_url(text))) {
-    return(NA)
+  if (is.na(matches[1, 2])) {
+    # Assume a Markdown link
+    matches <- stringr::str_match(text, "\\[.*\\]\\(([A-Za-z\\._]+)\\)")
+    testthat::expect_equal(1, nrow(matches))
+    testthat::expect_equal(2, ncol(matches))
+  }
+  else
+  {
+    # We have a href
+    # Absolute URLs are not welcome
+    if (!is.na(scoreto::extract_abs_url(text))) {
+      return(NA)
+    }
   }
   matches[1, 2]
 }
