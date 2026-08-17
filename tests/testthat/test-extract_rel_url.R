@@ -4,3 +4,15 @@ test_that("use", {
     "../uppmax_intro_course"
   )
 })
+
+test_that("absolute URLs are NAs", {
+  expect_true(
+    is.na(
+      extract_rel_url(
+        text = "<p><a class=\"md-button md-button--primary\" href=\"https://uppmax.github.io/bianca_workshops/beginner/intro/\">Introduction to Bianca: Handling Sensitive Research Data <br> <em>September 18 2026</em></a></p>"
+      )
+    )
+  )
+})
+
+

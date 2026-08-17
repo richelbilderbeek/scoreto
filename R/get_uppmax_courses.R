@@ -36,25 +36,23 @@ get_uppmax_courses <- function(html_text = scoreto::get_uppmax_html()) {
   course_names <- stringr::str_replace_all(course_names_with_brs, "<br> ", "")
   testthat::expect_equal(0, sum(is.na(course_names)))
 
-  urls <- scoreto::extract_abs_urls(lines)
-  testthat::expect_equal(length(urls), length(course_names))
-  testthat::expect_true(sum(is.na(urls)) >= 0)
+  abs_urls <- scoreto::extract_abs_urls(lines)
+  testthat::expect_equal(length(abs_urls), length(course_names))
+  testthat::expect_true(sum(is.na(abs_urls)) >= 0)
 
-  relative_urls <- scoreto::extract_rel_urls(lines)
-  testthat::expect_equal(0, sum(is.na(relative_urls)))
+  rel_urls <- scoreto::extract_rel_urls(lines)
+  testthat::expect_equal(length(rel_urls), length(course_names))
+  testthat::expect_true(sum(is.na(rel_urls)) >= 0)
 
-  urls <- relative_urls
-  index_with_relative_urls <- stringr::str_which(urls, pattern = "\\md$")
-  urls[index_with_relative_urls] <-
-    paste0(
-      "https://docs.uppmax.uu.se/courses_workshops/",
-      urls[index_with_relative_urls]
-    )
-  urls[index_with_relative_urls] <- tools::file_path_sans_ext(
-    urls[index_with_relative_urls]
+  full_rel_urls <- rel_urls
+  full_rel_urls[which(!is.na(full_rel_urls))] <- paste0(
+    "https://docs.uppmax.uu.se/courses_workshops/",
+    full_rel_urls[which(!is.na(full_rel_urls))]
   )
-
-  testthat::expect_equal(length(course_names), length(urls))
+  urls <- full_rel_urls
+  urls[which(is.na(urls))] <- abs_urls[which(is.na(urls))]
+  testthat::expect_equal(length(urls), length(course_names))
+  testthat::expect_equal(0, sum(is.na(urls)))
 
   tibble::tibble(
     date_from = from_dates,
