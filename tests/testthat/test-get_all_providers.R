@@ -1,3 +1,7 @@
+test_that("minimal use", {
+  expect_silent(get_all_providers())
+})
+
 test_that("use", {
   expect_true("AIDA Data Hub" %in% get_all_providers())
   expect_true("C3SE" %in% get_all_providers())

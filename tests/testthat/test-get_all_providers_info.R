@@ -1,3 +1,7 @@
+test_that("minimal use", {
+  expect_silent(get_all_providers_info())
+})
+
 test_that("use", {
   t <- get_all_providers_info()
   expect_true(tibble::is_tibble(t))

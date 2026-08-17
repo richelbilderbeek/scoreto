@@ -36,8 +36,8 @@ test_that("specific use", {
     "https://www.lunarc.lu.se/learning-more/training-courses"
   )
   expect_equal(
-    get_provider_courses_url("Mimer"),
-    "https://mimer-ai.eu/events-and-learning"
+    get_provider_courses_url(provider_name = "Mimer"),
+    "https://mimer-ai.eu/events-and-workshops/"
   )
   expect_equal(
     get_provider_courses_url("NAISS"),
