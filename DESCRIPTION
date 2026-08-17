@@ -23,6 +23,7 @@ Imports:
     httr2,
     knitr,
     lubridate,
+    RCurl,
     readr,
     rvest,
     stringr,
