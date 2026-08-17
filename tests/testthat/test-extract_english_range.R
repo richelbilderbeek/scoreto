@@ -59,4 +59,8 @@ test_that("use", {
     "September 18 2026"
   )
 
+  expect_equal(
+    extract_english_range(text = "[Programming Formalisms <br> _May 4-8 2026_](programming_formalisms.md){ .md-button .md-button--primary }"),
+    "May 4-8 2026"
+  )
 })
