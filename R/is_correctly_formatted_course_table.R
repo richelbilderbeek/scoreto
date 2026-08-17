@@ -20,6 +20,8 @@ is_correctly_formatted_courses_table <- function(t) { # nolint indeed a long fun
     if (sum(is.na(t$course_url)) != 0) return(FALSE)
     if (sum(is.na(t$date_from)) != 0) return(FALSE)
     if (sum(is.na(t$date_to)) != 0) return(FALSE)
+    if (!scoreto::are_valid_urls(t$course_url)) return(FALSE)
+    if (!scoreto::are_valid_urls(t$provider_courses_url)) return(FALSE)
     if (!scoreto::are_correctly_formatted_dates(t$date_from)) return(FALSE)
     if (!scoreto::are_correctly_formatted_dates(t$date_to)) return(FALSE)
   }
