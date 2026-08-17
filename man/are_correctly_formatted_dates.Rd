@@ -10,7 +10,7 @@ are_correctly_formatted_dates(date_strs)
 \item{date_strs}{strings for dates}
 }
 \value{
-TRUE if all the strings follows a \code{YYYY-MM-DD} format
+a logical vector, TRUE for each string that follows a \code{YYYY-MM-DD} format
 }
 \description{
 Are all the dates correctly formatted?

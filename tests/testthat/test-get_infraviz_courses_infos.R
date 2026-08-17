@@ -14,6 +14,6 @@ test_that("use on testing data", {
   expect_true("date_to" %in% names(t))
   expect_true(all(stringr::str_detect(t$date_from, "NA") == FALSE))
   expect_true(all(stringr::str_detect(t$date_to, "NA") == FALSE))
-  expect_true(are_correctly_formatted_dates(t$date_from))
-  expect_true(are_correctly_formatted_dates(t$date_to))
+  expect_true(all(are_correctly_formatted_dates(t$date_from)))
+  expect_true(all(are_correctly_formatted_dates(t$date_to)))
 })

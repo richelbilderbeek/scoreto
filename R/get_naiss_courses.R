@@ -41,12 +41,12 @@ get_naiss_courses <- function(
   from_dates <- scoreto::convert_english_dates_to_iso_8601(
     scoreto::extract_english_from_dates(english_date_ranges)
   )
-  testthat::expect_true(scoreto::are_correctly_formatted_dates(from_dates))
+  testthat::expect_true(all(scoreto::are_correctly_formatted_dates(from_dates)))
 
   to_dates <- scoreto::convert_english_dates_to_iso_8601(
     scoreto::extract_english_to_dates(english_date_ranges)
   )
-  testthat::expect_true(scoreto::are_correctly_formatted_dates(to_dates))
+  testthat::expect_true(all(scoreto::are_correctly_formatted_dates(to_dates)))
 
   tibble::tibble(
     date_from = from_dates,

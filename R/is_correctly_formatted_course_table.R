@@ -3,27 +3,10 @@
 #' @return TRUE if the table is correctly formatted
 #' @export
 is_correctly_formatted_courses_table <- function(t) { # nolint indeed a long function name
-
-  if (!tibble::is_tibble(t)) return(FALSE)
-  if (length(names(t)) != 6) return(FALSE)
-  expected_names <- c(
-    "date_from",
-    "date_to",
-    "course_name",
-    "course_url",
-    "provider_courses_url",
-    "provider_name"
+  is_valid <- TRUE
+  tryCatch(
+    { scoreto::check_courses_table(t) },
+    error = function(e) { is_valid <- FALSE }
   )
-  if (!all(names(t) == expected_names)) return(FALSE)
-
-  if (nrow(t) > 0) {
-    if (sum(is.na(t$course_url)) != 0) return(FALSE)
-    if (sum(is.na(t$date_from)) != 0) return(FALSE)
-    if (sum(is.na(t$date_to)) != 0) return(FALSE)
-    if (!scoreto::are_valid_urls(t$course_url)) return(FALSE)
-    if (!scoreto::are_valid_urls(t$provider_courses_url)) return(FALSE)
-    if (!scoreto::are_correctly_formatted_dates(t$date_from)) return(FALSE)
-    if (!scoreto::are_correctly_formatted_dates(t$date_to)) return(FALSE)
-  }
-  TRUE
+  is_valid
 }

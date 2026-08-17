@@ -3,6 +3,7 @@
 export(are_correctly_formatted_dates)
 export(are_valid_links)
 export(are_valid_urls)
+export(check_courses_table)
 export(check_providers_info_file)
 export(convert_enccs_dates)
 export(convert_english_date_to_iso_8601)
