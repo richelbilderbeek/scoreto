@@ -4,7 +4,10 @@
 #' @export
 check_providers_info_file <- function() {
   info_path <- scoreto::get_scoreto_path("providers_info.csv")
-  text <- readr::read_lines(info_path) # Will produce output, this is a known bug
+
+  # 'read_lines' produces output. This is a known bug,
+  # e.g. https://github.com/tidyverse/readr/issues/1501
+  text <- readr::read_lines(info_path)
   testthat::expect_true(length(text) > 2)
   n_cols <- length(stringr::str_split(text, ",")[[1]])
   n_rows <- length(text) - 1 # header
