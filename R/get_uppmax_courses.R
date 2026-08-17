@@ -15,16 +15,16 @@ get_uppmax_courses <- function(html_text = scoreto::get_uppmax_html()) {
     negate = TRUE
   )
 
-  dates <- stringr::str_match(lines, "(<br> _|<em>)(.*)(</em>|_)\\]")[, 3]
-  testthat::expect_equal(0, sum(is.na(dates)))
+  english_ranges <- scoreto::extract_english_ranges(lines)
+  testthat::expect_equal(0, sum(is.na(english_ranges)))
 
   from_dates <- scoreto::convert_english_dates_to_iso_8601(
-    scoreto::extract_english_from_dates(dates)
+    scoreto::extract_english_from_dates(english_ranges)
   )
   testthat::expect_equal(0, sum(is.na(from_dates)))
 
   to_dates <- scoreto::convert_english_dates_to_iso_8601(
-    scoreto::extract_english_to_dates(dates)
+    scoreto::extract_english_to_dates(english_ranges)
   )
   testthat::expect_equal(0, sum(is.na(to_dates)))
 
@@ -36,9 +36,11 @@ get_uppmax_courses <- function(html_text = scoreto::get_uppmax_html()) {
   course_names <- stringr::str_replace_all(course_names_with_brs, "<br> ", "")
   testthat::expect_equal(0, sum(is.na(course_names)))
 
-  relative_urls <- stringr::str_match(
-    lines, "(href=\\\"|_\\]\\()(.*.md)(/\\\">|\\))"
-  )[, 3]
+  urls <- scoreto::extract_abs_urls(lines)
+  testthat::expect_equal(length(urls), length(course_names))
+  testthat::expect_true(sum(is.na(urls)) >= 0)
+
+  relative_urls <- scoreto::extract_rel_urls(lines)
   testthat::expect_equal(0, sum(is.na(relative_urls)))
 
   urls <- relative_urls

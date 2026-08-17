@@ -19,6 +19,8 @@ extract_english_range <- function(text) {
   patterns <- c(
     # March 17-19 and 24-26 2026
     paste0("(", full_months_pattern, "[:blank:][:digit:]+-[:digit:]+[:blank:]and[:blank:][:digit:]+-[:digit:]+[:blank:][:digit:]{4}", ")"), # nolint
+    # August 24-26 2026
+    paste0("(", full_months_pattern, "[:blank:][:digit:]+-[:digit:]+[:blank:][:digit:]{4}", ")"), # nolint
     # Date:27 November
     "Date:[:blank:]?([:digit:]+[:blank:][:upper:][:lower:]+[:blank:][:digit:]{4})", # nolint
     # Date:27-28 November
@@ -31,7 +33,8 @@ extract_english_range <- function(text) {
       "[:blank:][:digit:]{4})"
     ),
     # March 10, 2026
-    "([:upper:][:lower:]+[:blank:][:digit:]{1,2},[:blank:][:digit:]{4})",
+    # September 18 2026
+    "([:upper:][:lower:]+[:blank:][:digit:]{1,2},?[:blank:][:digit:]{4})",
     # 9th Sep 2025
     # 3rd Oct 2025
     "([:digit:]{1,2}(th|rd)[:blank:][:upper:][:lower:]+[:blank:][:digit:]{4})",

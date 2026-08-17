@@ -49,4 +49,14 @@ test_that("use", {
     extract_english_range(text = "Location:K1051V, K-building, Linnéuniversitetet, Växjö\n\n\n\nLecturers:Anders Hast and Ingela Nyström\n\n\n\n\n\nDate:21 April, 9:15-11:45\n\n\n\nType:Workshop"), # nolint
     "21 April"
   )
+
+  expect_equal(
+    extract_english_range(text = "<p><a class=\"md-button md-button--primary\" href=\"../uppmax_intro_course/\">Introduction to Linux and UPPMAX <br> <em>August 24-26 2026</em></a></p>"),
+    "August 24-26 2026"
+  )
+  expect_equal(
+    extract_english_range(text = "<p><a class=\"md-button md-button--primary\" href=\"https://uppmax.github.io/bianca_workshops/beginner/intro/\">Introduction to Bianca: Handling Sensitive Research Data <br> <em>September 18 2026</em></a></p>"),
+    "September 18 2026"
+  )
+
 })
