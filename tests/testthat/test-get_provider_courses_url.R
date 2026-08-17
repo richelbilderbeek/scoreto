@@ -37,7 +37,7 @@ test_that("specific use", {
   )
   expect_equal(
     get_provider_courses_url(provider_name = "Mimer"),
-    "https://mimer-ai.eu/events-and-workshops/"
+    "https://mimer-ai.eu/events-and-workshops"
   )
   expect_equal(
     get_provider_courses_url("NAISS"),
