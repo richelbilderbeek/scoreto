@@ -5,7 +5,9 @@
 #' @export
 check_courses_table <- function(t) { # nolint indeed a long function name
 
-  if (!tibble::is_tibble(t)) stop("'t' is not a tibble, but a '", paste0(class(t), collapse = " "), "'")
+  if (!tibble::is_tibble(t)) {
+    stop("'t' is not a tibble, but a '", paste0(class(t), collapse = " "), "'")
+  }
   expected_names <- c(
     "date_from",
     "date_to",

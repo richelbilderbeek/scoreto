@@ -19,7 +19,7 @@ test_that("detailed (ab)use", {
   t <- get_test_courses_table()
   expect_true(is_correctly_formatted_courses_table(t))
 
-  expect_false(is_correctly_formatted_courses_table("nonensse"))
+  expect_false(is_correctly_formatted_courses_table(t = "nonensse"))
   expect_false(is_correctly_formatted_courses_table(tibble::tibble()))
 
   # Incorrect number of names
