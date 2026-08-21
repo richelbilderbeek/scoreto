@@ -5,5 +5,6 @@ test_that("use on today's data", {
 
 test_that("use on testing data", {
   t <- get_csc_courses(html_text = get_test_csc_html())
+  expect_silent(check_courses_table(t))
   expect_true(is_correctly_formatted_courses_table(t))
 })

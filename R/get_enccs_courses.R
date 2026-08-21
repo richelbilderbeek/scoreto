@@ -33,6 +33,9 @@ get_enccs_courses <- function(html_text = scoreto::get_enccs_html()) {
   to_dates <- from_dates
   testthat::expect_equal(length(course_urls), length(to_dates))
 
+  # Remove trailing slashes
+  course_urls <- stringr::str_replace(course_urls, "/$", "")
+
   tibble::tibble(
     date_from = from_dates,
     date_to = to_dates,

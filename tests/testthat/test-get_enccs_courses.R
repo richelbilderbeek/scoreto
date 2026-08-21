@@ -21,5 +21,6 @@ test_that("use on testing data, 2026-06-04", {
 test_that("use on testing data, 2026-07-09", {
   get_provider_courses_url("ENCCS")
   t <- get_enccs_courses(html_text = readr::read_lines(get_scoreto_path("enccs_20260709.html"))) # nolint
+  expect_silent(check_courses_table(t))
   expect_true(is_correctly_formatted_courses_table(t))
 })

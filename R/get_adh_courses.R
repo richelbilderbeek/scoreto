@@ -24,6 +24,9 @@ get_adh_courses <- function() {
   urls <- paste0(adh_home_url, "/", relative_urls)
   testthat::expect_equal(length(course_names), length(urls))
 
+  # Remove trailing slashes
+  adh_training_url <- stringr::str_replace(adh_training_url, "/$", "")
+
   tibble::tibble(
     date_from = dates,
     date_to = dates,

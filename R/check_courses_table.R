@@ -63,7 +63,7 @@ check_courses_table <- function(t) { # nolint indeed a long function name
   }
   if (any(!scoreto::are_valid_urls(t$provider_courses_url))) {
     stop(
-      "'t' has malformed course URLs. \n",
+      "'t' has malformed provider URLs. \n",
       "Row indices: ", paste(which(!scoreto::are_valid_urls(t$provider_courses_url)), collapse = " "), "\n",
       "Malformed course URLs: ", paste(t$provider_courses_url[!scoreto::are_valid_urls(t$provider_courses_url)], collapse = ", "), "\n",
       "Course names: ", paste(t$course_name[!scoreto::are_valid_urls(t$provider_courses_url)], collapse = ", ")

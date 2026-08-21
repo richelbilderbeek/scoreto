@@ -42,6 +42,10 @@ get_code_refinery_courses <- function(
   testthat::expect_equal(length(from_dates), length(course_names))
   testthat::expect_equal(length(from_dates), length(course_urls))
 
+  # Remove trailing slashes
+  course_urls <- stringr::str_replace(course_urls, "/$", "")
+
+
   tibble::tibble(
     date_from = from_dates,
     date_to = to_dates,

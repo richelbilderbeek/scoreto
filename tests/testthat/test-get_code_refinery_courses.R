@@ -10,6 +10,7 @@ test_that("use on testing data", {
 
 test_that("use on testing data, 2026-01-30", {
   t <- get_code_refinery_courses(html_text = readr::read_lines(get_scoreto_path("code_refinery_20260130.html"))) # nolint
+  check_courses_table(t)
   expect_true(is_correctly_formatted_courses_table(t))
 })
 

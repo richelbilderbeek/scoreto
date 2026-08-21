@@ -1,4 +1,5 @@
 test_that("use", {
   t <- get_adh_courses()
+  expect_silent(check_courses_table(t))
   expect_true(is_correctly_formatted_courses_table(t))
 })

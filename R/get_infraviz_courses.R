@@ -74,8 +74,11 @@ get_infraviz_courses <- function(html_text = scoreto::get_infraviz_html()) {
   t$provider_courses_url <- scoreto::get_infraviz_courses_url()
   t$provider_name <- "InfraViz"
 
+  # Remove trailing slashes
+  t$course_url <- stringr::str_replace(t$course_url, "/$", "")
+
   # Reorder
-  t <- t |> dplyr::select(
+  t |> dplyr::select(
     date_from,
     date_to,
     course_name,
@@ -83,6 +86,4 @@ get_infraviz_courses <- function(html_text = scoreto::get_infraviz_html()) {
     provider_courses_url,
     provider_name
   )
-  testthat::expect_true(scoreto::is_correctly_formatted_courses_table(t))
-  t
 }

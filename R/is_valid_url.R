@@ -6,6 +6,6 @@
 #' @export
 is_valid_url <- function(url) {
   testthat::expect_equal(1, length(url))
-  matches <- stringr::str_match(url, "^https://[A-Za-z0-9-\\._/]+$")
+  matches <- stringr::str_match(url, "^https://[A-Za-z0-9-\\._/]+[A-Za-z0-9-\\._]$")
   !is.na(matches[1, 1])
 }
