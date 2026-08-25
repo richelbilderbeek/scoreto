@@ -35,6 +35,9 @@ get_mimer_courses <- function(html_text = scoreto::get_mimer_html()) {
   from_dates <- date_ranges
   to_dates <- date_ranges
 
+  # Remove trailing slashes
+  course_urls <- stringr::str_replace(course_urls, "/$", "")
+
   tibble::tibble(
     date_from = from_dates,
     date_to = to_dates,

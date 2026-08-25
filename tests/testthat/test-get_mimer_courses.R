@@ -1,5 +1,6 @@
 test_that("use", {
   t <- get_mimer_courses(html_text = get_mimer_html())
+  expect_silent(check_courses_table(t))
   expect_true(is_correctly_formatted_courses_table(t))
 })
 

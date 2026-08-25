@@ -48,6 +48,9 @@ get_naiss_courses <- function(
   )
   testthat::expect_true(all(scoreto::are_correctly_formatted_dates(to_dates)))
 
+  # Remove trailing slashes
+  course_urls <- stringr::str_replace(course_urls, "/$", "")
+
   tibble::tibble(
     date_from = from_dates,
     date_to = to_dates,
