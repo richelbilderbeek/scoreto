@@ -22,6 +22,9 @@ get_hpc2n_courses <- function(html_text = scoreto::get_hpc2n_html()) {
   course_urls <- scoreto::extract_hpc2n_course_urls(lines)
   course_urls[is.na(course_urls)] <- scoreto::get_hpc2n_courses_url()
 
+  # Remove trailing slashes
+  course_urls <- stringr::str_replace(course_urls, "/$", "")
+
   tibble::tibble(
     date_from = from_dates,
     date_to = to_dates,
