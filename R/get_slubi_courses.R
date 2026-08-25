@@ -37,6 +37,9 @@ get_slubi_courses <- function(html_text = scoreto::get_slubi_html()) {
   to_dates <- scoreto::extract_slubi_to_dates(english_date_ranges)
   course_urls <- scoreto::extract_slubi_course_urls(relative_urls)
 
+    # Remove trailing slashes
+  course_urls <- stringr::str_replace(course_urls, "/$", "")
+
   tibble::tibble(
     date_from = from_dates,
     date_to = to_dates,
