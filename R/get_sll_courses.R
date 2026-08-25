@@ -31,7 +31,8 @@ get_sll_courses <- function(html_text = scoreto::get_sll_html()) {
     rvest::html_attr("href")
   testthat::expect_equal(length(course_titles), length(rel_urls))
 
-  urls <- paste0("https://training.scilifelab.se/", rel_urls)
+  testthat::expect_true(all(stringr::str_detect(rel_urls, "^/")))
+  urls <- paste0("https://training.scilifelab.se", rel_urls)
   testthat::expect_equal(length(course_titles), length(urls))
 
   from_dates <- scoreto::convert_english_dates_to_iso_8601(
