@@ -34,7 +34,7 @@ get_oscu_events <- function(html_text = scoreto::get_oscu_html()) {
   t_valid$course_urls <- scoreto::get_oscu_events_url()
 
   # Remove trailing slashes
-  t$course_urls <- stringr::str_replace(t$course_urls, "/$", "")
+  t_valid$course_urls <- stringr::str_replace(t_valid$course_urls, "/$", "")
 
   tibble::tibble(
     date_from = t_valid$from_dates,

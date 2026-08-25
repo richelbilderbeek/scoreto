@@ -1,5 +1,6 @@
 test_that("use", {
   t <- get_oscu_events(html_text = get_oscu_html())
+  check_courses_table(t)
   expect_true(is_correctly_formatted_courses_table(t))
 })
 
