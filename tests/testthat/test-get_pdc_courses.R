@@ -19,5 +19,6 @@ test_that("elegantly process no courses", {
 
 test_that("2026-08-21", {
   t <- get_pdc_courses(html_text = readr::read_lines(get_scoreto_path("pdc_20260821.html"))) # nolint
+  expect_false(all(stringr::str_detect(t$course_url, "www.pdc.kth.se//about")))
   expect_silent(check_courses_table(t))
 })

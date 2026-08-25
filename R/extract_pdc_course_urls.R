@@ -12,6 +12,13 @@ extract_pdc_course_urls <- function(
     "href=\"(.*)\">.*</a>"
   )[, 2]
   testthat::expect_equal(0, sum(is.na(rel_url)))
+
+  # Remove slash at front
+  rel_url <- stringr::str_replace(rel_url, "^/", "")
+
+  # Remove the question mark and beyond
+  rel_url <- stringr::str_replace(rel_url, "\\?.*", "")
+
   paste0(pdc_training_url, "/", rel_url)
 
 }

@@ -9,5 +9,19 @@ test_that("use", {
     0,
     sum(stringr::str_detect(course_urls, "about/events/about/events"))
   )
+  expect_false(all(stringr::str_detect(course_urls, "www.pdc.kth.se//about")))
 
 })
+
+test_that("use", {
+  pdc_courses_text <- c(
+    "<a title=\"NAISS User Forum\" href=\"/about/events/naiss-user-forum-1.1478678?date=2026-10-06&amp;orgdate=2026-08-21&amp;length=1&amp;orglength=0\">NAISS User Forum</a>"
+  )
+  course_urls <- extract_pdc_course_urls(pdc_courses_text)
+  expect_equal(
+    0,
+    sum(stringr::str_detect(course_urls, "\\?"))
+  )
+  expect_false(all(stringr::str_detect(course_urls, "www.pdc.kth.se//about")))
+})
+
