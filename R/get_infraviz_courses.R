@@ -50,7 +50,14 @@ get_infraviz_courses <- function(html_text = scoreto::get_infraviz_html()) {
     course_url = urls
   )
   workshops <- all_news |>
-    dplyr::filter(stringr::str_detect(course_name, "[wW]orkshop"))
+    dplyr::filter(stringr::str_detect(course_name, "[wW]orkshop")) |>
+    dplyr::filter(
+      !stringr::str_detect(
+        course_name,
+        "Accepted at ECCV 2026 Workshops: New methods for studying foraminifera in 3D" # nolint this describes a past conference
+      )
+    )
+
 
   if (nrow(workshops) == 0) {
     return(scoreto::create_empty_courses_table())
