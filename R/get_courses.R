@@ -31,7 +31,7 @@ get_courses <- function() {
   # Check again
   for (i in seq_along(tibbles)) {
     t <- tibbles[[i]]
-    testthat::expect_true(scoreto::is_correctly_formatted_courses_table(t))
+    testthat::expect_silent(scoreto::check_courses_table(t))
   }
 
   t_with_nas <- dplyr::bind_rows(tibbles)

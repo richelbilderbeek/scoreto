@@ -15,7 +15,7 @@ get_uppmax_courses <- function(html_text = scoreto::get_uppmax_html()) {
     negate = TRUE
   )
 
-  english_ranges <- scoreto::extract_english_ranges(lines)
+  english_ranges <- scoreto::extract_english_ranges(text = lines)
   testthat::expect_equal(0, sum(is.na(english_ranges)))
 
   from_dates <- scoreto::convert_english_dates_to_iso_8601(
