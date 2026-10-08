@@ -1,6 +1,6 @@
 #' Get the HPC2N courses
 #' @param html_text HTML text to parse, as can be obtained by
-#' \link{get_hpc2n_html} or \link{get_test_hpc2n_html}
+#' \link{get_hpc2n_html}
 #' @return a table with all HPC2N courses, where
 #' the table will pass the test of
 #' \link{is_correctly_formatted_courses_table}

@@ -17,5 +17,4 @@ Get the PDC courses as HTML
 }
 \seealso{
 use \link{get_pdc_courses} to get the PDC courses as a table.
-Use \link{get_test_pdc_html} to get testing HTML.
 }

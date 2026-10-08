@@ -12,7 +12,3 @@ HTML text
 \description{
 Get the HPC2N courses website as HTML
 }
-\seealso{
-use \link{get_test_hpc2n_html} to get similar HTML text to be
-used in testing
-}
