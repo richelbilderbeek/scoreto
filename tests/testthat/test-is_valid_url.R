@@ -6,9 +6,9 @@ test_that("use", {
     expect_true(is_valid_url(url = url), paste0("Invalid URL: ", url))
   }
 
-  expect_true(is_valid_url(url = "https://hpc.pages.naiss.se/training/NAISS-intro-week"))
-  expect_false(is_valid_url(url = "https://hpc.pages.naiss.se/training/NAISS-intro-week/"))
-  expect_false(is_valid_url(url = "https://hpc.pages.naiss.se/training/NAISS-intro-week/"))
+  expect_true(is_valid_url(url = "https://hpc.pages.naiss.se/training/NAISS-intro-week")) # nolint
+  expect_false(is_valid_url(url = "https://hpc.pages.naiss.se/training/NAISS-intro-week/")) # nolint
+  expect_false(is_valid_url(url = "https://hpc.pages.naiss.se/training/NAISS-intro-week/")) # nolint
   expect_true(is_valid_url(url = "https://www.pdc.kth.se/about"))
   expect_false(is_valid_url(url = "https://www.pdc.kth.se//about"))
 })

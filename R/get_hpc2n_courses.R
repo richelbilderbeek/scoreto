@@ -12,7 +12,7 @@ get_hpc2n_courses <- function(html_text = scoreto::get_hpc2n_html()) {
 
   lines <- all_lines[from_index:to_index]
 
-  english_date_ranges <- extract_english_ranges(lines)
+  english_date_ranges <- scoreto::extract_english_ranges(lines)
   english_from_dates <- scoreto::extract_english_from_dates(english_date_ranges)
   english_to_dates <- scoreto::extract_english_to_dates(english_date_ranges)
   from_dates <- scoreto::convert_english_dates_to_iso_8601(english_from_dates)

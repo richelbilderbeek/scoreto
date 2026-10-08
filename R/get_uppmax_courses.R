@@ -47,7 +47,10 @@ get_uppmax_courses <- function(html_text = scoreto::get_uppmax_html()) {
   full_rel_urls <- rel_urls
   full_rel_urls[which(!is.na(full_rel_urls))] <- paste0(
     "https://docs.uppmax.uu.se/courses_workshops/",
-    stringr::str_replace_all(full_rel_urls[which(!is.na(full_rel_urls))], "\\.md$", "")
+    stringr::str_replace_all(
+      full_rel_urls[which(!is.na(full_rel_urls))],
+      "\\.md$", ""
+    )
   )
 
   urls <- full_rel_urls

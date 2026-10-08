@@ -51,16 +51,16 @@ test_that("use", {
   )
 
   expect_equal(
-    extract_english_range(text = "<p><a class=\"md-button md-button--primary\" href=\"../uppmax_intro_course/\">Introduction to Linux and UPPMAX <br> <em>August 24-26 2026</em></a></p>"),
+    extract_english_range(text = "<p><a class=\"md-button md-button--primary\" href=\"../uppmax_intro_course/\">Introduction to Linux and UPPMAX <br> <em>August 24-26 2026</em></a></p>"), # nolint
     "August 24-26 2026"
   )
   expect_equal(
-    extract_english_range(text = "<p><a class=\"md-button md-button--primary\" href=\"https://uppmax.github.io/bianca_workshops/beginner/intro/\">Introduction to Bianca: Handling Sensitive Research Data <br> <em>September 18 2026</em></a></p>"),
+    extract_english_range(text = "<p><a class=\"md-button md-button--primary\" href=\"https://uppmax.github.io/bianca_workshops/beginner/intro/\">Introduction to Bianca: Handling Sensitive Research Data <br> <em>September 18 2026</em></a></p>"), # nolint
     "September 18 2026"
   )
 
   expect_equal(
-    extract_english_range(text = "[Programming Formalisms <br> _May 4-8 2026_](programming_formalisms.md){ .md-button .md-button--primary }"),
+    extract_english_range(text = "[Programming Formalisms <br> _May 4-8 2026_](programming_formalisms.md){ .md-button .md-button--primary }"), # nolint
     "May 4-8 2026"
   )
 })

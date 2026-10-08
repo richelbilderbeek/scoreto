@@ -51,10 +51,10 @@ extract_english_range <- function(text) {
   }
   if (is.na(result)) {
     stop(
-        "Failed to extract an English range\n",
-        "using scoreto::extract_english_range on text:\n",
-        text
-      )
+      "Failed to extract an English range\n",
+      "using scoreto::extract_english_range on text:\n",
+      text
+    )
   }
 
   testthat::expect_true(!is.na(result))

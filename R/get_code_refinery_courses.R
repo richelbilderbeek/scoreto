@@ -17,7 +17,10 @@ get_code_refinery_courses <- function(
 
   to_index <- stringr::str_which(
     all_lines,
-    "<h2 id=\"(recent|previous)-workshops-and-events\">(Previous|Recent) workshops and events</h2>"
+    paste0(
+      "<h2 id=\"(recent|previous)-workshops-and-events\">",
+      "(Previous|Recent) workshops and events</h2>"
+    )
   ) - 1
   testthat::expect_equal(1, length(to_index))
 

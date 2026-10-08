@@ -18,4 +18,3 @@ test_that("use, 2026-09-15", {
   )
   scoreto::get_provider_courses_url("UPPMAX")
 })
-

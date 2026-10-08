@@ -22,9 +22,7 @@ extract_rel_url <- function(text) {
     matches <- stringr::str_match(text, "\\[.*\\]\\(([A-Za-z\\._]+)\\)")
     testthat::expect_equal(1, nrow(matches))
     testthat::expect_equal(2, ncol(matches))
-  }
-  else
-  {
+  } else {
     # We have a href
     # Absolute URLs are not welcome
     if (!is.na(scoreto::extract_abs_url(text))) {

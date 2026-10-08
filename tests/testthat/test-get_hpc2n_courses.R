@@ -14,5 +14,3 @@ test_that("use, 2026-08-21", {
   t <- get_hpc2n_courses(html_text = readr::read_lines(get_scoreto_path("hpc2n_20260821.html"))) # nolint
   expect_silent(check_courses_table(t))
 })
-
-
