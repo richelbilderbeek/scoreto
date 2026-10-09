@@ -1,6 +1,6 @@
 test_that("use", {
   expect_equal(
-    extract_abs_urls("[Introduction to Bianca: Handling Sensitive Research Data <br> _September 18 2026_](https://uppmax.github.io/bianca_workshops/beginner/intro/){ .md-button .md-button--primary }"),
+    extract_abs_urls("[Introduction to Bianca: Handling Sensitive Research Data <br> _September 18 2026_](https://uppmax.github.io/bianca_workshops/beginner/intro/){ .md-button .md-button--primary }"), # nolint
     "https://uppmax.github.io/bianca_workshops/beginner/intro"
   )
 })
